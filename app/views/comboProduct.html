@@ -1,0 +1,85 @@
+<style type="text/css">
+.red_badge {
+    position: absolute;
+    margin-left: -15px;
+    margin-top: -10px;
+    background-color: red;
+}
+
+.list-price {
+    font-size: 10px;
+}
+</style>
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Combo / Product
+                          
+                        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cutlery" aria-hidden="true"></i> <a href="index.html"> Combo / Product </a>
+            </li>
+        </ol>
+        <div class="form-group input-group" style="margin-top:-20px; margin-bottom: -1px;">
+            <input type="text" class="form-control" ng-model="searchText">
+            <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <label class="panel-title"><i class="fa fa-cutlery" aria-hidden="true"></i> Combo</label>
+        <label class="text-right" style="float: right"> <a ng-href="#/comboProductAdd">Add Combo <i class="fa fa-plus-circle" aria-hidden="true" style="color:#088A08;"></i></a>
+        </label>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div ng-repeat="item in combos | filter:searchText">
+                
+                    <a ng-href="#/comboProductAdd/{{item.id}}" class="row list-group-item" >
+                        <div class="col-xs-3">
+                        <span ng-repeat="itm in item.floor">
+                        <i class="fa fa-fw fa-cutlery"></i>
+                        {{itm.comboName}}
+                        <br>
+                        <span class="list-price">Price {{itm.comboMoney}} THB.</span>
+                            </span>
+                        </div>
+                        <div class="col-xs-7"><span ng-repeat="itm in item.floor">
+                        <span ng-repeat="it  in itm.comboProd">
+                            <img class="imgset" src="{{it.img}}">
+                            <span class="badge red_badge">{{it.qty}}</span> &nbsp;
+                            </span>
+                            </span>
+                        </div>
+                        <div class="col-xs-2">
+                            <i class="fa  fa-trash fa-1x" ng-href="#/setupCart" class="list-group-item" ng-click="deleteCombo(item.id)" onclick="return false;" style="float: right;color:red;margin-top:15px;"></i>
+                        <br>&nbsp;
+                        </div>
+                        
+                    </a>
+                
+                <!-- 
+                <div class="col-xs-3">
+                        <div class="col-xs-2">
+                            
+                        </div>
+                        <div class="col-xs-10">
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-5">
+                        
+                    </div>
+                    <div class="col-xs-1">
+                        -->
+            </div>
+        </div>
+        <!-- <label class="text-right" style="float: right">
+                    <a ng-href="#/setupCart" class="list-group-item" ng-click="deleteCart(item.id)" onclick="return false;"> <i class="fa fa-trash" aria-hidden="true" style="color:red;"> </i> </a>
+                </label> -->
+    </div>
+</div>
+</div>

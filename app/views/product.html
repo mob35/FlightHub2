@@ -1,0 +1,238 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Combo Product
+                          
+                        </h1>
+        <div class="breadcrumb">
+            <span ><a href="javascript:window.history.back();"> Cancel</a></span>
+            <span style="float: right;"><a href="javascript:window.history.back();" ng-click="addProduct()"> Done </a></span>
+        </div>
+        <div class="form-group input-group" style="margin-top:-20px; margin-bottom: -1px;">
+            <input type="text" class="form-control" ng-model="searchText">
+            <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+    </div>
+</div>
+</div>
+<div class="navbar navbar-default">
+    
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pro">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+            <ul class="nav navbar-nav " >
+                <li><a class="btn btn-link" ng-click="changeType('Food')">Food</a>
+                </li>
+                <li><a class="btn btn-link" ng-click="changeType('Drink')">Drink</a>
+                </li>
+                <li><a class="btn btn-link" ng-click="changeType('Fast')">Fast Food</a>
+                </li>
+                <li><a class="btn btn-link" ng-click="changeType('Dessert')">Dessert</a>
+                </li>
+                <li><a class="btn btn-link" ng-click="changeType('Combo')">Combo Set</a>
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    
+</div>
+<div class="panel panel-default" style="margin-top: -20px;" ng-show="productType=='Food'">
+    <div class="panel-body">
+        <div class="col-md-4 setBorder" ng-repeat="itm in food | filter:searchText">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-9 text-center">
+                        <label>{{itm.name}}</label>
+                    </div>
+                </div>
+                <div class="row" align="middle">
+                    <div class="col-md-9">
+                        <!-- <img class="noti" src="{{itm.noti}}"> -->
+                        <img class="productSet" src="{{itm.img}}">
+                        <span class="badge red_badge">{{itm.qty}}</span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row" style="margin-top:30px;">
+                            <button class="btn btn-default" ng-disabled="itm.stock < 1" ng-click="clickAdd(itm)">
+                                <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                        </div>
+                        <div class="row">
+                            <button button class="btn btn-default" ng-click="clickRemove(itm)"><i class="fa fa-minus" style="color:red;"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <label>{{itm.price}}</label>
+                        <label> THB.</label>
+                        <label> / {{itm.quality}} Qty.</label>
+                        <button button class="btn btn-default" style="color: white; background-color: #009900; float: right;margin-top: -10px;">{{itm.stock}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" style="margin-top: -20px;" ng-show="productType=='Drink'">
+    <div class="panel-body">
+        <div class="col-md-4 setBorder" ng-repeat="itm in drink | filter:searchText">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-9 text-center">
+                        <label>{{itm.name}}</label>
+                    </div>
+                </div>
+                <div class="row" align="middle">
+                    <div class="col-md-9">
+                        <!-- <img class="noti" src="{{itm.noti}}"> -->
+                        <img class="productSet" src="{{itm.img}}">
+                        <span class="badge red_badge">{{itm.qty}}</span>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="row" style="margin-top:30px;">
+                            <button class="btn btn-default" ng-disabled="itm.stock < 1" ng-click="clickAdd(itm)">
+                                <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                        </div>
+                        <div class="row">
+                            <button button class="btn btn-default" ng-click="clickRemove(itm)"><i class="fa fa-minus" style="color:red;"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <label>{{itm.price}}</label>
+                        <label> THB.</label>
+                        <label> / {{itm.quality}} Qty.</label>
+                        <button button class="btn btn-default" style="color: white; background-color: #009900; float: right;margin-top: -10px;">{{itm.stock}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" style="margin-top: -20px;" ng-show="productType=='Fast'">
+   <div class="panel-body">
+        <div class="col-md-4 setBorder" ng-repeat="itm in fast | filter:searchText">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-9 text-center">
+                        <label>{{itm.name}}</label>
+                    </div>
+                </div>
+                <div class="row" align="middle">
+                    <div class="col-md-9">
+                        <!-- <img class="noti" src="{{itm.noti}}"> -->
+                        <img class="productSet" src="{{itm.img}}">
+                        <span class="badge red_badge">{{itm.qty}}</span>
+                    </div>
+                    <div class="col-md-3" >
+                        <div class="row" style="margin-top:30px;">
+                            <button class="btn btn-default" ng-disabled="itm.stock < 1" ng-click="clickAdd(itm)">
+                                <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                        </div>
+                        <div class="row">
+                            <button button class="btn btn-default" ng-click="clickRemove(itm)"><i class="fa fa-minus" style="color:red;"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <label>{{itm.price}}</label>
+                        <label> THB.</label>
+                        <label> / {{itm.quality}} Qty.</label>
+                        <button button class="btn btn-default" style="color: white; background-color: #009900; float: right;margin-top: -10px;">{{itm.stock}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" style="margin-top: -20px;" ng-show="productType=='Dessert'">
+    <div class="panel-body">
+        <div class="col-md-4 setBorder" ng-repeat="itm in dessert | filter:searchText">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-9 text-center">
+                        <label>{{itm.name}}</label>
+                    </div>
+                </div>
+                <div class="row" align="middle">
+                    <div class="col-md-9">
+                        <!-- <img class="noti" src="{{itm.noti}}"> -->
+                        <img class="productSet" src="{{itm.img}}">
+                        <span class="badge red_badge">{{itm.qty}}</span>
+                    </div>
+                    <div class="col-md-3" >
+                        <div class="row" style="margin-top:30px;">
+                            <button class="btn btn-default" ng-disabled="itm.stock < 1" ng-click="clickAdd(itm)">
+                                <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                        </div>
+                        <div class="row">
+                            <button button class="btn btn-default" ng-click="clickRemove(itm)"><i class="fa fa-minus" style="color:red;"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <label>{{itm.price}}</label>
+                        <label> THB.</label>
+                        <label> / {{itm.quality}} Qty.</label>
+                        <button button class="btn btn-default" style="color: white; background-color: #009900; float: right;margin-top: -10px;">{{itm.stock}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="panel panel-default" style="margin-top: -20px;" ng-show="productType=='Combo'">
+    <div class="panel-body">
+        <div class="col-md-4 setBorder" ng-repeat="itm in combo | filter:searchText">
+            <div class="row">
+                <div class="row">
+                    <div class="col-md-9 text-center">
+                        <label>{{itm.name}}</label>
+                    </div>
+                </div>
+                <div class="row" align="middle">
+                    <div class="col-md-9">
+                        <!-- <img class="noti" src="{{itm.noti}}"> -->
+                        <img class="productSet" src="{{itm.img}}">
+                        <span class="badge red_badge">{{itm.qty}}</span>
+                    </div>
+                    <div class="col-md-3" >
+                        <div class="row" style="margin-top:30px;">
+                            <button class="btn btn-default" ng-disabled="itm.stock < 1" ng-click="clickAdd(itm)">
+                                <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                        </div>
+                        <div class="row">
+                            <button button class="btn btn-default" ng-click="clickRemove(itm)"><i class="fa fa-minus" style="color:red;"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <label>{{itm.price}}</label>
+                        <label> THB.</label>
+                        <label> / {{itm.quality}} Qty.</label>
+                        <button button class="btn btn-default" style="color: white; background-color: #009900; float: right;margin-top: -10px;">{{itm.stock}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="breadcrumb">
+    <span ><a href="javascript:window.history.back();"> Cancel</a></span>
+  <span style="float: right;"><a href="javascript:window.history.back();" ng-click="addProduct()"> Done </a></span>
+</div>

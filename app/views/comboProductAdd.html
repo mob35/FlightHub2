@@ -1,0 +1,97 @@
+<!-- fa fa-minus-circle -->
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Combo / Product
+                            <!-- <small>Subheading</small> -->
+                        </h1>
+        <div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            <span ng-repeat="item in carts"></span>
+            <a ng-href="#/comboProduct" ng-click="clearData()">Cancel</a>
+            <a href="#/comboProduct">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addCombo()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+        <!-- <ol class="breadcrumb">
+            <div class="row">
+                <div class="col-lg-4">
+                    <!-- <i class="fa fa-dashboard"></i>  <-->
+                  <!--  <label><a href="#/comboProduct" ng-click="clearData()">Cancle</a></label>
+                </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4" align="right">
+                    <label><a href="#/comboProduct" ng-show="isEdit==false" ng-click="addCombo()">Done</a></label>
+                    <label><a href="#/comboProduct" ng-show="isEdit==true" ng-click="editFn()">Edit</a></label>
+                </div>
+            </div>
+        </ol> -->
+        <!--  Hello -->
+        <label style="margin-left: 15px;">Combo Name</label>
+        <div class="panel panel-default" style="margin-bottom:-1px;" ng-repeat="item in newCombo.floor">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5" style="padding-top: 15px;">
+                    <input type="text" ng-model="item.comboName" placeholder="Set Name" style="width: 420px;height: 50px; border-style:none">
+                </div>
+                <div class="col-md-5" style="padding-top: 15px;">
+                    <input type="text" ng-model="item.comboMoney" placeholder="Price" style="width: 420px;height: 50px; border-style:none">
+                </div>
+            </div>
+            <!--  <div class="col-md-10">
+                <input type="hidden" ng-model="item.limitNumber" ng-init="item.limitNumber=5">
+                <input type="hidden" ng-model="item.runNumber" ng-init="item.runNumber=0">
+                <button type="button" ng-click="item.runNumber>0?(item.runNumber=item.runNumber-1):item.runNumber=item.runNumber" class="btn btn-link">
+                    <span class="fa fa-angle-left fa-4x"> </span>
+                </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{item.runNumber}}
+                <span ng-repeat="itm in item.comboProd | limitTo:item.limitNumber:item.runNumber"> 
+            <img src="{{itm.img}}" class="imgset" />
+            <span class="badge red_badge">{{mg.qty}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </span>
+                <button type="button" ng-click="item.runNumber!=(floor.cartProd.length-item.limitNumber)?(item.runNumber=item.runNumber+1):item.runNumber=item.runNumber" class="btn btn-link">
+                    <span class="fa fa-angle-right fa-4x"> </span>
+                </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a ng-href="#/product/{{newCombo.id}}/{{item.floorId}}" ng-click="setTemp()"><i class="fa fa-info-circle"></i></a>
+            </div> -->
+            <div class="row">
+                <div class="col-xs-2 text-center" style="margin-top:30px;">
+                    <!--  <i class="fa fa-minus-circle" aria-hidden="true" ng-click="removeItem($index)" style="color:red;"></i> -->
+                </div>
+                <div class="col-md-10">
+                    <input type="hidden" ng-model="item.limitNumber" ng-init="item.limitNumber=4">
+                    <input type="hidden" ng-model="item.runNumber" ng-init="item.runNumber=0">
+                    <input type="hidden" ng-model="item.length" ng-init="item.length=item.comboProd.length">
+                    <button type="button" ng-click="item.runNumber>0?(item.runNumber=item.runNumber-1):item.runNumber=item.runNumber" class="btn btn-link">
+                        <span class="fa fa-angle-left fa-4x"> </span>
+                    </button>
+                    <!-- <span><i class="fa fa-angle-left fa-4x" ng-click="scrollLeft();" ></i></span> -->
+                    <span ng-repeat="itm in item.comboProd | limitTo:item.limitNumber:item.runNumber">
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <img src="{{itm.img}}" class="imgset" />
+        <span class="badge red_badge">{{itm.qty}}</span>
+                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="button" onclick="return false;" ng-click="(item.runNumber+item.limitNumber)<item.length?(item.runNumber=item.runNumber+1):item.runNumber=item.runNumber" class="btn btn-link">
+                        <span class="fa fa-angle-right fa-4x"> </span>
+                    </button>
+                    <!-- scroll -->
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a ng-href="#/product/{{newCombo.id}}/{{item.floorId}}" ng-click="setTemp()"> <i class="fa fa-info-circle"> </i> </a>
+                    <br> &nbsp;
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            <span ng-repeat="item in carts"></span>
+            <a ng-href="#/comboProduct" ng-click="clearData()">Cancel</a>
+            <a href="#/comboProduct">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addCombo()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+    </div>
+</div>

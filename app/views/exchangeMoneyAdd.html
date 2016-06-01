@@ -1,0 +1,61 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Exchange Money
+                            <!-- <small>Subheading</small> -->
+                        </h1>
+
+        <div class="breadcrumb">
+            
+            <a ng-href="#/exchangeMoney" >Cancel</a>
+            <a href="#/exchangeMoney">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addExchange()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+        <!-- <ol class="breadcrumb">
+            <div class="row">
+                <div class="col-lg-4">
+                    <label><a href="#/exchangeMoney">Cancle</a></label>
+                </div>
+                <div class="col-lg-4"></div>
+                <div class="col-lg-4" align="right">
+                    <label><a href="#/exchangeMoney" ng-show="isEdit==false" ng-click="addExchange()">Done</a></label>
+                    <label><a href="#/exchangeMoney" ng-show="isEdit==true" ng-click="editFn()">Edit</a></label>
+                </div>
+            </div>
+             </ol> -->
+            <!-- <li>
+                <i class="fa fa-dashboard"></i> <a href="index.html">one</a>
+            </li>
+            <li class="active">
+                <i class="fa fa-file"></i>Done            </li> -->
+       
+        <!--  Hello -->
+        <label>Exchange Name</label>
+        <div class="row xx">
+            <div class="col-lg-1 " align="center">
+                <!-- <i class="fa fa-minus-circle" style="color:red;size:10;padding-top:20px;" aria-hidden="true"></i> -->
+                <!-- <p class="xx">Some text.</p> -->
+            </div>
+            <div class="col-lg-5 ">
+                <input type="text" ng-model="newExchange.exchangeName" style="width: 420px;height: 50px; border-style:none">
+                <label></label>
+            </div>
+            <div class="col-lg-6 xx1">
+                <input type="text " ng-model="newExchange.exchangeMoney" style="width: 420px;height: 50px; border-style:none">
+                <label></label>
+            </div>
+        </div>
+        <br>
+        <br>
+       <div class="breadcrumb">
+            
+            <a ng-href="#/exchangeMoney" >Cancel</a>
+            <a href="#/exchangeMoney">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addExchange()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Setup Cart 
+                          
+                        </h1>
+        <div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            <span ng-repeat="item in carts"></span>
+            <a ng-href="#/setupCart" ng-click="clearData()">Cancel</a>
+            <a href="javascript:window.history.back();">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addCart()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label style="margin-left: 15px;">Cart Name</label>
+    <input class="form-control" ng-model="newCart.cartName">
+</div>
+<!-- /.row -->
+<div class="panel panel-default" style="margin-bottom:-1px;" ng-repeat="floor in newCart.floor">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4" style="padding-top: 15px;">
+            <input class="form-control"  type="text" ng-model="floor.cartCate" placeholder="A1 Food, Soft Drink">
+        </div>
+        <div class="col-md-4"> </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 text-center">
+            </br>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            
+        </div>
+        <div class="col-md-10">
+            <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color: red;"></i>&nbsp;&nbsp;&nbsp;
+            <input type="hidden" ng-model="item.limitNumber" ng-init="item.limitNumber=4">
+            <input type="hidden" ng-model="item.runNumber" ng-init="item.runNumber=0">
+            <button type="button" ng-click="item.runNumber>0?(item.runNumber=item.runNumber-1):item.runNumber=item.runNumber" class="btn btn-link">
+                <span class="fa fa-angle-left fa-4x"> </span>
+            </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span ng-repeat="mg in floor.cartProd| limitTo:item.limitNumber:item.runNumber"> 
+            <img class="imgset" ng-src="{{mg.img}}">
+            <span class="badge red_badge">{{mg.qty}}</span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+            <button type="button" ng-click="item.runNumber!=(floor.cartProd.length-item.limitNumber)?(item.runNumber=item.runNumber+1):item.runNumber=item.runNumber" class="btn btn-link">
+                <span class="fa fa-angle-right fa-4x"> </span>
+            </button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a ng-href="#/setupCartProduct/{{newCart.id}}/{{floor.floorId}}" ng-click="setTemp()"><i class="fa fa-info-circle"></i></a>
+            <!-- <i class="fa fa-info-circle" data-toggle="modal" data-target="#myModal"></i> -->
+        </div>
+    </div>
+    <div class="panel-body">
+        <div class="text-right">
+        </div>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="row" style="cursor:pointer;" ng-click="addFloor()">
+        <div class="col-md-2 text-center">
+            </br>
+        </div>
+        <div class="col-md-10">
+            <span> <i class="fa fa-plus-circle" style="color: #088A08"></i>&nbsp;&nbsp;&nbsp;
+            <label class="panel-title" ng-click="addItem()">  Add Class</label></span>
+        </div>
+    </div>
+</div>
+<br>
+<div class="breadcrumb">
+    <!-- <span> Cancel</span> -->
+    <span ng-repeat="item in carts"></span>
+    <a ng-href="#/setupCart" ng-click="clearData()">Cancel</a>
+    <a href="javascript:window.history.back();">
+        <span style="float: right;" ng-show="isEdit==false" ng-click="addCart()">Done </span>
+        <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+    </a>
+</div>
+<!-- MODAL -->
+

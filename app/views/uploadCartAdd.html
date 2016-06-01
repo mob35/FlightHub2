@@ -1,0 +1,92 @@
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Upload Cart
+                          
+                        </h1>
+        <div class="breadcrumb">
+            <a ng-href="#/uploadCart" ng-click="clearData()">Cancel</a>
+            <a ng-href="#/uploadCart">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addUpload()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label style="margin-left: 15px;">Flight Name</label>
+    <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+</div>
+<div class="form-group">
+    <div class="row">
+        <div class="col-md-4">
+            <label class="radio-inline" >
+                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="Inbound" ng-model="newUpload.optionsRadiosInline">Inbound
+            </label>
+        </div>
+        <div class="col-md-4">
+            <label class="radio-inline" >
+                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="Outbound" ng-model="newUpload.optionsRadiosInline">Outbound
+            </label>
+        </div>
+        <div class="col-md-4">
+            <label class="radio-inline">
+                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="Quick Turn" ng-model="newUpload.optionsRadiosInline">Quick Turn
+            </label>
+        </div>
+    </div>
+</div>
+<!-- <div style="margin-bottom: 10px;">
+<span ng-repeat="item in newUpload.trunBy" for="{{item}}" style="padding-left: 180px;margin-top: 50px;">
+            <label style="font-weight: normal;">
+                <input type="radio"  ng-model="newUpload.optionsRadiosInline" ng-value="item" id="{{item}}"/>
+                &nbsp;&nbsp;{{item}}
+            </label></span>
+        </div> -->
+<!-- /.row -->
+<div class="panel panel-default" style="margin-bottom:-1px;" ng-repeat="item in newUpload.cart">
+    <div class="row">
+        <div class="col-md-1 text-center">
+            </br>
+        </div>
+        <!-- /repeat form SetupCart -->
+        <div class="col-md-3">
+        <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color: red;"></i>
+        &nbsp;&nbsp;&nbsp;
+            <i class="fa fa-shopping-cart"></i>
+            <!-- <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{}}</span> -->
+            <select name="singleSelect" ng-model="item.singleSelect" value="">
+                <option ng-repeat="item in carts" value="{{item.id}}">{{item.cartName}}</option>
+            </select>
+            <span ng-show="item.singleSelect">
+                <a ng-href="#/setupCartAdd/{{item.singleSelect}}" >
+                <i class="fa fa-chevron-right"></i>
+            </a>
+            </span>
+        </div>
+        <!-- input -->
+        <div class="col-md-8">
+        <input style="width:300px;border-color:#ddd;border-style: solid;border-width: 0px 0px 0px 1px;" ng-model="item.detailadd" placeholder="Left Front Outbound">
+        </div>
+        <!-- <div class="col-md-7" style="border-style: solid;border-width: 0px 0px 0px 1px;" ng-model="newUpload.flightName">{{newUpload.detailadd}}</div> -->
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="row">
+        <div class="col-md-1 text-center">
+            </br>
+        </div>
+        <div class="col-md-10" style="cursor:pointer;" ng-click="addFloor()">
+            <i class="fa fa-plus-circle" style="color: #088A08;"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+            <i class="fa fa-shopping-cart"></i>
+            <span class="panel-title" ng-click="addItem()">  Add Cart</span>
+        </div>
+    </div>
+</div>
+<div class="breadcrumb">
+    <a ng-href="#/uploadCart" ng-click="clearData()">Cancel</a>
+    <a ng-href="#/uploadCart">
+        <span style="float: right;" ng-show="isEdit==false" ng-click="addUpload()">Done </span>
+        <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+    </a>
+</div>
