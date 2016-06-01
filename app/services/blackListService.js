@@ -27,6 +27,7 @@ angular.module('inflightHubApp').service('blackListService', function() {
     var blackLists = [{
         "id": 1,
         "name": "SCB",
+        "Date":"10-01-2016",
         "listIds": [{
             "id": 1,
             "cardID": "4434567891234534",
