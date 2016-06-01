@@ -6836,4 +6836,21 @@ a {
   margin-bottom: -15px;
  
 } 
+/*.ss:link {
+    background-color: yellow;
+}
+
+.ss:visited {
+    background-color: cyan;
+}
+
+.ss:hover {
+    background-color: lightgreen;
+}
+
+.ss:active {
+    background-color: hotpink;
+} 
+*/
+
 /*# sourceMappingURL=bootstrap.css.map */
