@@ -14,16 +14,11 @@ angular.module('inflightHubApp')
             'AngularJS',
             'Karma'
         ];
-        // $scope.promotion = [{
-        //     id:1,
-        //     type:"ByBill",
-        // }, {
-        //     id:2,
-        //     type:"ByProduct",
-        // }, {
-        //     id:3,
-        //     type:"ByPayment",
-        // };
+        $scope.project = {
+    description: 'Nuclear Missile Defense System',
+    rate: 500
+  };
+       
         $scope.productPro = [{
             id: 1,
             cate: "Food",
