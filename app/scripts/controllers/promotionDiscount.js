@@ -14,6 +14,16 @@ angular.module('inflightHubApp')
             'AngularJS',
             'Karma'
         ];
+        // $scope.promotion = [{
+        //     id:1,
+        //     type:"ByBill",
+        // }, {
+        //     id:2,
+        //     type:"ByProduct",
+        // }, {
+        //     id:3,
+        //     type:"ByPayment",
+        // };
         $scope.productPro = [{
             id: 1,
             cate: "Food",
@@ -436,5 +446,15 @@ angular.module('inflightHubApp')
         $scope.productType = "Food";
         $scope.changeType = function(type) {
             $scope.productType = type;
+        };
+
+        // $scope.ByBill = $scope.newPromotion.proBy;
+        // $scope.ByProduct = "ByProduct";
+        // $scope.ByPayment = "ByPayment";
+        
+        $scope.promotionType = "ByBill";
+        $scope.changeProType = function(type) {
+            $scope.promotionType = type;
+            console.log(type);
         };
     });
