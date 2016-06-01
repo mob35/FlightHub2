@@ -38,6 +38,7 @@ angular.module('inflightHubApp')
                 var item = {
                     "id": guid(),
                     "name": fileName_select,
+                    "Date": "10-02-2016",
                     "listIds": [{
                         "id": 1,
                         "cardID": "4434567891234534",

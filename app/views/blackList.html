@@ -33,7 +33,7 @@
                 
                     <a ng-href="#/blackListDetail/{{item.id}}" class="list-group-item" ng-model="item.blackLists">
                         <i class="fa fa-credit-card"></i> Excel From {{item.name}}
-                        <br> <span style="margin-left: 20px;">Black List ({{item.listIds.length}}) </span>
+                        <br> <span style="margin-left: 20px;">Black List ({{item.listIds.length}}) </span> <span style="margin-left: 20px;">Date : {{item.Date}}</span>
                   
                 
                     <i class="fa  fa-trash fa-1x" ng-href="#/blackListlist" class="list-group-item" ng-click="deleteBlackList(item.id)" onclick="return false;" style="float: right;color:red;margin-top:-6px;"></i></a>
