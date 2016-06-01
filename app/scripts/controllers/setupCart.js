@@ -12,7 +12,7 @@ angular.module('inflightHubApp')
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
-            'Karma'
+            'Karma',
         ];
 
            $scope.product = [{
