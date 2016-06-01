@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
                             Exchange Money
@@ -24,7 +24,7 @@
     </div> -->
 
     <div class="row">
-            <div class="col-lg-6">
+            <!-- <div class="col-lg-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-exchange"></i> Air Asia Exchange Rates</h3>
@@ -83,30 +83,30 @@
                         <!-- <div class="text-right">
                         <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
                     </div -->
-                    </div>
+                   <!--  </div>
                 </div>
-            </div>
-            <div class="col-lg-6">
+            </div> --> 
+            <div class="col-lg-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-exchange"></i> Exchange Rates</h3>
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
-                            <table class="table table-bordered table-hover table-striped">
+                            <table class="table table-bordered table-hover ">
                                 <thead>
                                     <tr>
-                                        <th class="exchangeColHeader">Foreign Currencies</th>
-                                        <th class="text-center">Description<br>&nbsp;</th>
-                                        <th class="exchangeColHeader">Buying Rates</th>
-                                        <th class="exchangeColHeader">Selling Rates</th>
+                                        <th class="exchangeColHeader text-center breadcrumb">Foreign Currencies</th>
+                                        <th class="exchangeColHeader text-center breadcrumb">Description</th>
+                                        <th class="exchangeColHeader text-right breadcrumb">AirAsia Rates</th>
+                                        <th class="exchangeColHeader text-right breadcrumb">Current Rates</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr ng-repeat="item in exchanges">
-                                        <td class="exchangeRow">{{item.exchangeName}}</td>
-                                        <td>{{item.exchangeDesc}}</td>
-                                        <td class="exchangeColRate">{{item.buyingRate}}</td>
+                                        <td class="exchangeRow "><img src="{{item.img}}" class="setFlag">&nbsp; &nbsp; {{item.exchangeName}}</td>
+                                        <td class="text-center">{{item.exchangeDesc}}</td>
+                                        <td class="exchangeColRate"><input type="number" ng-model="item.thaiRate" style="border-style: none; text-align: right;"></td>
                                         <td class="exchangeColRate">{{item.sellingRate}}</td>
                                     </tr>                                    
                                 </tbody>

@@ -14,39 +14,45 @@ angular.module('inflightHubApp').service('exchangeMoneyService', function() {
         id: 1,
         exchangeName: "USD",
         exchangeDesc: "USD50-100",
-        buyingRate: 35.99,
-        sellingRate: 35.87
+        thaiRate: 40.00,
+        sellingRate: 35.87,
+        img:"images/flag/us-flag.jpg"
     }, {
         id: 2,
         exchangeName: "GBP",
         exchangeDesc: "United Kingdom",
-        buyingRate: 52.58,
-        sellingRate: 52.08
+        thaiRate: 45.00,
+        sellingRate: 52.08,
+        img:"images/flag/euro.gif"
     }, {
         id: 3,
         exchangeName: "EUR",
         exchangeDesc: "Euro Zone",
-        buyingRate: 40.35,
-        sellingRate: 40.05
+        thaiRate: 42.00,
+        sellingRate: 40.05,
+        img:"images/flag/EU_Flag.jpg"
     }, {
         id: 4,
         exchangeName: "JYP",
         exchangeDesc: "Japan",
-        buyingRate: 33.11,
-        sellingRate: 32.65
+        thaiRate: 40.00,
+        sellingRate: 32.65,
+        img:"images/flag/Japanese_flag_print.jpg"
     }, {
         id: 5,
         exchangeName: "HKD",
         exchangeDesc: "Hong Kong",
-        buyingRate: 4.69,
-        sellingRate: 4.62
+        thaiRate: 45.00,
+        sellingRate: 4.62,
+        img:"images/flag/Hong_Kong.svg"
     }, {
         id: 6,
         exchangeName: "AUD",
         exchangeDesc: "Australia",
-        buyingRate: 26.63,
-        sellingRate: 26.33
-    
+        thaiRate: 42.00,
+        sellingRate: 26.33,
+        img:"images/flag/Australia.svg.png"
+
     }];
 
     this.getExchangeList = function() {
