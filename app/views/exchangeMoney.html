@@ -17,13 +17,110 @@
     </div>
 </div>
 <div class="panel panel-default">
-    <div class="panel-heading">
+    <!-- <div class="panel-heading">
         <label class="panel-title"><i class="fa fa-exchange" aria-hidden="true"></i> Type Money</label>
         <label class="text-right" style="float: right"> <a ng-href="#/exchangeMoneyAdd">Add Money <i class="fa fa-plus-circle" aria-hidden="true" style="color:#088A08;"></i></a>
         </label>
-    </div>
+    </div> -->
 
-    <div class="panel-body">
+    <div class="row">
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-exchange"></i> Air Asia Exchange Rates</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width:100px;">Foreign Currencies</th>
+                                        <th>Description<br>&nbsp;</th>
+                                        <th style="width:100px;">Buying Rates</th>
+                                        <th style="width:100px;">Selling Rates</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="exchangeRow">USD</td>
+                                        <td>USD50-100</td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="exchangeRow">GBP</td>
+                                        <td>United Kingdom</td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="exchangeRow">EUR</td>
+                                        <td>Euro Zone</td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="exchangeRow">JYP</td>
+                                        <td>Japan</td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td  class="exchangeRow">HKD</td>
+                                        <td>Hong Kong</td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="exchangeRow">AUD</td>
+                                        <td>Australia</td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                        <td><input type="number" placeholder="00.00" style="width: 70%"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="text-right">
+                        <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                    </div -->
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-exchange"></i> Exchange Rates</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="exchangeColHeader">Foreign Currencies</th>
+                                        <th class="text-center">Description<br>&nbsp;</th>
+                                        <th class="exchangeColHeader">Buying Rates</th>
+                                        <th class="exchangeColHeader">Selling Rates</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in exchanges">
+                                        <td class="exchangeRow">{{item.exchangeName}}</td>
+                                        <td>{{item.exchangeDesc}}</td>
+                                        <td class="exchangeColRate">{{item.buyingRate}}</td>
+                                        <td class="exchangeColRate">{{item.sellingRate}}</td>
+                                    </tr>                                    
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="text-right">
+                        <a href="#">View All Transactions <i class="fa fa-arrow-circle-right"></i></a>
+                    </div -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- <div class="panel-body">
         <div class="list-group">
             <div ng-repeat="item in exchanges | filter:searchText">
                 
@@ -37,7 +134,7 @@
         </div>
         <div class="text-right">
         </div>
-    </div>
+    </div> -->
 
     <!-- 
     <div class="panel-body">

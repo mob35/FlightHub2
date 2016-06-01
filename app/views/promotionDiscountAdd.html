@@ -17,75 +17,276 @@
     <label style="margin-left: 15px;">Promotion Name</label>
     <input class="form-control" placeholder="Buy 3 Coke Free 1 Water" ng-model="newPromotion.promotionName">
 </div>
-<div class="form-group">
-    <div class="row">
-        <div class="col-md-4">
-            <label class="radio-inline">
-                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline1" value="ByBill" ng-model="newPromotion.optionsRadiosInline">By Bill
-            </label>
+<div class="navbar navbar-default">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pro">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+        <ul class="nav nav-tabs">
+            <li><a class="btn btn-link" ng-click="changeProType('ByBill')">By Bill</a>
+            </li>
+            <li><a class="btn btn-link" ng-click="changeProType('ByProduct')">By Product</a>
+            </li>
+            <li><a class="btn btn-link" ng-click="changeProType('ByPayment')">By Payment</a>
+            </li>
+        </ul>
+    </div>
+    <!--/.nav-collapse -->
+    <!-- By Bill -->
+</div>
+<div class="form-group panel panel-default " style="margin-top: -20px;" ng-show="promotionType=='ByBill'">
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-5">
+            <span><label>Start Promotion </label>
+               <input type="date" class="form-control"></span>
         </div>
-        <div class="col-md-4">
-            <label class="radio-inline">
-                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline2" value="ByProduct" ng-model="newPromotion.optionsRadiosInline">By Product
-            </label>
-        </div>
-        <div class="col-md-4">
-            <label class="radio-inline">
-                <input type="radio" name="optionsRadiosInline" id="optionsRadiosInline3" value="ByPayment" ng-model="newPromotion.optionsRadiosInline">By Payment
-            </label>
+        <div class="col-md-5">
+            <span><label>Finish Promotion </label>
+               <input type="date" class="form-control"></span>
         </div>
     </div>
-</div>
-<div class="breadcrumb" ng-hide="newPromotion.optionsRadiosInline == 'ByProduct' ||
-    newPromotion.optionsRadiosInline == 'ByPayment'">
-    <label> Bill Amount</label>
-</div>
-<div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;"
- ng-hide="newPromotion.optionsRadiosInline == 'ByProduct' ||
-    newPromotion.optionsRadiosInline == 'ByPayment'">
-    <div class="row">
-        <div class="col-md-12">
-            <input type="text" placeholder="Amount" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.amount">
-            <br>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-5">
+            <div class="breadcrumb">
+                <label> Bill Amount</label>
+            </div>
+            <div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" placeholder="Amount" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.amount">
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="breadcrumb">
+                <label> Discount</label>
+            </div>
+            <div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Percent" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.percent">
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" ng-model="newPromotion.bath" placeholder="Baht" style="width: 98%;height: 50px;border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px; text-align: right;">
+                        <br>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="breadcrumb" ng-hide="newPromotion.optionsRadiosInline == 'ByBill' ||
-    newPromotion.optionsRadiosInline == 'ByPayment'">
-    <label> Product</label>
-</div>
-<div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorProduct" ng-hide="newPromotion.optionsRadiosInline == 'ByBill' || newPromotion.optionsRadiosInline == 'ByPayment'">
-    <div class="row">
-        <div class="col-md-6">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-            <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorId}}" ng-click="setTemp(); setAddType('addProduct');">
-                <span ng-repeat="mg in floor.proProd"> 
+    <div class="breadcrumb">
+        <label> Free Product</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorFree">
+        <div class="row">
+            <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorFreeId}}" ng-click="setTemp(); setAddType('addFreeProduct');">
+                    <span ng-repeat="mg in floor.proFree"> 
                 <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
-                <i class="fa fa-chevron-right"></i>
-            </a>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-6" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proFree"> 
+        <input type="number" ng-model="mg.qty"> Qty. </span>
+            </div>
         </div>
-        <div class="col-md-6" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proProd"> 
+    </div>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor2()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Product</span>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <label> Offer Buy</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorOffer">
+        <div class="row">
+            <div class="col-md-5">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorOfferId}}" ng-click="setTemp(); setAddType('addOfferProduct');">
+                    <span ng-repeat="mg in floor.proOffer"> 
+                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-4" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
+        <input type="number" ng-model="mg.qty"> Qty. </span>
+            </div>
+            <div class="col-md-3" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
+        <input type="number" ng-model="mg.price"> Price </span>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor3()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Offer Buy Product</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- By Product -->
+<div class="form-group panel panel-default" style="margin-top: -20px;" ng-show="promotionType=='ByProduct'">
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-5">
+            <span><label>Start Promotion </label>
+               <input type="date" class="form-control"></span>
+        </div>
+        <div class="col-md-5">
+            <span><label>Finish Promotion </label>
+               <input type="date" class="form-control"></span>
+        </div>
+    </div>
+    <div class="breadcrumb" style="margin-top:15px;">
+        <label> Product</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorProduct">
+        <div class="row">
+            <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorId}}" ng-click="setTemp(); setAddType('addProduct');">
+                    <span ng-repeat="mg in floor.proProd"> 
+                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-6" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proProd"> 
         <input type="number" ng-model="mg.qty"> Qty. </span></div>
+        </div>
     </div>
-</div>
-<div class="panel panel-default" ng-hide="newPromotion.optionsRadiosInline == 'ByBill' ||
-    newPromotion.optionsRadiosInline == 'ByPayment'" style="margin-top: -20px;">
-    <div class="row" ng-click="addFloor()">
-        <div class="col-md-10">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-            <span class="panel-title" style="margin-left:10px;" ng-click="addItem()">  Add Product</span>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem()">  Add Product</span>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-top:15px;">
+        <div class="col-md-12">
+            <div class="breadcrumb">
+                <label> Discount</label>
+            </div>
+            <div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Percent" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.percent">
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" ng-model="newPromotion.bath" placeholder="Baht" style="width: 98%;height: 50px;border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px; text-align: right;">
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <label> Free Product</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorFree">
+        <div class="row">
+            <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorFreeId}}" ng-click="setTemp(); setAddType('addFreeProduct');">
+                    <span ng-repeat="mg in floor.proFree"> 
+                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-6" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proFree"> 
+        <input type="number" ng-model="mg.qty"> Qty. </span>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor2()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Product</span>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <label> Offer Buy</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorOffer">
+        <div class="row">
+            <div class="col-md-5">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorOfferId}}" ng-click="setTemp(); setAddType('addOfferProduct');">
+                    <span ng-repeat="mg in floor.proOffer"> 
+                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-4" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
+        <input type="number" ng-model="mg.qty"> Qty. </span>
+            </div>
+            <div class="col-md-3" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
+        <input type="number" ng-model="mg.price"> Price </span>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor3()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Offer Buy Product</span>
+            </div>
         </div>
     </div>
 </div>
-<div class="breadcrumb" ng-hide="newPromotion.optionsRadiosInline == 'ByBill' ||
-    newPromotion.optionsRadiosInline == 'ByProduct'">
+<!-- By Payment -->
+<div class="form-group panel panel-default" style="margin-top: -20px;" ng-show="promotionType=='ByPayment'">
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-md-5">
+            <span><label>Start Promotion </label>
+               <input type="date" class="form-control"></span>
+        </div>
+        <div class="col-md-5">
+            <span><label>Finish Promotion </label>
+               <input type="date" class="form-control"></span>
+        </div>
+    </div>
+    <div class="breadcrumb" style="margin-top: 15px;">
     <label> Payment</label>
 </div>
-<div class="row" ng-hide="newPromotion.optionsRadiosInline == 'ByBill' || newPromotion.optionsRadiosInline == 'ByProduct'">
+<!--  -->
+<div class="row">
     <div class="col-md-4">
         <label class="radio-inline">
             <input type="radio" name="options" id="options1" value="cash" ng-model="newPromotion.options">Cash
@@ -96,7 +297,7 @@
             <input type="radio" name="options" id="options2" value="card" ng-model="newPromotion.options">Credit Card
         </label>
         &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;
-        <select ng-show="newPromotion.options=='card'">
+        <select>
             <option>Choose Bank</option>
             <option value="SCB">SCB Bank</option>
             <option value="TMB">TMB Bank</option>
@@ -105,154 +306,107 @@
         </select>
     </div>
 </div>
-<div class="breadcrumb">
-    <label> Discount</label>
-</div>
-<div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;">
-    <div class="row">
-        <div class="col-md-6">
-            <input type="text" placeholder="Percent" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.percent">
-            <br>
-        </div>
-        <div class="col-md-6">
-            <input type="text" ng-model="newPromotion.bath" placeholder="Baht" style="width: 98%;height: 50px;border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px; text-align: right;">
-            <br>
-        </div>
-    </div>
-</div>
-<div class="breadcrumb">
-    <label> Free Product</label>
-</div>
-<div class="panel panel-default" style="margin-top:-20px;"ng-repeat="floor in newPromotion.floorFree">
-    <div class="row" >
-        <div class="col-md-6">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-            <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorFreeId}}" ng-click="setTemp(); setAddType('addFreeProduct');">
-                <span ng-repeat="mg in floor.proFree"> 
-                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </div>
-        <div class="col-md-6" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proFree"> 
-        <input type="number" ng-model="mg.qty"> Qty. </span>
-        </div>
-        
-    </div>
-</div>
-<div class="panel panel-default" style="margin-top: -20px;">
-    <div class="row" ng-click="addFloor2()">
-        <div class="col-md-10">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-            <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Product</span>
-        </div>
-    </div>
-</div>
-<div class="breadcrumb">
-    <label> Offer Buy</label>
-</div>
-<div class="panel panel-default" style="margin-top:-20px;"ng-repeat="floor in newPromotion.floorOffer">
-    <div class="row" >
+    <div class="row" style="margin-top:15px;">
         <div class="col-md-5">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-           <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorOfferId}}" ng-click="setTemp(); setAddType('addOfferProduct');">
-                <span ng-repeat="mg in floor.proOffer"> 
-                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
-                <i class="fa fa-chevron-right"></i>
-            </a>
+            <div class="breadcrumb">
+                <label> Bill Amount</label>
+            </div>
+            <div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" placeholder="Minimum balance" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.amount">
+                        <br>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
-        <input type="number" ng-model="mg.qty"> Qty. </span>
-        </div>
-        <div class="col-md-3" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
-        <input type="number" ng-model="mg.price"> Price </span>
+        <div class="col-md-7">
+            <div class="breadcrumb">
+                <label> Discount</label>
+            </div>
+            <div class="panel panel-default" style="margin-top:-20px;margin-bottom:-1px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" placeholder="Percent" style="width: 98%;height: 50px; border-style:none;text-align: right;" ng-model="newPromotion.percent">
+                        <br>
+                    </div>
+                    <div class="col-md-6">
+                        <input type="text" ng-model="newPromotion.bath" placeholder="Baht" style="width: 98%;height: 50px;border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px; text-align: right;">
+                        <br>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-<div class="panel panel-default" style="margin-top: -20px;">
-    <div class="row" ng-click="addFloor3()">
-        <div class="col-md-10">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-            <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Offer Buy Product</span>
+    <div class="breadcrumb">
+        <label> Free Product</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorFree">
+        <div class="row">
+            <div class="col-md-6">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorFreeId}}" ng-click="setTemp(); setAddType('addFreeProduct');">
+                    <span ng-repeat="mg in floor.proFree"> 
+                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-6" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proFree"> 
+        <input type="number" ng-model="mg.qty"> Qty. </span>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor2()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Product</span>
+            </div>
+        </div>
+    </div>
+    <div class="breadcrumb">
+        <label> Offer Buy</label>
+    </div>
+    <div class="panel panel-default" style="margin-top:-20px;" ng-repeat="floor in newPromotion.floorOffer">
+        <div class="row">
+            <div class="col-md-5">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorOfferId}}" ng-click="setTemp(); setAddType('addOfferProduct');">
+                    <span ng-repeat="mg in floor.proOffer"> 
+                <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
+                    <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+            <div class="col-md-4" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
+        <input type="number" ng-model="mg.qty"> Qty. </span>
+            </div>
+            <div class="col-md-3" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;"><span ng-repeat="mg in floor.proOffer"> 
+        <input type="number" ng-model="mg.price"> Price </span>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-default" style="margin-top: -20px;">
+        <div class="row" ng-click="addFloor3()">
+            <div class="col-md-10">
+                &nbsp;&nbsp;&nbsp;
+                <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
+                <i class="fa fa-cutlery"></i>
+                <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Offer Buy Product</span>
+            </div>
         </div>
     </div>
 </div>
 
-<!-- <div class="panel panel-default" ng-repeat="floor in newPromotion.floorFree"  style="margin-bottom:-1px; margin-top: -19px;">
-    
-        <div class="row">
-            <div class="col-md-6">
-                &nbsp;&nbsp;&nbsp;
-                <i class="fa fa-minus-circle" ng-click="removeItem2($index)" style="color:red;"></i>&nbsp;&nbsp;&nbsp;
-                <i class="fa fa-cutlery"></i>
-                <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorFreeId}}" ng-click="setTemp(); setAddType('addFreeProduct');">
-                    <span ng-repeat="mg in floor.proFree"> 
-                    <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
-                    <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <span ng-repeat="mg in floor.proFree"> 
-            <input type="number" ng-model="mg.qty"> Qty.
-            </span>
-            </div>
-        </div>
-    
-</div>
-<div class="row" ng-click="addFloor2()">
-    <div class="col-md-10">
-        &nbsp;&nbsp;&nbsp;
-        <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
-        <i class="fa fa-cutlery"></i>
-        <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Free Product</span>
-    </div>
-</div>
-<div class="breadcrumb">
-    <label> Offer Buy</label>
-</div>
-<div class="panel panel-default" style="margin-bottom:-1px; margin-top: -19px;" ng-repeat="floor in newPromotion.floorFree">
-    <div class="row">
-        <div class="col-md-4">
-            &nbsp;&nbsp;&nbsp;
-            <i class="fa fa-minus-circle" ng-click="removeItem2($index)" style="color:red;"></i>&nbsp;&nbsp;&nbsp;
-            <i class="fa fa-cutlery"></i>
-            <a ng-href="#/promotionProduct/{{newPromotion.id}}/{{floor.floorFreeId}}" ng-click="setTemp(); setAddType('addFreeProduct');">
-                <span ng-repeat="mg in floor.proFree"> 
-                    <span class="panel-title text-center" style="margin-left:10px;margin-right:10px;">{{mg.name}}</span></span>
-                <i class="fa fa-chevron-right"></i>
-            </a>
-        </div>
-        <div class="col-md-4" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;">
-            <span ng-repeat="mg in floor.proFree"> 
-            <input type="number" ng-model="mg.qty"> Qty.
-            </span></div>
-        <div class="col-md-4" style="border-style: solid;border-color:#ddd;border-width: 0px 0px 0px 1px;">
-            <span> 
-            <input type="number" > Price
-            </span></div>
-    </div>
-</div>
-<div class="row" ng-click="addFloor2()">
-    <div class="col-md-10">
-        &nbsp;&nbsp;&nbsp;
-        <i class="fa fa-plus-circle" style="color:#088A08;"></i> &nbsp;&nbsp;
-        <i class="fa fa-cutlery"></i>
-        <span class="panel-title" style="margin-left:10px;" ng-click="addItem2()">  Add Offer Buy  Product</span>
-    </div>
-</div>
 <div class="breadcrumb">
     <a ng-href="#/promotionDiscount" ng-click="clearData()">Cancel</a>
     <a ng-href="#/promotionDiscount">
         <span style="float: right;" ng-show="isEdit==false" ng-click="addPromotion()">Done </span>
         <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
     </a>
-</div> -->
-<!-- 
-
+</div>

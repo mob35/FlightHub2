@@ -12,12 +12,41 @@ angular.module('inflightHubApp').service('exchangeMoneyService', function() {
     
     var exchanges = [{
         id: 1,
-        exchangeName: "EUR",
-        exchangeMoney: 40.35
+        exchangeName: "USD",
+        exchangeDesc: "USD50-100",
+        buyingRate: 35.99,
+        sellingRate: 35.87
     }, {
         id: 2,
-        exchangeName: "USD",
-        exchangeMoney: 35.65
+        exchangeName: "GBP",
+        exchangeDesc: "United Kingdom",
+        buyingRate: 52.58,
+        sellingRate: 52.08
+    }, {
+        id: 3,
+        exchangeName: "EUR",
+        exchangeDesc: "Euro Zone",
+        buyingRate: 40.35,
+        sellingRate: 40.05
+    }, {
+        id: 4,
+        exchangeName: "JYP",
+        exchangeDesc: "Japan",
+        buyingRate: 33.11,
+        sellingRate: 32.65
+    }, {
+        id: 5,
+        exchangeName: "HKD",
+        exchangeDesc: "Hong Kong",
+        buyingRate: 4.69,
+        sellingRate: 4.62
+    }, {
+        id: 6,
+        exchangeName: "AUD",
+        exchangeDesc: "Australia",
+        buyingRate: 26.63,
+        sellingRate: 26.33
+    
     }];
 
     this.getExchangeList = function() {
