@@ -50,6 +50,17 @@
             width: 25px;
             height: 15px;
         }
+        .calcomColHeader{
+            width: 200px;
+            
+        }
+        .calcomColRate{
+            text-align: right;
+        }
+        .calcomRow{
+            height: 43px;
+            text-align: center;
+        }
         </style>
 </head>
 
@@ -265,7 +276,6 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -295,6 +305,7 @@
     <script src="scripts/controllers/setupCartAddController.js"></script>
     <script src="scripts/controllers/exchangeMoneyAddController.js"></script>
     <script src="scripts/controllers/comboProductAddController.js"></script>
+    <script src="scripts/controllers/calculateCtrl.js"></script>
     <script src="services/setupCartService.js"></script>
     <script src="scripts/controllers/uploadCartAddController.js"></script>
     <script src="scripts/controllers/promotionDiscountController.js"></script>
@@ -305,6 +316,7 @@
     <script src="services/blackListService.js"></script>
     <script src="scripts/controllers/blackListDetail.js"></script>
     <script src="services/productService.js"></script>
+    <script src="services/calculateService.js"></script>
 
     <!-- endbuild -->
     <!-- jQuery -->

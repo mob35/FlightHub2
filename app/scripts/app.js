@@ -223,8 +223,8 @@ angular
             })
         .when('/calculate', {
                 templateUrl: 'views/calculate.html',
-                controller: 'uploadCartCtrl',
-                controllerAs: 'uploadCart'
+                controller: 'calculateCtrl',
+                controllerAs: 'calculateCtrl'
 
             })
 
