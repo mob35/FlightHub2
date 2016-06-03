@@ -12,6 +12,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -24,33 +25,123 @@
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
-    <style type="text/css">
-        .red_badge {
-            position: absolute;
-            margin-left: -15px;
-            margin-top: -10px;
-            background-color: red;
-        }
-        
-        .list-price {
-            font-size: 10px;
-        }
-        .exchangeColHeader{
-            width: 200px;
-            
-        }
-        .exchangeColRate{
-            text-align: right;
-        }
-        .exchangeRow{
-            height: 43px;
-            text-align: center;
-        }
-        .setFlag{
-            width: 25px;
-            height: 15px;
-        }
-        </style>
+    <!-- <link type="text/css" rel="stylesheet" href="bower_components/Materialize/bin/materialize.css"  media="screen,projection"/> -->
+
+    <style type="text/css"> 
+    .red_badge { 
+        position: absolute; 
+        margin-left: -15px; 
+        margin-top: -10px; 
+        background-color: red; 
+    } 
+     
+    .list-price { 
+        font-size: 10px; 
+    } 
+     
+    .exchangeColHeader { 
+        width: 200px; 
+    } 
+     
+    .exchangeColRate { 
+        text-align: right; 
+    } 
+     
+    .exchangeRow { 
+        height: 43px; 
+        text-align: center; 
+    } 
+     
+    .setFlag { 
+        width: 25px; 
+        height: 15px; 
+    } 
+     
+    * { 
+        -moz-box-sizing: border-box; 
+        -webkit-box-sizing: border-box; 
+        box-sizing: border-box; 
+    } 
+     
+    [ng-drag] { 
+        -moz-user-select: -moz-none; 
+        -khtml-user-select: none; 
+        -webkit-user-select: none; 
+        -ms-user-select: none; 
+        user-select: none; 
+    } 
+     
+    [ng-drag] { 
+        width: 100px; 
+        height: 100px; 
+        background: none; 
+        color: white; 
+        text-align: center; 
+        /*padding-top:40px;*/ 
+        display: inline-block; 
+        margin: 0 10px; 
+        cursor: move; 
+    } 
+     
+    ul.draggable-objects:after { 
+        display: block; 
+        content: ""; 
+        clear: both; 
+    } 
+     
+    .draggable-objects li { 
+        float: left; 
+        display: block; 
+        width: 120px; 
+        height: 100px; 
+    } 
+     
+    [ng-drag].drag-over { 
+        /*border:solid 1px red;*/ 
+        border: none; 
+    } 
+     
+    [ng-drag].dragging { 
+        opacity: 0.5; 
+    } 
+     
+    [ng-drop] { 
+        /*background: rgba(0, 255, 0, 0.5); */
+        text-align: center; 
+        width: 400px; 
+        height: 150px; 
+        padding-top: 50px; 
+        display: block; 
+        /*margin: 20px auto; */
+        position: relative; 
+        margin-top: -9.5px;
+        padding-right: 55px;
+    } 
+     
+    [ng-drop].drag-enter { 
+        border: solid 5px red; 
+    } 
+     
+    [ng-drop] span.title { 
+        display: block; 
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        width: 200px; 
+        height: 20px; 
+        margin-left: -100px; 
+        margin-top: -10px; 
+    } 
+     
+    [ng-drop] div { 
+        position: relative; 
+        z-index: 2; 
+    } 
+    .setimgSmall{
+        width: 25px;
+        height:20px;
+    }
+    </style>
 </head>
 
 <body ng-app="inflightHubApp">
@@ -193,6 +284,9 @@
                         <a ng-href="#/comboProduct"><i class="fa fa-fw fa-cutlery"></i> Combo / Product</a>
                     </li>
                     <li>
+                        <a ng-href="#/comboProductNew"><i class="fa fa-fw fa-cutlery"></i> Combo Product New</a>
+                    </li>
+                    <li>
                         <a ng-href="#/promotionDiscount"><i class="fa fa-fw fa-suitcase"></i> Promotion /  Discount</a>
                     </li>
                     <li>
@@ -265,10 +359,19 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script type="text/javascript" src="bower_components/Materialize/bin/materialize.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+       <!--  <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script> -->
     <script src="scripts/app.js"></script>
     <!-- <script src="js/jquery.js"></script>  -->
     <!-- Bootstrap Core JavaScript -->
@@ -276,7 +379,7 @@
     <!-- Morris Charts JavaScript -->
 
     
- 
+
     <script src="js/plugins/morris/raphael.min.js"></script>
     <script src="js/plugins/morris/morris.min.js"></script>
     <!-- <script src="js/plugins/morris/morris-data.js"></script> -->
@@ -305,7 +408,8 @@
     <script src="services/blackListService.js"></script>
     <script src="scripts/controllers/blackListDetail.js"></script>
     <script src="services/productService.js"></script>
-
+    <script src="scripts/controllers/comboProductNewController.js"></script>
+    <script src="services/comboProductNewService.js"></script>
     <!-- endbuild -->
     <!-- jQuery -->
 </body>

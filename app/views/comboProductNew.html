@@ -1,0 +1,124 @@
+<div class="row" style="margin-top: 50px;">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Combo Product New
+                          
+                        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cutlery"></i> <a href="index.html"> Combo Product New</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<p>This is Combo Product New</p>
+<!-- ///////////////////////////////////////////////////// -->
+<ul class="draggable-objects">
+    <li ng-repeat="obj in draggableObjects">
+        <div class="row">
+            <div class="col-md-12" ng-drag="true" ng-drag-data="obj" data-allow-transform="true"> <img src="{{obj.name}}" class="imgset">
+                <!-- <label style="color: black;">{{obj.default}}</label> -->
+            </div>
+        </div>
+    </li>
+</ul>
+<!-- //////////// -->
+<div style="float:right;margin-top:500px;">
+    <i class="fa fa-4x fa-trash" aria-hidden="true" ng-drop="true" ng-drop-success="onDropComplete2($data,$event)"></i>
+</div>
+<!-- ///////////////////////////////////////////////////// -->
+<!--  -->
+<!--   <div class="mob" draggable drag="handleDrag(o)" ng-repeat = "o in dragObjects">{{o}}</div>
+  <br/><br/><br/>
+  TO THIS BLOCK:
+  <div class="mob" droppable drop="handleDrop()">Dropped Objects:<br/>
+    <span ng-repeat = "o in dropObjects">
+        {{o}}<br/>
+    </span>
+  </div>
+ -->
+<!-- ///////////////////////////////////////////////////////////////////// -->
+<!-- <div id="box">
+  <div class="container">
+    <div id="circle">
+      <div id="menu-icon">
+        <div class="bar" id="bar-one"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
+    
+    
+    
+    <div id="menu">
+       <ul>
+         <li id="back"><i class="fa fa-arrow-left fa-2x"></i>Back</li>
+         <li><a href="https://twitter.com/vcmg" target="_blank"><i class="fa fa-twitter fa-2x"></i>Twitter</a></li>
+         <li><a href="http://maevegoggin.com/" target="_blank"><i class="fa fa-laptop fa-2x"></i>Website</a></li>
+         <li><a href="http://codepen.io/vcmg/" target="_blank"><i class="fa fa-codepen fa-2x"></i>Other Pens</a></li>
+      </ul>
+    </div>
+</div> -->
+<!-- //////////////////////////////////////////////////////////// Left -->
+
+<div class="row">
+    <div class="col-md-6" >
+        <div class="fixed-action-btn horizontal click-to-toggle" style="float:right;">
+            <a ng-click="show = !show" class="btn-floating btn-large red" style="width:100px;height:150px;">
+                <!-- <i class="material-icons">menu</i> -->
+                <div>
+                    <div ng-show="show">
+                        <h1 style="margin-top:55px;color: red;">A1</h1>
+                    </div>
+                    <div ng-hide="show">
+                        <h2 style="font-size:20px;color: red;">A1</h2>
+                        <span ng-repeat="obj in droppedObjects1"><img  src="{{obj.name}}" class="setimgSmall">
+
+               </span>
+                    </div>
+                </div>
+            </a>
+            <ul>
+                <li>
+                    <div class="btn-floating" ng-drop="true" ng-drop-success="onDropComplete1($data,$event)" class="md-fab md-raised md-mini">
+                        <div style="margin-bottom:50px" ng-repeat="obj in droppedObjects1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                            <img src="{{obj.name}}" class="imgset">
+                            <span class="badge red_badge">{{obj.qty}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-6" style="margin-left:-448px;">
+        <div class="fixed-action-btn horizontal click-to-toggle" style="float:right;">
+            <a ng-click="show2 = !show2" class="btn-floating btn-large red" style="width:100px;height:150px;">
+                <!-- <i class="material-icons">menu</i> -->
+                <div>
+                    <div ng-show="show2">
+                        <h1 style="margin-top:55px;color: red;">A2</h1>
+                    </div>
+                    <div ng-hide="show2">
+                        <h2 style="font-size:20px;color: red;">A2</h2>
+                        <span ng-repeat="obj in droppedObjects3"><img  src="{{obj.name}}" class="setimgSmall">
+
+               </span>
+                    </div>
+                </div>
+            </a>
+            <ul>
+                <li>
+                    <div style="margin-left:500px" class="btn-floating" ng-drop="true" ng-drop-success="onDropComplete3($data,$event)" class="md-fab md-raised md-mini">
+                        <div style="margin-bottom:50px" ng-repeat="obj in droppedObjects3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccess3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                            <img src="{{obj.name}}" class="imgset">
+                            <span class="badge red_badge">{{obj.qty}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- ///////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////// Right -->
