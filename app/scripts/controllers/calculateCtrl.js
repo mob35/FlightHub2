@@ -33,7 +33,7 @@ angular.module('inflightHubApp')
             $scope.newFn();
         };
 
-        $scope.deleteCalculate = function(id){
+        $scope.deleteCalculate = function(id) {
             calculateService.deleteCalculate(id);
         };
 
@@ -61,7 +61,11 @@ angular.module('inflightHubApp')
         }
 
 
-
+        $scope.calculateType = "ByBill";
+        $scope.changeCalType = function(type) {
+            $scope.calculateType = type;
+            console.log(type);
+        };
 
 
     });
