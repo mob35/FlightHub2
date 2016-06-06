@@ -154,6 +154,23 @@
         height: 43px;
         text-align: center;
     }
+
+    .amountColHeader {
+        width: 200px;
+    }
+    
+    .amountColRate {
+        text-align: right;
+    }
+    
+    .amountRow {
+        height: 43px;
+        text-align: center;
+    }
+
+    .flightHeader {
+        width: 80px;
+    }
     </style>
 </head>
 
@@ -312,6 +329,9 @@
                         <a ng-href="#/calculate"><i class="fa fa-fw fa-calculator"></i> Calculate Commission</a>
                     </li>
                     <li>
+                        <a ng-href="#/report"><i class="fa fa-fw fa-file-text"></i> Report</a>
+                    </li>
+                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-file-text"></i> View Reports <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
                             <li>
@@ -419,8 +439,11 @@
     <script src="scripts/controllers/blackListDetail.js"></script>
     <script src="services/productService.js"></script>
     <script src="scripts/controllers/comboProductNewController.js"></script>
+    <script src="scripts/controllers/reportCtrl.js"></script>
     <script src="services/comboProductNewService.js"></script>
     <script src="services/calculateService.js"></script>
+    <script src="services/amountService.js"></script>
+    <script src="services/flightService.js"></script>
     <!-- endbuild -->
     <!-- jQuery -->
 </body>
