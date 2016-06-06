@@ -1,7 +1,7 @@
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
-                            Calculate Commission
+                            Setup Commission
                           
                         </h1>
         <div class="breadcrumb">
@@ -17,10 +17,10 @@
         <ul class="nav navbar-nav col-md-6" style="margin:10px 0px -3px 0px;">
             <div data-toggle="buttons" class="btn-group btn-group-justified">
                 <li class="btn nav-edit active" ng-click="changeCalType('ByBill')">
-                    <input type="radio" name="type"> By Bill
+                    <input type="radio" name="type"> Commission
                 </li>
                 <li class="btn nav-edit" ng-click="changeCalType('ByProduct')">
-                    <input type="radio" name="type"> By Product
+                    <input type="radio" name="type"> Incentive
                 </li>
             </div>
         </ul>
@@ -83,10 +83,10 @@
                                 <tr>
                                     <th class="calcomColHeader text-center breadcrumb">Type</th>
                                     <th class="calcomColHeader text-center breadcrumb">Product</th>
-                                    <th class="calcomColHeader text-center breadcrumb">Description (THB)</th>
-                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Quanlity (Qty)</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Minimum</th>
                                     <th class="calcomColHeader text-right breadcrumb">Maximum</th>
-                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Price/Qty (THB)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -98,7 +98,7 @@
                                         <input type="text" ng-model="item.calProd" style="border-style: none; text-align: left;">
                                     </td>
                                     <td class="calcomRow ">
-                                        <input type="text" ng-model="item.calDesc1" style="border-style: none; text-align: right;">
+                                        <input type="text" ng-model="item.calDesc1" style="border-style: none; text-align: center;">
                                     </td>
                                     <td class="calcomRow ">
                                         <input type="number" ng-model="item.calMin1" style="border-style: none; text-align: right;">

@@ -1,0 +1,133 @@
+<div class="row" style="margin-top: 50px;">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                           Report
+                          
+                        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-fw fa-file-text"></i> <a href="index.html"> Report</a>
+            </li>
+        </ol>
+        <div class="form-group input-group" style="margin-top:-20px; margin-bottom: -1px;">
+            <input type="text" class="form-control" ng-model="searchText">
+            <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+    </div>
+</div>
+<!-- /.row -->
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <span class="panel-title"><i class="fa fa-fw fa-file-text"></i> Type Report</span>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="row">
+                <div class="col-md-12">
+                    <select ng-model="report" style="width: 100%">
+                        <option value="">Chooose Report</option>
+                        <option value="amount">Daily Summary Sales Report By Amount</option>
+                        <option value="flight">Daily Summary Sales Report By Flight</option>
+                        <option value="">Daily Summary Sales Report By Qty (included redeem and free item)</option>
+                        <option value="">Daily Summary Sales Report By Qty (excluded redeem and free item)H</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default" ng-show="report == 'amount'">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-fw fa-file-text"></i> Daily Summary Sales Report By Amount</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th class="amountColHeader text-center breadcrumb">Date</th>
+                                        <th class="amountColHeader text-center breadcrumb">Product</th>
+                                        <th class="amountColHeader text-center breadcrumb">Tax</th>
+                                        <th class="amountColHeader text-center breadcrumb">Discount</th>
+                                        <th class="amountColHeader text-right breadcrumb">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in amounts">
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.amDate" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.amProd" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.amTax" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.amDis" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountColRate">
+                                            <input type="text" ng-model="item.amTol" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <!--                                         <td class="calcomColRate">{{item.calComm}}</td> -->
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default" ng-show="report == 'flight'">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-fw fa-file-text"></i> Daily Summary Sales Report By Flight</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th class="flightHeader text-center breadcrumb span2">Date</th>
+                                        <th class="flightHeader text-center breadcrumb">Flight</th>
+                                        <th class="flightHeader text-center breadcrumb">Cart</th>
+                                        <th class="flightHeader text-center breadcrumb">Product</th>
+                                        <th class="flightHeader text-right breadcrumb">Tax</th>
+                                        <th class="flightHeader text-right breadcrumb">Discount</th>
+                                        <th class="flightHeader text-right breadcrumb">Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in flights">
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliDate" style="border-style: none; text-align: left;width:80px;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliFlight" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliCart" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliProd" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliTax" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliDis" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountColRate">
+                                            <input type="text" ng-model="item.fliTol" style="border-style: none; text-align: right;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
