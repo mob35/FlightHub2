@@ -67,7 +67,14 @@
                  controller: 'setupCartCtrl',
                  controllerAs: 'setupCart'
 
-             }).when('/setupCartProduct', {
+             })
+            .when('/setupCartNew', {
+                 templateUrl: 'views/setupCartNew.html',
+                 controller: 'setupCartNewCtrl',
+                 controllerAs: 'setupCartNew'
+
+             })
+             .when('/setupCartProduct', {
                  templateUrl: 'views/setupCartProduct.html',
                  controller: 'setupCartCtrl',
                  controllerAs: 'setupCart'

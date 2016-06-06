@@ -107,14 +107,15 @@
     [ng-drop] {
         /*background: rgba(0, 255, 0, 0.5); */
         text-align: center;
-        width: 400px;
-        height: 150px;
-        padding-top: 50px;
+        /*width: 200px;*/
+        height: 50px;
+        /*padding-top: 50px;*/
         display: block;
         /*margin: 20px auto; */
         position: relative;
-        margin-top: -9.5px;
-        padding-right: 55px;
+        /*margin-top: -9.5px;*/
+        /*padding-right: 55px;*/
+        padding-top:10px;
     }
     
     [ng-drop].drag-enter {
@@ -291,6 +292,9 @@
                         <a ng-href="#/setupCart"><i class="fa fa-fw fa-shopping-cart"></i> Setup Cart</a>
                     </li>
                     <li>
+                        <a ng-href="#/setupCartNew"><i class="fa fa-fw fa-shopping-cart"></i> Setup Cart New</a>
+                    </li>
+                    <li>
                         <a ng-href="#/uploadCart"><i class="fa fa-fw fa-plane"></i> Upload Cart</a>
                     </li>
                     <li>
@@ -419,6 +423,7 @@
     <script src="scripts/controllers/blackListDetail.js"></script>
     <script src="services/productService.js"></script>
     <script src="scripts/controllers/comboProductNewController.js"></script>
+    <script src="scripts/controllers/setupCartNewController.js"></script>
     <script src="services/comboProductNewService.js"></script>
     <script src="services/calculateService.js"></script>
     <!-- endbuild -->

@@ -6762,9 +6762,17 @@ button.close {
 
 
 }
+.imgsetPro{
+    width: 75px !important;
+  height: 60px !important;
+}
 .imgset{ 
   width: 75px; 
   height: 60px; 
+}
+.imgsetCart {
+  width: 40px; 
+  height: 32px; 
 } 
 .productSet{ 
   width: 155px; 
@@ -6774,20 +6782,6 @@ button.close {
   border-style: solid; 
   border-width: 1px; 
   border-color: #ddd; 
-}
-
-.imgset{
-  width: 75px;
-  height: 60px;
-}
-.productSet{
-  width: 155px;
-  height: 140px;
-}
-.setBorder{
-  border-style: solid;
-  border-width: 1px;
-  border-color: #ddd;
 }
 
 ul.horizontal-slide {
@@ -7068,4 +7062,36 @@ a.btn-floating:hover {
 
 button.btn-floating {
   border: none;
+}
+
+/*table, td, th {    
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 30%;
+}
+
+th, td {
+    padding: 15px;
+}*/
+
+.one {
+    border-style: solid;
+    border-width: 0px 0px 3px 3px;
+    border-color:#ddd;
+    height: 40px;
+}
+.two {
+    border-style: solid;
+    border-width: 1px;
+    height: 50px;
+}
+.three {
+    border-style: solid;
+    border-width: 0px 3px 3px 0px;
+    border-color:#ddd;
+    height: 40px;
 }
