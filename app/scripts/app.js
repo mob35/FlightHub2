@@ -237,6 +237,13 @@
                  controllerAs: 'calculateCtrl'
 
              })
+             .when('/report', {
+                 templateUrl: 'views/report.html',
+                 controller: 'reportCtrl',
+                 controllerAs: 'reportCtrl'
+
+             })
+
 
 
 
