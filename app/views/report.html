@@ -28,7 +28,7 @@
                         <option value="">Chooose Report</option>
                         <option value="amount">Daily Summary Sales Report By Amount</option>
                         <option value="flight">Daily Summary Sales Report By Flight</option>
-                        <option value="">Daily Summary Sales Report By Qty (included redeem and free item)</option>
+                        <option value="included">Daily Summary Sales Report By Qty (included redeem and free item)</option>
                         <option value="">Daily Summary Sales Report By Qty (excluded redeem and free item)</option>
                         <option value="">Monthly Summary Sales Repoert By flight H</option>
                         <option value="">Wastage Report Summry</option>
@@ -147,7 +147,7 @@
         <!-- Daily Summary Sales Report By Qty (included redeem and free item) -->
         <div class="row">
             <div class="col-lg-12">
-                <div class="panel panel-default" ng-show="report == 'flight'">
+                <div class="panel panel-default" ng-show="report == 'included'">
                     <div class="panel-heading">
                         <h3 class="panel-title"><i class="fa fa-fw fa-file-text"></i> Daily Summary Sales Report By Qty (included redeem and free item)</h3>
                     </div>
@@ -160,37 +160,37 @@
                                         <th class="flightHeader text-center breadcrumb">Flight</th>
                                         <th class="flightHeader text-center breadcrumb">Cart</th>
                                         <th class="flightHeader text-center breadcrumb">Product</th>
-                                        <th class="flightHeader text-right breadcrumb">Price</th>
-                                        <th class="flightHeader text-right breadcrumb">Price Free</th>
-                                        <th class="flightHeader text-right breadcrumb">Price Offer</th>
-                                        <th class="flightHeader text-right breadcrumb">total</th>
+                                        <th class="flightHeader text-right breadcrumb">Piece</th>
+                                        <th class="flightHeader text-right breadcrumb">Piece Free</th>
+                                        <th class="flightHeader text-right breadcrumb">Piece Offer</th>
+                                        <th class="flightHeader text-right breadcrumb">Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="item in flights">
+                                    <tr ng-repeat="item in includes">
                                         <td class="amountRow ">
-                                            <input type="text" ng-model="item.fliDate" style="border-style: none; text-align: left;width:80px;">
+                                            <input type="text" ng-model="item.incDate" style="border-style: none; text-align: left;width:80px;">
                                         </td>
                                         <td class="amountRow ">
-                                            <input type="text" ng-model="item.fliFlight" style="border-style: none; text-align: left;">
+                                            <input type="text" ng-model="item.incFlight" style="border-style: none; text-align: left;">
                                         </td>
                                         <td class="amountRow ">
-                                            <input type="text" ng-model="item.fliCart" style="border-style: none; text-align: left;">
-                                        </td>
-                                        <td class="amountRow ">
-                                            <input type="text" ng-model="item.fliProd" style="border-style: none; text-align: left;">
-                                        </td>
-                                        <td class="amountRow ">
-                                            <input type="text" ng-model="item.fliTax" style="border-style: none; text-align: right;">
-                                        </td>
-                                        <td class="amountRow ">
-                                            <input type="text" ng-model="item.fliDis" style="border-style: none; text-align: right;">
+                                            <input type="text" ng-model="item.incCart" style="border-style: none; text-align: left;">
                                         </td>
                                         <td class="amountColRate">
-                                            <input type="text" ng-model="item.fliTol" style="border-style: none; text-align: right;">
+                                            <input type="text" ng-model="item.incProd" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.incPrice" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.incFree" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.incOffer" style="border-style: none; text-align: right;">
                                         </td>
                                         <td class="amountColRate">
-                                            <input type="text" ng-model="item.fliTol" style="border-style: none; text-align: right;">
+                                            <input type="text" ng-model="item.inctotal" style="border-style: none; text-align: right;">
                                         </td>
                                     </tr>
                                 </tbody>
