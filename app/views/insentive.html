@@ -1,0 +1,58 @@
+<div class="row" style="margin-top: 50px;">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Setup Incentive
+                          
+                        </h1>
+        <!-- tag -->
+    </div>
+    <!--   By Bill -->
+    <div class="panel panel-default">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-money"></i> Calculate Incentive</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                    <th class="calcomColHeader text-center breadcrumb">Type</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Product</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Quanlity (Qty)</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Price/Qty (THB)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in calculates">
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calType" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calProd" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calDesc1" style="border-style: none; text-align: center;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="number" ng-model="item.calMin1" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calMax1" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calComm1" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <!--                                         <td class="calcomColRate">{{item.calComm}}</td> -->
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
