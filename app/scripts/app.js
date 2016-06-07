@@ -148,6 +148,12 @@
                  controllerAs: 'comboProductNew'
 
              })
+             .when('/comboProductNew2', {
+                 templateUrl: 'views/comboProductNew2.html',
+                 controller: 'comboProductNew2Ctrl',
+                 controllerAs: 'comboProductNew2'
+
+             })
              .when('/product', {
                  templateUrl: 'views/product.html',
                  controller: 'comboProductCtrl',
@@ -236,6 +242,12 @@
                  templateUrl: 'views/uploadCart.html',
                  controller: 'uploadCartCtrl',
                  controllerAs: 'uploadCart'
+
+             })
+             .when('/uploadCartNew', {
+                 templateUrl: 'views/uploadCartNew.html',
+                 controller: 'uploadCartNewCtrl',
+                 controllerAs: 'uploadCartNew'
 
              })
              .when('/calculate', {

@@ -8,7 +8,7 @@
  * Controller of the inflightHubApp
  */
 angular.module('inflightHubApp')
-    .controller('setupCartNewCtrl', function($scope, productService, promotionDiscountService, $filter, $routeParams) {
+    .controller('uploadCartNewCtrl', function($scope, productService, promotionDiscountService, $filter, $routeParams) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -16,76 +16,28 @@ angular.module('inflightHubApp')
         ];
         $scope.productPro = [{
             id: 1,
-            cate: "Food",
-            name: "KoloMee",
+            cate: "Cart",
+            name: "Class 1",
             price: 130,
             stock: 10,
             qty: 0,
-            img: "images/food/AK-1-KoloMee.png"
+            img: "images/upload/c1.png"
         }, {
             id: 2,
-            cate: "Food",
-            name: "Shepherds Pie",
+            cate: "Cart",
+            name: "Class 2",
             price: 230,
             stock: 55,
             qty: 0,
-            img: "images/food/AK-2-ShepherdsPie.png"
+            img: "images/upload/c2.png"
         }, {
             id: 3,
-            cate: "Food",
-            name: "Pak Nassers Nasi Lemak",
+            cate: "Cart",
+            name: "Class 3",
             price: 100,
             stock: 90,
             qty: 0,
-            img: "images/food/AK-6-PakNassersNasiLemak.png"
-        }, {
-            id: 4,
-            cate: "Food",
-            name: "Nasi Dagang with Chicken Curry",
-            price: 90,
-            stock: 70,
-            qty: 0,
-            img: "images/food/AK-7-NasiDagangwithChickenCurry.png"
-        }, {
-            id: 5,
-            cate: "Food",
-            name: "Tomato Rice with Ayam Percik",
-            price: 146,
-            stock: 85,
-            qty: 0,
-            img: "images/food/AK-8-TomatoRicewithAyamPercik.png"
-        }, {
-            id: 6,
-            cate: "Food",
-            name: "Roast Chicken with Cream Sauce",
-            price: 99,
-            stock: 63,
-            qty: 0,
-            img: "images/food/AK-11-RoastChickenwithCreamSauce.png"
-        }, {
-            id: 7,
-            cate: "Food",
-            name: "Ginger Fried Rice",
-            price: 78,
-            stock: 12,
-            qty: 0,
-            img: "images/food/AK-12-GingerFriedRicewithVegetarianChickenV.png"
-        }, {
-            id: 8,
-            cate: "Food",
-            name: "Vegetable Briyani",
-            price: 340,
-            stock: 66,
-            qty: 0,
-            img: "images/food/AK-13-VegetableBriyaniV.png"
-        }, {
-            id: 9,
-            cate: "Food",
-            name: "Chicken Rice",
-            price: 120,
-            stock: 36,
-            qty: 0,
-            img: "images/food/AK-14-ChickenRice.png"
+            img: "images/upload/c3.png"
         }, {
             id: 10,
             cate: "Drink",
@@ -93,7 +45,7 @@ angular.module('inflightHubApp')
             price: 20,
             stock: 70,
             qty: 0,
-            img: "images/drink/1-Water.jpg"
+            img: "images/upload/male.png"
         }, {
             id: 11,
             cate: "Drink",
@@ -142,118 +94,6 @@ angular.module('inflightHubApp')
             stock: 42,
             qty: 0,
             img: "images/drink/7-sprite.jpg"
-        }, {
-            id: 17,
-            cate: "Fast",
-            name: "Chicken Satay Wrap",
-            price: 95,
-            stock: 62,
-            qty: 0,
-            img: "images/fast/AK-9-ChickenSatayWrap.png"
-        }, {
-            id: 18,
-            cate: "Fast",
-            name: "Chicken Tikka Sandwich",
-            price: 65,
-            stock: 57,
-            qty: 0,
-            img: "images/fast/I5-13-ChickenTikkaSandwichwithMintMayo.jpg"
-        }, {
-            id: 19,
-            cate: "Fast",
-            name: "Assorted Sandwiches",
-            price: 135,
-            stock: 22,
-            qty: 0,
-            img: "images/fast/QC-12-AssortedSandwiches.png"
-        }, {
-            id: 20,
-            cate: "Fast",
-            name: "CornBell Peppers Sandwich",
-            price: 65,
-            stock: 31,
-            qty: 0,
-            img: "images/fast/I5-14-CornBellPeppersSandwichwithPestoMayoInMarbleBread.jpg"
-        }, {
-            id: 21,
-            cate: "Fast",
-            name: "Frankster Chicken",
-            price: 65,
-            stock: 18,
-            qty: 0,
-            img: "images/fast/QC-10-FranksterChicken.png"
-        }, {
-            id: 22,
-            cate: "Fast",
-            name: "Deli Chicken Focaccia Sandwich",
-            price: 125,
-            stock: 20,
-            qty: 0,
-            img: "images/fast/XJ-7-DeliChickenFocacciaBreadSandwich.jpg"
-        }, {
-            id: 23,
-            cate: "Dessert",
-            name: "Pancakes Maple Syrup Butter",
-            price: 100,
-            stock: 51,
-            qty: 0,
-            img: "images/dessert/QC-8-PancakesMapleSyrupButter.png"
-        }, {
-            id: 24,
-            cate: "Dessert",
-            name: "Banana Cake with Malee",
-            price: 120,
-            stock: 62,
-            qty: 0,
-            img: "images/dessert/XJ-16-BananaCakewithMaleeOrangeJuice.jpg"
-        }, {
-            id: 25,
-            cate: "Dessert",
-            name: "Yamanishi Mochi",
-            price: 90,
-            stock: 63,
-            qty: 0,
-            img: "images/dessert/XJ-15-YamanishiMochi.png"
-        }, {
-            id: 26,
-            cate: "combo",
-            name: "Macand Cheese Ribena",
-            price: 310,
-            stock: 43,
-            qty: 0,
-            img: "images/combo/AK-5-KidsMealMacandCheeseRibena.png"
-        }, {
-            id: 27,
-            cate: "Combo",
-            name: "Roti Canai With ChickenCurry",
-            price: 290,
-            stock: 36,
-            qty: 0,
-            img: "images/combo/AK-4-RotiCanaiWithChickenCurryTehTarik.png"
-        }, {
-            id: 28,
-            cate: "Combo",
-            name: "American Breakfast Set",
-            price: 300,
-            stock: 67,
-            qty: 0,
-            img: "images/combo/XJ-13-AmericanBreakfastSet.jpg"
-        }, {
-            id: 29,
-            cate: "Combo",
-            name: "Mee Goreng Mamak TehTarik",
-            price: 270,
-            stock: 28,
-            qty: 0,
-            img: "images/combo/AK-3-MeeGorengMamakTehTarik.png"
-        }, {
-            id: 30,
-            cate: "Combo",
-            name: "Chicken Rice Soup Set",
-            price: 250,
-            stock: 61,
-            qty: 0,
-            img: "images/combo/XJ-12-ChickenRiceSoupSet.jpg"
         }];
 
         ////////////////////////////////////////////////////////////////////////////////////
@@ -571,13 +411,11 @@ angular.module('inflightHubApp')
             $scope.cartType = type;
         }
 
-        $scope.food = $filter("filter")($scope.productPro, { cate: "Food" });
+        $scope.cart = $filter("filter")($scope.productPro, { cate: "Cart" });
         $scope.drink = $filter("filter")($scope.productPro, { cate: "Drink" });
-        $scope.fast = $filter("filter")($scope.productPro, { cate: "Fast" });
-        $scope.dessert = $filter("filter")($scope.productPro, { cate: "Dessert" });
-        $scope.combo = $filter("filter")($scope.productPro, { cate: "Combo" });
+        
 
-        $scope.productType = "Food";
+        $scope.productType = "Cart";
         $scope.changeType = function(type) {
             $scope.productType = type;
         };

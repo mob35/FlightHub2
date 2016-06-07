@@ -1,0 +1,254 @@
+<div class="row" style="margin-top: 50px;">
+    <div class="col-lg-12">
+        <h1 class="page-header">
+                            Combo Product New 2
+                          
+                        </h1>
+        <ol class="breadcrumb">
+            <li>
+                <i class="fa fa-cutlery"></i> <a href="index.html"> Combo Product New</a>
+            </li>
+        </ol>
+    </div>
+</div>
+<!-- ///////////////////////////////////////// -->
+<div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pro">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+</div>
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+            <ul class="nav navbar-nav">
+                <li><a style="cursor:pointer" ng-click="changeType('Food')">Food</a>
+                </li>
+                <li><a style="cursor:pointer" ng-click="changeType('Drink')">Drink</a>
+                </li>
+                <li><a style="cursor:pointer" ng-click="changeType('Fast')">Fast Food</a>
+                </li>
+                <li><a style="cursor:pointer" ng-click="changeType('Dessert')">Dessert</a>
+                </li>
+                <li><a style="cursor:pointer" ng-click="changeType('Combo')">Combo Set</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-body">
+        <!-- Food -->
+        <div class="row" align="center" ng-show="productType=='Food'">
+            <div class="col-md-1">
+                <input type="hidden" ng-model="item.limitNumberFood" ng-init="item.limitNumberFood=5">
+                <input type="hidden" ng-model="item.runNumberFood" ng-init="item.runNumberFood=0">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberFood>0?(item.runNumberFood=item.runNumberFood-1):item.runNumberFood=item.runNumberFood" style="padding-top:40px;"></i>
+            </div>
+            <div class="col-md-2" ng-repeat="obj in food | filter:searchText | limitTo:item.limitNumberFood:item.runNumberFood">
+                <label style="height:34px;">{{obj.name}}</label>
+                <br>
+                <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <br>
+                <label>{{obj.price}}</label>
+                <label> THB.</label>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberFood!=(floor.cartProd.length-item.limitNumberFood)?(item.runNumberFood=item.runNumberFood+1):item.runNumberFood=item.runNumberFood" style="padding-top:40px;"></i>
+            </div>
+        </div>
+        <!-- Drink -->
+        <div class="row" align="center" ng-show="productType=='Drink'">
+            <div class="col-md-1">
+                <input type="hidden" ng-model="item.limitNumberDrink" ng-init="item.limitNumberDrink=5">
+                <input type="hidden" ng-model="item.runNumberDrink" ng-init="item.runNumberDrink=0">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberDrink>0?(item.runNumberDrink=item.runNumberDrink-1):item.runNumberDrink=item.runNumberDrink" style="padding-top:40px;"></i>
+            </div>
+            <div class="col-md-2" ng-repeat="obj in drink | filter:searchText | limitTo:item.limitNumberDrink:item.runNumberDrink">
+                <label>{{obj.name}}</label>
+                <br>
+                <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <br>
+                <label>{{obj.price}}</label>
+                <label> THB.</label>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberDrink!=(floor.cartProd.length-item.limitNumberDrink)?(item.runNumberDrink=item.runNumberDrink+1):item.runNumberDrink=item.runNumberDrink" style="padding-top:40px;"></i>
+            </div>
+        </div>
+        <!-- Fast -->
+        <div class="row" align="center" ng-show="productType=='Fast'">
+            <div class="col-md-1">
+                <input type="hidden" ng-model="item.limitNumberFast" ng-init="item.limitNumberFast=5">
+                <input type="hidden" ng-model="item.runNumberFast" ng-init="item.runNumberFast=0">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberFast>0?(item.runNumberFast=item.runNumberFast-1):item.runNumberFast=item.runNumberFast" style="padding-top:40px;"></i>
+            </div>
+            <div class="col-md-2" ng-repeat="obj in fast | filter:searchText | limitTo:item.limitNumberFast:item.runNumberFast">
+                <label>{{obj.name}}</label>
+                <br>
+                <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <br>
+                <label>{{obj.price}}</label>
+                <label> THB.</label>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberFast!=(floor.cartProd.length-item.limitNumberFast)?(item.runNumberFast=item.runNumberFast+1):item.runNumberFast=item.runNumberFast" style="padding-top:40px;"></i>
+            </div>
+        </div>
+        <!-- Dessert -->
+        <div class="row" align="center" ng-show="productType=='Dessert'">
+            <div class="col-md-1">
+                <input type="hidden" ng-model="item.limitNumberDessert" ng-init="item.limitNumberDessert=5">
+                <input type="hidden" ng-model="item.runNumberDessert" ng-init="item.runNumberDessert=0">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberDessert>0?(item.runNumberDessert=item.runNumberDessert-1):item.runNumberDessert=item.runNumberDessert" style="padding-top:40px;"></i>
+            </div>
+            <div class="col-md-2" ng-repeat="obj in dessert | filter:searchText | limitTo:item.limitNumberDessert:item.runNumberDessert">
+                <label>{{obj.name}}</label>
+                <br>
+                <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <br>
+                <label>{{obj.price}}</label>
+                <label> THB.</label>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberDessert!=(floor.cartProd.length-item.limitNumberDessert)?(item.runNumberDessert=item.runNumberDessert+1):item.runNumberDessert=item.runNumberDessert" style="padding-top:40px;"></i>
+            </div>
+        </div>
+        <!-- Combo -->
+        <div class="row" align="center" ng-show="productType=='Combo'">
+            <div class="col-md-1">
+                <input type="hidden" ng-model="item.limitNumberCombo" ng-init="item.limitNumberCombo=5">
+                <input type="hidden" ng-model="item.runNumberCombo" ng-init="item.runNumberCombo=0">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberCombo>0?(item.runNumberCombo=item.runNumberCombo-1):item.runNumberCombo=item.runNumberCombo" style="padding-top:40px;"></i>
+            </div>
+            <div class="col-md-2" ng-repeat="obj in combo | filter:searchText | limitTo:item.limitNumberCombo:item.runNumberCombo">
+                <label>{{obj.name}}</label>
+                <br>
+                <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <br>
+                <label>{{obj.price}}</label>
+                <label> THB.</label>
+            </div>
+            <div class="col-md-1">
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberCombo!=(floor.cartProd.length-item.limitNumberCombo)?(item.runNumberCombo=item.runNumberCombo+1):item.runNumberCombo=item.runNumberCombo" style="padding-top:40px;"></i>
+            </div>
+        </div>
+        <div class="text-right">
+        </div>
+    </div>
+</div>
+<!-- ///////////////////////////////////////// -->
+<div class="row" align="left">
+    <div class="col-md-6">
+        <div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            
+                <span>Promotion List </span>
+                <!-- <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span> -->
+            
+        </div>
+        <div class="panel panel-default" style="padding:15px;margin-top:-20px;">
+            <div class="row">
+                <div class="col-md-1"></div>
+                <div class="col-md-1">
+                    <input type="hidden" ng-model="item.limitNumberFoo" ng-init="item.limitNumberFoo=2">
+                    <input type="hidden" ng-model="item.runNumberFoo" ng-init="item.runNumberFoo=0">
+                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberFoo>0?(item.runNumberFoo=item.runNumberFoo-1):item.runNumberFoo=item.runNumberFoo" style="padding-top:40px;"></i>
+                </div>
+                <div class="col-md-4" ng-repeat="item in combos | filter:searchText  | limitTo:item.limitNumberFoo:item.runNumberFoo">
+                    <div class="panel panel-default" style="padding:15px;" ng-repeat="itm in item.floor">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>{{itm.comboName}}</label>
+                                <br>
+                                <label>Price {{itm.comboMoney}} ฿</label>
+                            </div>
+                        </div>
+                        <div style="margin-top:30px">
+                        <span ng-repeat="itm in item.floor">
+                            <div class="col-md-6 panel panel-default" style="padding:5px;margin-top:-20px" ng-repeat="im in itm.comboProd">
+                                <img class="imgsetCart" src="{{im.img}}">
+                            </div>
+                            </span>
+                        </div>
+                        <div align="center">
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-md-12">
+                                    <span style="font-size:10px;">Date {{item.comboDateFinish | date:'dd-MM-yyyy'}}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <span style="font-size:10px;">To. {{item.comboDateFinish | date:'dd-MM-yyyy'}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberFoo!=(floor.cartProd.length-item.limitNumberFoo)?(item.runNumberFoo=item.runNumberFoo+1):item.runNumberFoo=item.runNumberFoo" style="padding-top:40px;"></i>
+                </div>
+                <div class="col-md-1"></div>
+            </div>
+        </div>
+    </div>
+    <!-- ///////////////////////////////////////// -->
+    <div class="col-md-6">
+        <div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            <a ng-click="clearData()">Cancel</a>
+            <a>
+                <span style="float: right;" ng-click="addCombo()">Done </span>
+                <!-- <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span> -->
+            </a>
+        </div>
+        <div class="panel panel-default" style="padding:15px;margin-top:-20px" ng-repeat="item in newCombo.floor">
+            <div class="row">
+                <div class="col-md-2">
+                    <label>Name : </label>
+                </div>
+                <div class="col-md-10">
+                    <input class="form-control" ng-model="item.comboName">
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <div class="col-md-2">
+                    <label>Price : </label>
+                </div>
+                <div class="col-md-10">
+                    <input class="form-control" ng-model="item.comboMoney">
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <div class="col-md-4">
+                    <label>Effective Date :
+                </div>
+                <div class="col-md-8">
+                    <input type="date" ng-model="newCombo.comboDateStart">
+                    </label>
+                </div>
+            </div>
+            <div class="row" style="margin-top:10px;">
+                <div class="col-md-4">
+                    <label>To :
+                </div>
+                <div class="col-md-8">
+                    <input type="date" ng-model="newCombo.comboDateFinish">
+                    </label>
+                </div>
+            </div>
+            <div class="panel panel-default" style="margin-top:15px;padding:15px;">
+                <div ng-drop="true" ng-drop-success="onDropCompleteA1($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA1" ng-init="item.limitNumberA1=6">
+                    <input type="hidden" ng-model="item.runNumberA1" ng-init="item.runNumberA1=0">
+                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA1>0?(item.runNumberA1=item.runNumberA1-1):item.runNumberA1=item.runNumberA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA1| limitTo:item.limitNumberA1:item.runNumberA1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetCart" ng-model="obj.img">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA1!=(floor.cartProd.length-item.limitNumberA1)?(item.runNumberA1=item.runNumberA1+1):item.runNumberA1=item.runNumberA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

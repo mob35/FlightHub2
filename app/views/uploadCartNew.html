@@ -1,7 +1,7 @@
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
-                            Setup Cart New
+                            Upload Cart New
                           
                         </h1>
         <ol class="breadcrumb">
@@ -25,37 +25,31 @@
     <div class="panel-heading">
         <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
             <ul class="nav navbar-nav">
-                <li><a style="cursor:pointer" ng-click="changeType('Food')">Food</a>
+                <li><a style="cursor:pointer" ng-click="changeType('Cart')">Cart</a>
                 </li>
-                <li><a style="cursor:pointer" ng-click="changeType('Drink')">Drink</a>
-                </li>
-                <li><a style="cursor:pointer" ng-click="changeType('Fast')">Fast Food</a>
-                </li>
-                <li><a style="cursor:pointer" ng-click="changeType('Dessert')">Dessert</a>
-                </li>
-                <li><a style="cursor:pointer" ng-click="changeType('Combo')">Combo Set</a>
+                <li><a style="cursor:pointer" ng-click="changeType('Drink')">Crew</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="panel-body">
         <!-- Food -->
-        <div class="row" align="center" ng-show="productType=='Food'">
+        <div class="row" align="center" ng-show="productType=='Cart'">
             <div class="col-md-1">
-                <input type="hidden" ng-model="item.limitNumberFood" ng-init="item.limitNumberFood=5">
-                <input type="hidden" ng-model="item.runNumberFood" ng-init="item.runNumberFood=0">
-                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberFood>0?(item.runNumberFood=item.runNumberFood-1):item.runNumberFood=item.runNumberFood" style="padding-top:40px;"></i>
+                <input type="hidden" ng-model="item.limitNumberCart" ng-init="item.limitNumberCart=3">
+                <input type="hidden" ng-model="item.runNumberCart" ng-init="item.runNumberCart=0">
+                <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberCart>0?(item.runNumberCart=item.runNumberCart-1):item.runNumberCart=item.runNumberCart" style="padding-top:40px;"></i>
             </div>
-            <div class="col-md-2" ng-repeat="obj in food | filter:searchText | limitTo:item.limitNumberFood:item.runNumberFood">
+            <div class="col-md-2" ng-repeat="obj in cart | filter:searchText | limitTo:item.limitNumberCart:item.runNumberCart">
                 <label style="height:34px;">{{obj.name}}</label>
                 <br>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
-                <br>
-                <label>{{obj.price}}</label>
-                <label> THB.</label>
+                
+                
+                
             </div>
             <div class="col-md-1">
-                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberFood!=(floor.cartProd.length-item.limitNumberFood)?(item.runNumberFood=item.runNumberFood+1):item.runNumberFood=item.runNumberFood" style="padding-top:40px;"></i>
+                <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberCart!=(floor.cartProd.length-item.limitNumberCart)?(item.runNumberCart=item.runNumberCart+1):item.runNumberCart=item.runNumberCart" style="padding-top:40px;"></i>
             </div>
         </div>
         <!-- Drink -->

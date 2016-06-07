@@ -7093,3 +7093,7 @@ th, td {
     border-color:#ddd;
     height: 40px;
 }
+div#scroll {
+  width: auto;
+  overflow-x: scroll;
+}
