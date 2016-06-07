@@ -4,65 +4,46 @@
                             Setup Commission
                           
                         </h1>
-        
         <!-- tag -->
     </div>
-  <!--   <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-bottom: 13px;margin-left: -15px;" id="pro">
-        <ul class="nav navbar-nav col-md-6" style="margin:10px 0px -3px 0px;">
-            <div data-toggle="buttons" class="btn-group btn-group-justified">
-                <li class="btn nav-edit active" ng-click="changeCalType('ByBill')">
-                    <input type="radio" name="type"> Commission
-                </li>
-                <li class="btn nav-edit" ng-click="changeCalType('ByProduct')">
-                    <input type="radio" name="type"> Incentive
-                </li>
-            </div>
-        </ul>
-        </div> -->
-          <!--   By Bill -->
-            <div class="panel panel-default" ng-show="calculateType=='ByBill'">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><i class="fa fa-calculator"></i> Calculate Commission</h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-hover ">
-                                    <thead>
-                                        <tr>
-                                            <th class="calcomColHeader text-center breadcrumb">Description (THB)</th>
-                                            <th class="calcomColHeader text-center breadcrumb">Minimum</th>
-                                            <th class="calcomColHeader text-right breadcrumb">Maximum</th>
-                                            <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="item in calculates">
-                                            <td class="calcomRow ">
-                                                <input type="text" ng-model="item.calDesc" style="border-style: none; text-align: left;">
-                                            </td>
-                                            <td class="calcomRow ">
-                                                <input type="number" ng-model="item.calMin" style="border-style: none; text-align: right;">
-                                            </td>
-                                            <td class="calcomColRate">
-                                                <input type="number" ng-model="item.calMax" style="border-style: none; text-align: right;">
-                                            </td>
-                                            <td class="calcomColRate">
-                                                <input type="number" ng-model="item.calComm" style="border-style: none; text-align: right;">
-                                            </td>
-                                            <!--                                         <td class="calcomColRate">{{item.calComm}}</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+    <!--   By Bill -->
+    <div class="panel panel-default" ng-show="calculateType=='ByBill'">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><i class="fa fa-calculator"></i> Calculate Commission</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover ">
+                            <thead>
+                                <tr>
+                                    <th class="calcomColHeader text-center breadcrumb">Description (THB)</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in calculates">
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calDesc" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="number" ng-model="item.calMin" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calMax" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calComm" style="border-style: none; text-align: right;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </div>
-<!-- By Product -->
-
-    </div>
