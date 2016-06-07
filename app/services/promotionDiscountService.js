@@ -12,6 +12,8 @@ angular.module('inflightHubApp').service('promotionDiscountService', function() 
     var promotions = [{
         id: 1,
         promotionName: "Buy 500 THB. Free Coke 1 Qty",
+        promotionDateStart:"07-06-2016",
+        promotionDateFinish:"07-07-2016",
         proBy: ['By Bill', 'By Product'],
         percent: "20 %",
         bath: 100,
@@ -90,6 +92,8 @@ angular.module('inflightHubApp').service('promotionDiscountService', function() 
     var varTemp = {
         id: guid(),
         promotionName: "",
+        promotionDateStart:"",
+        promotionDateFinish:"",
         proBy: "ByBill",
         percent: 0,
         bath: 0,
@@ -144,6 +148,8 @@ angular.module('inflightHubApp').service('promotionDiscountService', function() 
         varTemp = {
             id: guid(),
             promotionName: "",
+            promotionDateStart:"",
+        promotionDateFinish:"",
             proBy: "",
             percent: 0,
             bath: 0,

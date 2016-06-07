@@ -6838,9 +6838,9 @@ background-color:#b0c4de;
 }
 */
 /*# sourceMappingURL=bootstrap.css.map */
+/*////////////////////////////////////////////////////////////*/
 
-
-.fixed-action-btn {
+/*.fixed-action-btn {
   position: fixed scroll;
   right: 23px;
   bottom: 23px;
@@ -6866,7 +6866,6 @@ background-color:#b0c4de;
   height: 100%;
   left: auto;
   width: 500px;
-  /*width 100% only goes to width of button container */
 }
 
 .fixed-action-btn.horizontal ul li {
@@ -7035,7 +7034,6 @@ a.btn-floating:hover {
   line-height: 37px;
   padding: 0;
   background-color: #fff;
-  /*border-radius: 50%;*/
   transition: .3s;
   cursor: pointer;
   vertical-align: middle;
@@ -7062,8 +7060,8 @@ a.btn-floating:hover {
 
 button.btn-floating {
   border: none;
-}
-
+}*/
+/*//////////////////////////////////////////////////////////////////////////*/
 /*table, td, th {    
     border: 1px solid #ddd;
     text-align: center;

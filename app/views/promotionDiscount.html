@@ -27,7 +27,8 @@
             <div ng-repeat="item in promotions | filter:searchText">
                 
                     <a ng-href="#/promotionDiscountAdd/{{item.id}}" class="list-group-item" ng-model="item.promotionName">
-                        <i class="fa fa-suitcase"></i> {{item.promotionName}}
+                        <i class="fa fa-suitcase"></i> {{item.promotionName}} 
+                        | Effective Date : {{item.promotionDateStart | date:'dd-MM-yyyy'}}  To : {{item.promotionDateFinish | date:'dd-MM-yyyy'}}
                
                     
                         <i class="fa  fa-trash fa-1x"  ng-href="#/promotionDiscount" class="list-group-item" ng-click="deletePromotion(item.id)" onclick="return false;" style="float: right;color:red" ></i>
