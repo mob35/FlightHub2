@@ -244,6 +244,12 @@
                  controllerAs: 'calculateCtrl'
 
              })
+             .when('/insentive', {
+                 templateUrl: 'views/insentive.html',
+                 controller: 'calculateCtrl',
+                 controllerAs: 'calculateCtrl'
+
+             })
              .when('/report', {
                  templateUrl: 'views/report.html',
                  controller: 'reportCtrl',
