@@ -8,7 +8,7 @@
  * Controller of the inflightHubApp
  */
 angular.module('inflightHubApp')
-    .controller('reportCtrl', function($scope, amountService,flightService, $filter, $routeParams) {
+    .controller('reportCtrl', function($scope, amountService, flightService, includedService, $filter, $routeParams) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -17,18 +17,18 @@ angular.module('inflightHubApp')
         $scope.amounts = [];
         $scope.isEdit = $routeParams.amountID ? true : false;
         $scope.newAmount = {};
-        $scope.init = function() {
+        $scope.initAmount = function() {
             $scope.amounts = amountService.getAmountList();
         }
 
-        $scope.newFn = function() {
+        $scope.newFnAmount = function() {
             $scope.newAmount = {};
         };
 
         $scope.addAmount = function() {
             $scope.newAmount.id = guid();
             $scope.amounts.push($scope.newAmount);
-            $scope.newFn();
+            $scope.newFnAmount();
         };
 
         $scope.deleteAmount = function(id) {
@@ -36,7 +36,7 @@ angular.module('inflightHubApp')
         };
 
 
-        $scope.setVal = function() {
+        $scope.setValAmount = function() {
             // alert('');
             // var result = $filter("filter")($scope.carts, { id: $routeParams.cardID });
             var result = amountService.getAmount($scope.amounts, $routeParams.amountID);
@@ -47,15 +47,15 @@ angular.module('inflightHubApp')
 
         };
 
-        $scope.editFn = function() {
+        $scope.editFnAmount = function() {
             //
         };
-        $scope.init();
+        $scope.initAmount();
 
         if ($routeParams.amountID) {
-            $scope.setVal();
+            $scope.setValAmount();
         } else {
-            $scope.newFn();
+            $scope.newFnAmount();
         }
 
 
@@ -68,18 +68,18 @@ angular.module('inflightHubApp')
         $scope.flights = [];
         $scope.isEdit = $routeParams.flightID ? true : false;
         $scope.newFlight = {};
-        $scope.init = function() {
+        $scope.initFlight = function() {
             $scope.flights = flightService.getFlightList();
         }
 
-        $scope.newFn = function() {
+        $scope.newFnFlight = function() {
             $scope.newFlight = {};
         };
 
         $scope.addFlight = function() {
             $scope.newFlight.id = guid();
             $scope.flights.push($scope.newFlight);
-            $scope.newFn();
+            $scope.newFnFlight();
         };
 
         $scope.deleteFlight = function(id) {
@@ -87,7 +87,7 @@ angular.module('inflightHubApp')
         };
 
 
-        $scope.setVal = function() {
+        $scope.setValFlight = function() {
             // alert('');
             // var result = $filter("filter")($scope.carts, { id: $routeParams.cardID });
             var result = flightService.getFlight($scope.flights, $routeParams.flightID);
@@ -98,17 +98,59 @@ angular.module('inflightHubApp')
 
         };
 
-        $scope.editFn = function() {
+        $scope.editFnFlight = function() {
             //
         };
-        $scope.init();
+        $scope.initFlight();
 
-        if ($routeParams.amountID) {
-            $scope.setVal();
+        if ($routeParams.flightID) {
+            $scope.setValFlight();
         } else {
-            $scope.newFn();
+            $scope.newFnFlight();
+        }
+//////////////////////////////////
+        $scope.includes = [];
+        $scope.isEdit = $routeParams.includeID ? true : false;
+        $scope.newInclude = {};
+        $scope.initInclunde = function() {
+            $scope.includes = includedService.getInclundeList();
         }
 
+        $scope.newFnInclude = function() {
+            $scope.newInclude  = {};
+        };
 
+        $scope.addInclunde = function() {
+            $scope.newInclude .id = guid();
+            $scope.includes.push($scope.newInclude );
+            $scope.newFnInclude();
+        };
+
+        $scope.deleteInclunde = function(id) {
+            includedService.deleteInclunde(id);
+        };
+
+
+        $scope.setValInclude = function() {
+            // alert('');
+            // var result = $filter("filter")($scope.carts, { id: $routeParams.cardID });
+            var result = includedService.getInclunde($scope.includes, $routeParams.includeID);
+            console.log(result);
+            if (result) {
+                $scope.newInclude  = result;
+            }
+
+        };
+
+        $scope.editFnInclude = function() {
+            //
+        };
+        $scope.initInclunde();
+
+        if ($routeParams.includeID) {
+            $scope.setValInclude();
+        } else {
+            $scope.newFnInclude();
+        }
 
     });
