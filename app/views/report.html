@@ -129,5 +129,61 @@
                 </div>
             </div>
         </div>
+        <!-- Daily Summary Sales Report By Qty (included redeem and free item) -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default" ng-show="report == 'flight'">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-fw fa-file-text"></i> Daily Summary Sales Report By Qty (included redeem and free item)</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-hover ">
+                                <thead>
+                                    <tr>
+                                        <th class="flightHeader text-center breadcrumb span2">Date</th>
+                                        <th class="flightHeader text-center breadcrumb">Flight</th>
+                                        <th class="flightHeader text-center breadcrumb">Cart</th>
+                                        <th class="flightHeader text-center breadcrumb">Product</th>
+                                        <th class="flightHeader text-right breadcrumb">Price</th>
+                                        <th class="flightHeader text-right breadcrumb">Price Free</th>
+                                        <th class="flightHeader text-right breadcrumb">Price Offer</th>
+                                        <th class="flightHeader text-right breadcrumb">total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="item in flights">
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliDate" style="border-style: none; text-align: left;width:80px;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliFlight" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliCart" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliProd" style="border-style: none; text-align: left;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliTax" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountRow ">
+                                            <input type="text" ng-model="item.fliDis" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountColRate">
+                                            <input type="text" ng-model="item.fliTol" style="border-style: none; text-align: right;">
+                                        </td>
+                                        <td class="amountColRate">
+                                            <input type="text" ng-model="item.fliTol" style="border-style: none; text-align: right;">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
