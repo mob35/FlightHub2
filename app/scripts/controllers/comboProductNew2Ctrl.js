@@ -273,6 +273,7 @@ $scope.comboID = $routeParams.comboID;
             $scope.newCombo.floor[0].comboProd = $scope.droppedObjectsA1;
             $scope.combos.push($scope.newCombo);
             $scope.newFn();
+             $scope.droppedObjectsA1 = [];
             comboProductNew2service.clearTemp();
         };
         $scope.clearData = function() {
