@@ -40,60 +40,60 @@ angular.module('inflightHubApp')
             img: "images/upload/c3.png"
         }, {
             id: 10,
-            cate: "Drink",
-            name: "Water",
+            cate: "Crew",
+            name: "Nirut",
             price: 20,
             stock: 70,
             qty: 0,
             img: "images/upload/male.png"
         }, {
             id: 11,
-            cate: "Drink",
-            name: "Pepsi",
+            cate: "Crew",
+            name: "Somchai",
             price: 50,
             stock: 88,
             qty: 0,
-            img: "images/drink/2-Pepsi.jpg"
+            img: "images/upload/male.png"
         }, {
             id: 12,
-            cate: "Drink",
-            name: "Cocacola",
+            cate: "Crew",
+            name: "Aekkachai",
             price: 50,
             stock: 16,
             qty: 0,
-            img: "images/drink/3-Cocacola.jpg"
+            img: "images/upload/male.png"
         }, {
             id: 13,
-            cate: "Drink",
-            name: "Green Fanta",
+            cate: "Crew",
+            name: "Lampi",
             price: 30,
             stock: 35,
             qty: 0,
-            img: "images/drink/4-GreenFanta.jpg"
+            img: "images/upload/female.png"
         }, {
             id: 14,
-            cate: "Drink",
-            name: "Red Fanta",
+            cate: "Crew",
+            name: "Wanna",
             price: 30,
             stock: 65,
             qty: 0,
-            img: "images/drink/5-RedFanta.jpg"
+            img: "images/upload/female.png"
         }, {
             id: 15,
-            cate: "Drink",
-            name: "Orange Fanta",
+            cate: "Crew",
+            name: "Orathai",
             price: 30,
             stock: 37,
             qty: 0,
-            img: "images/drink/6-OrangeFanta.jpg"
+            img: "images/upload/female.png"
         }, {
             id: 16,
-            cate: "Drink",
-            name: "Sprite",
+            cate: "Crew",
+            name: "Seesamon",
             price: 30,
             stock: 42,
             qty: 0,
-            img: "images/drink/7-sprite.jpg"
+            img: "images/upload/female.png"
         }];
 
         ////////////////////////////////////////////////////////////////////////////////////
@@ -412,7 +412,7 @@ angular.module('inflightHubApp')
         }
 
         $scope.cart = $filter("filter")($scope.productPro, { cate: "Cart" });
-        $scope.drink = $filter("filter")($scope.productPro, { cate: "Drink" });
+        $scope.crew = $filter("filter")($scope.productPro, { cate: "Crew" });
         
 
         $scope.productType = "Cart";
