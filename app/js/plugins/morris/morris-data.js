@@ -7,58 +7,58 @@ $(function() {
         element: 'morris-area-chart',
         data: [{
             period: '2014-03',
-            AK001: 2666,
-            QZ345: null,
-            D7: 2647
+            Food: 2666,
+            Drink: null,
+            Combo: 2647
         }, {
             period: '2014-06',
-            AK001: 2778,
-            QZ345: 2294,
-            D7: 2441
+            Food: 2778,
+            Drink: 2294,
+            Combo: 2441
         }, {
             period: '2014-09',
-            AK001: 4912,
-            QZ345: 1969,
-            D7: 2501
+            Food: 4912,
+            Drink: 1969,
+            Combo: 2501
         }, {
             period: '2014-12',
-            AK001: 3767,
-            QZ345: 3597,
-            D7: 5689
+            Food: 3767,
+            Drink: 3597,
+            Combo: 5689
         }, {
             period: '2015-03',
-            AK001: 6810,
-            QZ345: 1914,
-            D7: 2293
+            Food: 6810,
+            Drink: 1914,
+            Combo: 2293
         }, {
             period: '2015-06',
-            AK001: 5670,
-            QZ345: 4293,
-            D7: 1881
+            Food: 5670,
+            Drink: 4293,
+            Combo: 1881
         }, {
             period: '2015-09',
-            AK001: 4820,
-            QZ345: 3795,
-            D7: 1588
+            Food: 4820,
+            Drink: 3795,
+            Combo: 1588
         }, {
             period: '2015-12',
-            AK001: 15073,
-            QZ345: 5967,
-            D7: 5175
+            Food: 15073,
+            Drink: 5967,
+            Combo: 5175
         }, {
             period: '2016-03',
-            AK001: 10687,
-            QZ345: 4460,
-            D7: 2028
+            Food: 10687,
+            Drink: 4460,
+            Combo: 2028
         }, {
             period: '2016-06',
-            AK001: 8432,
-            QZ345: 5713,
-            D7: 1791
+            Food: 8432,
+            Drink: 5713,
+            Combo: 1791
         }],
         xkey: 'period',
-        ykeys: ['AK001', 'QZ345', 'D7'],
-        labels: ['AK001', 'QZ345', 'D7'],
+        ykeys: ['Food', 'Drink', 'Combo'],
+        labels: ['Food', 'Drink', 'Combo'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
@@ -68,13 +68,13 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Average Sales",
+            label: "Malaysia",
             value: 10
         }, {
-            label: "Point of Sales",
+            label: "Japan",
             value: 50
         }, {
-            label: "Setup From Hub",
+            label: "India",
             value: 40
         }],
         resize: true
