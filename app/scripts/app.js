@@ -46,8 +46,8 @@
              })
              .when('/home', {
                  templateUrl: 'views/home.html',
-                 controller: 'setupCartCtrl',
-                 controllerAs: 'setupCart'
+                 controller: 'homeCtrl',
+                 controllerAs: 'homeCtrl'
 
              })
              .when('/setupCart', {
