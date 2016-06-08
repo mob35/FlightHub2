@@ -19,14 +19,14 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <label class="panel-title"><i class="fa fa-plane"></i> Upload Cart</label> 
-        <span class="panel-title" style="float: right;">Add Upload <a href="#/uploadCartAdd"> <i class="fa fa-plus-circle" style="color:#088A08;"></i></a></span>
+        <span class="panel-title" style="float: right;">Add Upload <a href="#/uploadCartNew"> <i class="fa fa-plus-circle" style="color:#088A08;"></i></a></span>
     </div>
 
     <div class="panel-body">
         <div class="list-group">
             <div ng-repeat="item in uploads | filter:searchText">
                 
-                    <a ng-href="#/uploadCartAdd/{{item.id}}" class="list-group-item" ng-model="item.flightName">
+                    <a ng-href="#/uploadCartNew/{{item.id}}" class="list-group-item" ng-model="item.flightName">
                         <i class="fa fa-plane"> </i> <span style="margin-left: 20px;">Flight No. {{item.flightName}} </span>
                         <br>
                         <span style="margin-left: 35px;"> Detail: {{item.optionsRadiosInline}} - Cart ({{item.cart.length}})

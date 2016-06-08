@@ -240,8 +240,8 @@
              })
              .when('/uploadCart', {
                  templateUrl: 'views/uploadCart.html',
-                 controller: 'uploadCartCtrl',
-                 controllerAs: 'uploadCart'
+                 controller: 'uploadCartNewCtrl',
+                 controllerAs: 'uploadCartNew'
 
              })
              .when('/uploadCartNew', {
@@ -250,6 +250,11 @@
                  controllerAs: 'uploadCartNew'
 
              })
+             .when('/uploadCartNew/:uploadID', {
+                 templateUrl: 'views/uploadCartNew.html',
+                 controller: 'uploadCartNewCtrl',
+                 controllerAs: 'uploadCartNew'
+                 })
              .when('/calculate', {
                  templateUrl: 'views/calculate.html',
                  controller: 'calculateCtrl',

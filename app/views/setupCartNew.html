@@ -65,7 +65,7 @@
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberDrink>0?(item.runNumberDrink=item.runNumberDrink-1):item.runNumberDrink=item.runNumberDrink" style="padding-top:40px;"></i>
             </div>
             <div class="col-md-2" ng-repeat="obj in drink | filter:searchText | limitTo:item.limitNumberDrink:item.runNumberDrink">
-                <label>{{obj.name}}</label>
+                <label style="height:34px;">{{obj.name}}</label>
                 <br>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
                 <br>
@@ -84,7 +84,7 @@
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberFast>0?(item.runNumberFast=item.runNumberFast-1):item.runNumberFast=item.runNumberFast" style="padding-top:40px;"></i>
             </div>
             <div class="col-md-2" ng-repeat="obj in fast | filter:searchText | limitTo:item.limitNumberFast:item.runNumberFast">
-                <label>{{obj.name}}</label>
+                <label style="height:34px;">{{obj.name}}</label>
                 <br>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
                 <br>
@@ -103,7 +103,7 @@
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberDessert>0?(item.runNumberDessert=item.runNumberDessert-1):item.runNumberDessert=item.runNumberDessert" style="padding-top:40px;"></i>
             </div>
             <div class="col-md-2" ng-repeat="obj in dessert | filter:searchText | limitTo:item.limitNumberDessert:item.runNumberDessert">
-                <label>{{obj.name}}</label>
+                <label style="height:34px;">{{obj.name}}</label>
                 <br>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
                 <br>
@@ -122,7 +122,7 @@
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberCombo>0?(item.runNumberCombo=item.runNumberCombo-1):item.runNumberCombo=item.runNumberCombo" style="padding-top:40px;"></i>
             </div>
             <div class="col-md-2" ng-repeat="obj in combo | filter:searchText | limitTo:item.limitNumberCombo:item.runNumberCombo">
-                <label>{{obj.name}}</label>
+                <label style="height:34px;">{{obj.name}}</label>
                 <br>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
                 <br>

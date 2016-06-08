@@ -4,14 +4,21 @@
                             Upload Cart New
                           
                         </h1>
-        <ol class="breadcrumb">
-            <li>
-                <i class="fa fa-cutlery"></i> <a href="index.html"> Upload Cart New</a>
-            </li>
-        </ol>
+        <div class="breadcrumb">
+            <a ng-href="#/uploadCart" ng-click="clearData()">Cancel</a>
+            <a ng-href="#/uploadCart">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addUpload()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
     </div>
 </div>
 <!-- ///////////////////////////////////////// -->
+<div class="form-group">
+    <label style="margin-left: 15px;">Flight Name</label>
+    <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+</div>
+<!-- ////////////////////////////////// -->
 <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#pro">
         <span class="sr-only">Toggle navigation</span>
@@ -56,7 +63,7 @@
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberCrew>0?(item.runNumberCrew=item.runNumberCrew-1):item.runNumberCrew=item.runNumberCrew" style="padding-top:40px;"></i>
             </div>
             <div class="col-md-2" ng-repeat="obj in crew | filter:searchText | limitTo:item.limitNumberCrew:item.runNumberCrew">
-                <label>{{obj.name}}</label>
+                <label style="height:34px;">{{obj.name}}</label>
                 <br>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
             </div>

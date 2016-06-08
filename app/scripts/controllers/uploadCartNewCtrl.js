@@ -8,7 +8,7 @@
  * Controller of the inflightHubApp
  */
 angular.module('inflightHubApp')
-    .controller('uploadCartNewCtrl', function($scope, productService, promotionDiscountService, $filter, $routeParams) {
+    .controller('uploadCartNewCtrl', function($scope, productService, uploadCartService, promotionDiscountService, $filter, $routeParams) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -472,5 +472,69 @@ angular.module('inflightHubApp')
         $scope.uploadChangecontentCart = function(type) {
             $scope.uploadCartcontentType = type;
         };
+
+        $scope.uploads = [];
+        $scope.isEdit = $routeParams.uploadID ? true : false;
+        $scope.newUpload = {};
+        $scope.init = function() {
+            $scope.uploads = uploadCartService.getUploadList();
+            // $scope.carts = setupCartService.getCartList();
+        }
+
+        $scope.newFn = function() {
+            $scope.newUpload = uploadCartService.getTemp();
+        };
+
+        $scope.addUpload = function() {
+            $scope.newUpload.id = guid();
+            $scope.uploads.push($scope.newUpload);
+
+            $scope.newFn();
+            uploadCartService.clearTemp();
+
+        };
+
+        $scope.clearData = function() {
+             uploadCartService.clearTemp();
+        };
+        $scope.removeItem = function(index) {
+                $scope.newUpload.cart.splice(index, 1);
+            },
+
+            $scope.setTemp = function() {
+                uploadCartService.setTemp($scope.newUpload);
+            };
+        $scope.addFloor = function() {
+            $scope.newUpload.cart.push({
+
+            });
+            console.log($scope.newUpload);
+        };
+
+        $scope.deleteUpload = function(id) {
+            uploadCartService.deleteUpload(id);
+        };
+
+        $scope.setVal = function() {
+            // alert(''); 
+            // var result = $filter("filter")($scope.carts, { id: $routeParams.cardID }); 
+            var result = uploadCartService.getUpload($scope.uploads, $routeParams.uploadID);
+            console.log(result);
+            if (result) {
+                $scope.newUpload = result;
+            }
+
+        };
+
+        $scope.editFn = function() {
+            // 
+        };
+        $scope.init();
+
+        if ($routeParams.uploadID) {
+            $scope.setVal();
+        } else {
+            $scope.newFn();
+        }
 
     });
