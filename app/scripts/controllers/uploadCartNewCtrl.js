@@ -105,21 +105,28 @@ angular.module('inflightHubApp')
         ];
 
         $scope.droppedObjects2 = [];
-        $scope.droppedObjectsA1 = [];
-        $scope.droppedObjectsB1 = [];
-        $scope.droppedObjectsA2 = [];
-        $scope.droppedObjectsB2 = [];
-        $scope.droppedObjectsA3 = [];
-        $scope.droppedObjectsB3 = [];
-        $scope.droppedObjectsA4 = [];
-        $scope.droppedObjectsB4 = [];
-        $scope.droppedObjectsA5 = [];
-        $scope.droppedObjectsB5 = [];
-        $scope.droppedObjectsA6 = [];
-        $scope.droppedObjectsB6 = [];
-        $scope.droppedObjectsA7 = [];
-        $scope.droppedObjectsB7 = [];
-         // TRASH ///////
+        // Inbound
+        $scope.droppedObjectsInboundSec1 = [];
+        $scope.droppedObjectsInboundSec2 = [];
+        $scope.droppedObjectsInboundSec3 = [];
+        $scope.droppedObjectsInboundSec4 = [];
+        // Outbound
+        $scope.droppedObjectsOutboundSec1 = [];
+        $scope.droppedObjectsOutboundSec2 = [];
+        $scope.droppedObjectsOutboundSec3 = [];
+        $scope.droppedObjectsOutboundSec4 = [];
+        // QuickTurnLeft
+        $scope.droppedObjectsQuickTurnLeftSec1 = [];
+        $scope.droppedObjectsQuickTurnLeftSec2 = [];
+        $scope.droppedObjectsQuickTurnLeftSec3 = [];
+        $scope.droppedObjectsQuickTurnLeftSec4 = [];
+        // QuickTurnRight
+        $scope.droppedObjectsQuickTurnRightSec1 = [];
+        $scope.droppedObjectsQuickTurnRightSec2 = [];
+        $scope.droppedObjectsQuickTurnRightSec3 = [];
+        $scope.droppedObjectsQuickTurnRightSec4 = [];
+
+        // TRASH ///////
         $scope.onDragSuccess2 = function(data, evt) {
             var index = $scope.droppedObjects2.indexOf(data);
             if (index > -1) {
@@ -134,273 +141,313 @@ angular.module('inflightHubApp')
                 }
                 qty1 = data.qty = 0;
             }
-            // A1 ///////
-        $scope.onDropCompleteA1 = function(data, evt) {
-            var index = $scope.droppedObjectsA1.indexOf(data);
+            // InboundSec1 ///////
+        $scope.onDropCompleteInboundSec1 = function(data, evt) {
+            var index = $scope.droppedObjectsInboundSec1.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA1.push(data);
+                $scope.droppedObjectsInboundSec1.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA1 = function(data, evt) {
-            console.log("A1", "$scope", "onDragSuccessA1", "", evt);
-            var index = $scope.droppedObjectsA1.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA1.splice(index, 1);
+        $scope.onDragSuccessInboundSec1 = function(data, evt) {
+                console.log("InboundSec1", "$scope", "onDragSuccessInboundSec1", "", evt);
+                var index = $scope.droppedObjectsInboundSec1.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsInboundSec1.splice(index, 1);
+                }
             }
-        }
-        // B1 ///////
-        $scope.onDropCompleteB1 = function(data, evt) {
-            var index = $scope.droppedObjectsB1.indexOf(data);
+            // InboundSec2 ///////
+        $scope.onDropCompleteInboundSec2 = function(data, evt) {
+            var index = $scope.droppedObjectsInboundSec2.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB1.push(data);
+                $scope.droppedObjectsInboundSec2.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB1 = function(data, evt) {
-            console.log("B1", "$scope", "onDragSuccessB1", "", evt);
-            var index = $scope.droppedObjectsB1.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsB1.splice(index, 1);
+        $scope.onDragSuccessInboundSec2 = function(data, evt) {
+                console.log("InboundSec2", "$scope", "onDragSuccessInboundSec2", "", evt);
+                var index = $scope.droppedObjectsInboundSec2.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsInboundSec2.splice(index, 1);
+                }
             }
-        }
-        // A2 ///////
-        $scope.onDropCompleteA2 = function(data, evt) {
-            var index = $scope.droppedObjectsA2.indexOf(data);
+            // InboundSec3 ///////
+        $scope.onDropCompleteInboundSec3 = function(data, evt) {
+            var index = $scope.droppedObjectsInboundSec3.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA2.push(data);
+                $scope.droppedObjectsInboundSec3.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA2 = function(data, evt) {
-            console.log("A2", "$scope", "onDragSuccessA2", "", evt);
-            var index = $scope.droppedObjectsA2.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA2.splice(index, 1);
+        $scope.onDragSuccessInboundSec3 = function(data, evt) {
+                console.log("InboundSec3", "$scope", "onDragSuccessInboundSec3", "", evt);
+                var index = $scope.droppedObjectsInboundSec3.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsInboundSec3.splice(index, 1);
+                }
             }
-        }
-        // B2 ///////
-        $scope.onDropCompleteB2 = function(data, evt) {
-            var index = $scope.droppedObjectsB2.indexOf(data);
+            // InboundSec4 ///////
+        $scope.onDropCompleteInboundSec4 = function(data, evt) {
+            var index = $scope.droppedObjectsInboundSec4.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB2.push(data);
+                $scope.droppedObjectsInboundSec4.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB2 = function(data, evt) {
-            console.log("B2", "$scope", "onDragSuccessB2", "", evt);
-            var index = $scope.droppedObjectsB2.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsB2.splice(index, 1);
+        $scope.onDragSuccessInboundSec4 = function(data, evt) {
+                console.log("InboundSec4", "$scope", "onDragSuccessInboundSec4", "", evt);
+                var index = $scope.droppedObjectsInboundSec4.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsInboundSec4.splice(index, 1);
+                }
             }
-        }
-        // A3 ///////
-        $scope.onDropCompleteA3 = function(data, evt) {
-            var index = $scope.droppedObjectsA3.indexOf(data);
+            // OutboundSec1 ///////
+        $scope.onDropCompleteOutboundSec1 = function(data, evt) {
+            var index = $scope.droppedObjectsOutboundSec1.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA3.push(data);
+                $scope.droppedObjectsOutboundSec1.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA3 = function(data, evt) {
-            console.log("A3", "$scope", "onDragSuccessA3", "", evt);
-            var index = $scope.droppedObjectsA3.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA3.splice(index, 1);
+        $scope.onDragSuccessOutboundSec1 = function(data, evt) {
+                console.log("OutboundSec1", "$scope", "onDragSuccessOutboundSec1", "", evt);
+                var index = $scope.droppedObjectsOutboundSec1.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsOutboundSec1.splice(index, 1);
+                }
             }
-        }
-        // B3 ///////
-        $scope.onDropCompleteB3 = function(data, evt) {
-            var index = $scope.droppedObjectsB3.indexOf(data);
+            // OutboundSec2 ///////
+        $scope.onDropCompleteOutboundSec2 = function(data, evt) {
+            var index = $scope.droppedObjectsOutboundSec2.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB3.push(data);
+                $scope.droppedObjectsOutboundSec2.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB3 = function(data, evt) {
-            console.log("B3", "$scope", "onDragSuccessB3", "", evt);
-            var index = $scope.droppedObjectsB3.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsB3.splice(index, 1);
+        $scope.onDragSuccessOutboundSec2 = function(data, evt) {
+                console.log("OutboundSec2", "$scope", "onDragSuccessOutboundSec2", "", evt);
+                var index = $scope.droppedObjectsOutboundSec2.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsOutboundSec2.splice(index, 1);
+                }
             }
-        }
-        // A4 ///////
-        $scope.onDropCompleteA4 = function(data, evt) {
-            var index = $scope.droppedObjectsA4.indexOf(data);
+            // OutboundSec3 ///////
+        $scope.onDropCompleteOutboundSec3 = function(data, evt) {
+            var index = $scope.droppedObjectsOutboundSec3.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA4.push(data);
+                $scope.droppedObjectsOutboundSec3.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA4 = function(data, evt) {
-            console.log("A4", "$scope", "onDragSuccessA4", "", evt);
-            var index = $scope.droppedObjectsA4.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA4.splice(index, 1);
+        $scope.onDragSuccessOutboundSec3 = function(data, evt) {
+                console.log("OutboundSec3", "$scope", "onDragSuccessOutboundSec3", "", evt);
+                var index = $scope.droppedObjectsOutboundSec3.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsOutboundSec3.splice(index, 1);
+                }
             }
-        }
-        // B4 ///////
-        $scope.onDropCompleteB4 = function(data, evt) {
-            var index = $scope.droppedObjectsB4.indexOf(data);
+            // OutboundSec4 ///////
+        $scope.onDropCompleteOutboundSec4 = function(data, evt) {
+            var index = $scope.droppedObjectsOutboundSec4.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB4.push(data);
+                $scope.droppedObjectsOutboundSec4.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB4 = function(data, evt) {
-            console.log("B4", "$scope", "onDragSuccessB4", "", evt);
-            var index = $scope.droppedObjectsB4.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsB4.splice(index, 1);
+        $scope.onDragSuccessOutboundSec4 = function(data, evt) {
+                console.log("OutboundSec4", "$scope", "onDragSuccessOutboundSec4", "", evt);
+                var index = $scope.droppedObjectsOutboundSec4.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsOutboundSec4.splice(index, 1);
+                }
             }
-        }
-        // A5 ///////
-        $scope.onDropCompleteA5 = function(data, evt) {
-            var index = $scope.droppedObjectsA5.indexOf(data);
+            // QuickTurnLeftSec1 ///////
+        $scope.onDropCompleteQuickTurnLeftSec1 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnLeftSec1.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA5.push(data);
+                $scope.droppedObjectsQuickTurnLeftSec1.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA5 = function(data, evt) {
-            console.log("A5", "$scope", "onDragSuccessA5", "", evt);
-            var index = $scope.droppedObjectsA5.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA5.splice(index, 1);
+        $scope.onDragSuccessQuickTurnLeftSec1 = function(data, evt) {
+                console.log("QuickTurnLeftSec1", "$scope", "onDragSuccessQuickTurnLeftSec1", "", evt);
+                var index = $scope.droppedObjectsQuickTurnLeftSec1.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnLeftSec1.splice(index, 1);
+                }
             }
-        }
-        // B5 ///////
-        $scope.onDropCompleteB5 = function(data, evt) {
-            var index = $scope.droppedObjectsB5.indexOf(data);
+            // QuickTurnLeftSec2 ///////
+        $scope.onDropCompleteQuickTurnLeftSec2 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnLeftSec2.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB5.push(data);
+                $scope.droppedObjectsQuickTurnLeftSec2.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB5 = function(data, evt) {
-            console.log("B5", "$scope", "onDragSuccessB5", "", evt);
-            var index = $scope.droppedObjectsB5.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsB5.splice(index, 1);
+        $scope.onDragSuccessQuickTurnLeftSec2 = function(data, evt) {
+                console.log("QuickTurnLeftSec2", "$scope", "onDragSuccessQuickTurnLeftSec2", "", evt);
+                var index = $scope.droppedObjectsQuickTurnLeftSec2.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnLeftSec2.splice(index, 1);
+                }
             }
-        }
-        // A6 ///////
-        $scope.onDropCompleteA6 = function(data, evt) {
-            var index = $scope.droppedObjectsA6.indexOf(data);
+            // QuickTurnLeftSec3 ///////
+        $scope.onDropCompleteQuickTurnLeftSec3 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnLeftSec3.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA6.push(data);
+                $scope.droppedObjectsQuickTurnLeftSec3.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA6 = function(data, evt) {
-            console.log("A6", "$scope", "onDragSuccessA6", "", evt);
-            var index = $scope.droppedObjectsA6.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA6.splice(index, 1);
+        $scope.onDragSuccessQuickTurnLeftSec3 = function(data, evt) {
+                console.log("QuickTurnLeftSec3", "$scope", "onDragSuccessQuickTurnLeftSec3", "", evt);
+                var index = $scope.droppedObjectsQuickTurnLeftSec3.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnLeftSec3.splice(index, 1);
+                }
             }
-        }
-        // B6 ///////
-        $scope.onDropCompleteB6 = function(data, evt) {
-            var index = $scope.droppedObjectsB6.indexOf(data);
+            // QuickTurnLeftSec4 ///////
+        $scope.onDropCompleteQuickTurnLeftSec4 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnLeftSec4.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB6.push(data);
+                $scope.droppedObjectsQuickTurnLeftSec4.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB6 = function(data, evt) {
-            console.log("B6", "$scope", "onDragSuccessB6", "", evt);
-            var index = $scope.droppedObjectsB6.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsB6.splice(index, 1);
+        $scope.onDragSuccessQuickTurnLeftSec4 = function(data, evt) {
+                console.log("QuickTurnLeftSec4", "$scope", "onDragSuccessQuickTurnLeftSec4", "", evt);
+                var index = $scope.droppedObjectsQuickTurnLeftSec4.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnLeftSec4.splice(index, 1);
+                }
             }
-        }
-        // A7 ///////
-        $scope.onDropCompleteA7 = function(data, evt) {
-            var index = $scope.droppedObjectsA7.indexOf(data);
+            // QuickTurnRightSec1 ///////
+        $scope.onDropCompleteQuickTurnRightSec1 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnRightSec1.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsA7.push(data);
+                $scope.droppedObjectsQuickTurnRightSec1.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessA7 = function(data, evt) {
-            console.log("A7", "$scope", "onDragSuccessA7", "", evt);
-            var index = $scope.droppedObjectsA7.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA7.splice(index, 1);
+        $scope.onDragSuccessQuickTurnRightSec1 = function(data, evt) {
+                console.log("QuickTurnRightSec1", "$scope", "onDragSuccessQuickTurnRightSec1", "", evt);
+                var index = $scope.droppedObjectsQuickTurnRightSec1.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnRightSec1.splice(index, 1);
+                }
             }
-        }
-        // B7 ///////
-        $scope.onDropCompleteB7 = function(data, evt) {
-            var index = $scope.droppedObjectsB7.indexOf(data);
+            // QuickTurnRightSec2 ///////
+        $scope.onDropCompleteQuickTurnRightSec2 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnRightSec2.indexOf(data);
             var qty1 = data.qty;
             console.log(data);
             if (index == -1) {
-                $scope.droppedObjectsB7.push(data);
+                $scope.droppedObjectsQuickTurnRightSec2.push(data);
             }
             qty1 = data.qty++;
             console.log(data.qty);
         }
-        $scope.onDragSuccessB7 = function(data, evt) {
-            console.log("B7", "$scope", "onDragSuccessB7", "", evt);
-            var index = $scope.droppedObjectsB7.indexOf(data);
+        $scope.onDragSuccessQuickTurnRightSec2 = function(data, evt) {
+                console.log("QuickTurnRightSec2", "$scope", "onDragSuccessQuickTurnRightSec2", "", evt);
+                var index = $scope.droppedObjectsQuickTurnRightSec2.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnRightSec2.splice(index, 1);
+                }
+            }
+            // QuickTurnRightSec3 ///////
+        $scope.onDropCompleteQuickTurnRightSec3 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnRightSec3.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsQuickTurnRightSec3.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessQuickTurnRightSec3 = function(data, evt) {
+                console.log("QuickTurnRightSec3", "$scope", "onDragSuccessQuickTurnRightSec3", "", evt);
+                var index = $scope.droppedObjectsQuickTurnRightSec3.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsQuickTurnRightSec3.splice(index, 1);
+                }
+            }
+            // QuickTurnRightSec4 ///////
+        $scope.onDropCompleteQuickTurnRightSec4 = function(data, evt) {
+            var index = $scope.droppedObjectsQuickTurnRightSec4.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsQuickTurnRightSec4.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessQuickTurnRightSec4 = function(data, evt) {
+            console.log("QuickTurnRightSec4", "$scope", "onDragSuccessQuickTurnRightSec4", "", evt);
+            var index = $scope.droppedObjectsQuickTurnRightSec4.indexOf(data);
             var qty1 = data.qty;
             if (index > -1) {
-                $scope.droppedObjectsB7.splice(index, 1);
+                $scope.droppedObjectsQuickTurnRightSec4.splice(index, 1);
             }
         }
-            //  ///////
+
+
+        //  ///////
         var inArray = function(array, obj) {
             var index = array.indexOf(obj);
         }
@@ -413,11 +460,17 @@ angular.module('inflightHubApp')
 
         $scope.cart = $filter("filter")($scope.productPro, { cate: "Cart" });
         $scope.crew = $filter("filter")($scope.productPro, { cate: "Crew" });
-        
+
 
         $scope.productType = "Cart";
         $scope.changeType = function(type) {
             $scope.productType = type;
+        };
+
+        $scope.uploadContent = "uploadCartInbound";
+        $scope.uploadCartcontentType = "uploadCartInbound";
+        $scope.uploadChangecontentCart = function(type) {
+            $scope.uploadCartcontentType = type;
         };
 
     });

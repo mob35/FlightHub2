@@ -279,6 +279,14 @@ angular.module('inflightHubApp')
         $scope.droppedObjectsB6 = [];
         $scope.droppedObjectsA7 = [];
         $scope.droppedObjectsB7 = [];
+        $scope.droppedObjectsTemA1 = [];
+        $scope.droppedObjectsTemA2 = [];
+        $scope.droppedObjectsTemA3 = [];
+        $scope.droppedObjectsTemA4 = [];
+        $scope.droppedObjectsTemA5 = [];
+        $scope.droppedObjectsTemA6 = [];
+        $scope.droppedObjectsTemA7 = [];
+
          // TRASH ///////
         $scope.onDragSuccess2 = function(data, evt) {
             var index = $scope.droppedObjects2.indexOf(data);
@@ -561,6 +569,143 @@ angular.module('inflightHubApp')
             }
         }
             //  ///////
+
+
+            /////////////////////////////
+        $scope.onDropCompleteTemA1 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA1.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA1.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA1 = function(data, evt) {
+            console.log("TemA1", "$scope", "onDragSuccessTemA1", "", evt);
+            var index = $scope.droppedObjectsTemA1.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA1.splice(index, 1);
+            }
+        }
+        /////////////////////////////
+        $scope.onDropCompleteTemA2 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA2.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA2.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA2 = function(data, evt) {
+            console.log("TemA2", "$scope", "onDragSuccessTemA2", "", evt);
+            var index = $scope.droppedObjectsTemA2.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA2.splice(index, 1);
+            }
+        }
+        ///////////////////////////////////////
+        $scope.onDropCompleteTemA3 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA3.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA3.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA3 = function(data, evt) {
+            console.log("TemA3", "$scope", "onDragSuccessTemA3", "", evt);
+            var index = $scope.droppedObjectsTemA3.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA3.splice(index, 1);
+            }
+        }
+        ///////////////////////////////////////
+        $scope.onDropCompleteTemA4 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA4.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA4.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA4 = function(data, evt) {
+            console.log("TemA4", "$scope", "onDragSuccessTemA4", "", evt);
+            var index = $scope.droppedObjectsTemA4.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA4.splice(index, 1);
+            }
+        }
+        ///////////////////////////////////////
+        $scope.onDropCompleteTemA5 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA5.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA5.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA5 = function(data, evt) {
+            console.log("TemA5", "$scope", "onDragSuccessTemA5", "", evt);
+            var index = $scope.droppedObjectsTemA5.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA5.splice(index, 1);
+            }
+        }
+        ///////////////////////////////////////
+        $scope.onDropCompleteTemA6 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA6.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA6.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA6 = function(data, evt) {
+            console.log("TemA6", "$scope", "onDragSuccessTemA6", "", evt);
+            var index = $scope.droppedObjectsTemA6.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA6.splice(index, 1);
+            }
+        }
+        ///////////////////////////////////////
+        $scope.onDropCompleteTemA7 = function(data, evt) {
+            var index = $scope.droppedObjectsTemA7.indexOf(data);
+            var qty1 = data.qty;
+            console.log(data);
+            if (index == -1) {
+                $scope.droppedObjectsTemA7.push(data);
+            }
+            qty1 = data.qty++;
+            console.log(data.qty);
+        }
+        $scope.onDragSuccessTemA7 = function(data, evt) {
+            console.log("TemA7", "$scope", "onDragSuccessTemA7", "", evt);
+            var index = $scope.droppedObjectsTemA7.indexOf(data);
+            var qty1 = data.qty;
+            if (index > -1) {
+                $scope.droppedObjectsTemA7.splice(index, 1);
+            }
+        }
+        ///////////////////////////////////////
+            ///////////////////////////////
         var inArray = function(array, obj) {
             var index = array.indexOf(obj);
         }
@@ -569,6 +714,10 @@ angular.module('inflightHubApp')
         $scope.cartType = '';
         $scope.changeCart = function(type) {
             $scope.cartType = type;
+        }
+        $scope.cartTemType = '';
+        $scope.changeTemCart = function(type) {
+            $scope.cartTemType = type;
         }
 
         $scope.food = $filter("filter")($scope.productPro, { cate: "Food" });
@@ -580,6 +729,12 @@ angular.module('inflightHubApp')
         $scope.productType = "Food";
         $scope.changeType = function(type) {
             $scope.productType = type;
+        };
+// ////////////////////////////////////////////////
+        $scope.content = "cartAB";
+        $scope.cartcontentType = "cartAB";
+        $scope.changecontentCart = function(type) {
+            $scope.cartcontentType = type;
         };
 
     });
