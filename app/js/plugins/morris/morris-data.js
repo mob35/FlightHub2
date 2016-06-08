@@ -6,59 +6,59 @@ $(function() {
     Morris.Area({
         element: 'morris-area-chart',
         data: [{
-            period: '2010 Q1',
-            iphone: 2666,
-            ipad: null,
-            itouch: 2647
+            period: '2014-03',
+            AK001: 2666,
+            QZ345: null,
+            D7: 2647
         }, {
-            period: '2010 Q2',
-            iphone: 2778,
-            ipad: 2294,
-            itouch: 2441
+            period: '2014-06',
+            AK001: 2778,
+            QZ345: 2294,
+            D7: 2441
         }, {
-            period: '2010 Q3',
-            iphone: 4912,
-            ipad: 1969,
-            itouch: 2501
+            period: '2014-09',
+            AK001: 4912,
+            QZ345: 1969,
+            D7: 2501
         }, {
-            period: '2010 Q4',
-            iphone: 3767,
-            ipad: 3597,
-            itouch: 5689
+            period: '2014-12',
+            AK001: 3767,
+            QZ345: 3597,
+            D7: 5689
         }, {
-            period: '2011 Q1',
-            iphone: 6810,
-            ipad: 1914,
-            itouch: 2293
+            period: '2015-03',
+            AK001: 6810,
+            QZ345: 1914,
+            D7: 2293
         }, {
-            period: '2011 Q2',
-            iphone: 5670,
-            ipad: 4293,
-            itouch: 1881
+            period: '2015-06',
+            AK001: 5670,
+            QZ345: 4293,
+            D7: 1881
         }, {
-            period: '2011 Q3',
-            iphone: 4820,
-            ipad: 3795,
-            itouch: 1588
+            period: '2015-09',
+            AK001: 4820,
+            QZ345: 3795,
+            D7: 1588
         }, {
-            period: '2011 Q4',
-            iphone: 15073,
-            ipad: 5967,
-            itouch: 5175
+            period: '2015-12',
+            AK001: 15073,
+            QZ345: 5967,
+            D7: 5175
         }, {
-            period: '2012 Q1',
-            iphone: 10687,
-            ipad: 4460,
-            itouch: 2028
+            period: '2016-03',
+            AK001: 10687,
+            QZ345: 4460,
+            D7: 2028
         }, {
-            period: '2012 Q2',
-            iphone: 8432,
-            ipad: 5713,
-            itouch: 1791
+            period: '2016-06',
+            AK001: 8432,
+            QZ345: 5713,
+            D7: 1791
         }],
         xkey: 'period',
-        ykeys: ['iphone', 'ipad', 'itouch'],
-        labels: ['iPhone', 'iPad', 'iPod Touch'],
+        ykeys: ['AK001', 'QZ345', 'D7'],
+        labels: ['AK001', 'QZ345', 'D7'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
@@ -68,14 +68,14 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Download Sales",
-            value: 12
+            label: "Average Sales",
+            value: 10
         }, {
-            label: "In-Store Sales",
-            value: 30
+            label: "Point of Sales",
+            value: 50
         }, {
-            label: "Mail-Order Sales",
-            value: 20
+            label: "Setup From Hub",
+            value: 40
         }],
         resize: true
     });
