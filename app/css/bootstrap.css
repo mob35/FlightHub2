@@ -7107,3 +7107,11 @@ div#scroll {
     margin-left:-15px;
     overflow: hidden;
 }
+.closeLeft {
+float: left;
+margin-top:-10px;
+}
+.closeRight {
+float: right;
+margin-top:-10px;
+}
