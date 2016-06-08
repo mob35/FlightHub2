@@ -717,7 +717,7 @@ angular.module('inflightHubApp')
         }
         $scope.cartTemType = '';
         $scope.changeTemCart = function(type) {
-            $scope.cartTemType = type;
+            $scope.cartTemType = type ;
         }
 
         $scope.food = $filter("filter")($scope.productPro, { cate: "Food" });

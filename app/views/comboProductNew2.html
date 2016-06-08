@@ -147,15 +147,14 @@
                 <!-- <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span> -->
             
         </div>
-        <div class="panel panel-default" style="padding:15px;margin-top:-20px;">
+        <div class="form-group input-group" style="margin-top:-20px; margin-bottom: -1px;">
+            <input type="text" class="form-control" ng-model="searchPromoList">
+            <span class="input-group-btn"><button class="btn btn-default" type="button"><i class="fa fa-search"></i></button></span>
+        </div>
+        <div class="panel panel-default" style="padding:15px;">
             <div class="row">
-                <div class="col-md-1"></div>
-                <div class="col-md-1">
-                    <input type="hidden" ng-model="item.limitNumberFoo" ng-init="item.limitNumberFoo=2">
-                    <input type="hidden" ng-model="item.runNumberFoo" ng-init="item.runNumberFoo=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberFoo>0?(item.runNumberFoo=item.runNumberFoo-1):item.runNumberFoo=item.runNumberFoo" style="padding-top:40px;"></i>
-                </div>
-                <div class="col-md-4" ng-repeat="item in combos | filter:searchText  | limitTo:item.limitNumberFoo:item.runNumberFoo">
+                
+                <div class="col-md-4" ng-repeat="item in combos | filter:searchPromoList">
                     <div class="panel panel-default" style="padding:15px;" ng-repeat="itm in item.floor">
                         <div class="row">
                             <div class="col-md-12">
@@ -185,10 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-1">
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberFoo!=(floor.cartProd.length-item.limitNumberFoo)?(item.runNumberFoo=item.runNumberFoo+1):item.runNumberFoo=item.runNumberFoo" style="padding-top:40px;"></i>
-                </div>
-                <div class="col-md-1"></div>
+                
             </div>
         </div>
     </div>

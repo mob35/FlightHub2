@@ -705,14 +705,6 @@ angular.module("ngDraggable", [])
                         stock: 87,
                         qty: 1,
                         img: "images/drink/5-RedFanta.jpg"
-                    },{
-                        id: 14,
-                        cate: "Drink",
-                        name: "Red Fanta",
-                        price: 30,
-                        stock: 87,
-                        qty: 1,
-                        img: "images/drink/5-RedFanta.jpg"
                     }]
                 }]
 
