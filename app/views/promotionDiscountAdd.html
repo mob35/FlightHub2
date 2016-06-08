@@ -162,14 +162,20 @@
             </div>
         </div>
     </div>
+     <div class="breadcrumb">
+        <label> Promotion Image</label>
+    </div>
+    <div class="form-group" style="margin-top: 10px; margin-left: 10px;">
+    <input type="file" id="fileSelected"/>
+</div>
 </div>
 <!-- By Product -->
 <div class="form-group panel panel-default" ng-show="promotionType=='ByProduct'">
     <div class="breadcrumb">
         <label> Offer Buy</label>
     </div>
-    <div class="panel panel-default" ng-repeat="floor in newPromotion.floorOffer">
-        <div class="row">
+    <div class="panel panel-default" ng-repeat="floor in newPromotion.floorOffer" style="margin-top: -20px;">
+        <div class="row" >
             <div class="col-md-5">
                 &nbsp;&nbsp;&nbsp;
                 <i class="fa fa-minus-circle" ng-click="removeItem($index)" style="color:red;"></i> &nbsp;&nbsp;&nbsp;
@@ -198,6 +204,12 @@
             </div>
         </div>
     </div>
+    <div class="breadcrumb">
+        <label> Promotion Image</label>
+    </div>
+    <div class="form-group" style="margin-top: 10px; margin-left: 10px;">
+    <input type="file" id="fileSelected"/>
+</div>
 </div>
 <!-- By Payment -->
 <div class="form-group panel panel-default" ng-show="promotionType=='ByPayment'">
@@ -325,6 +337,12 @@
             </div>
         </div>
     </div>
+    <div class="breadcrumb">
+        <label> Promotion Image</label>
+    </div>
+    <div class="form-group" style="margin-top: 10px; margin-left: 10px;">
+    <input type="file" id="fileSelected"/>
+</div>
 </div>
 <div class="breadcrumb">
     <a ng-href="#/promotionDiscount" ng-click="clearData()">Cancel</a>
