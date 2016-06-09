@@ -164,6 +164,7 @@
         <div ng-show="cartType=='A1'" style="margin-top:-25px;">
         <label>A1 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one"  ng-drop="true" ng-drop-success="onDropCompleteA1($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A1')"></i>
                 <input type="hidden" ng-model="item.limitNumberA1" ng-init="item.limitNumberA1=3">
                 <input type="hidden" ng-model="item.runNumberA1" ng-init="item.runNumberA1=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA1>0?(item.runNumberA1=item.runNumberA1-1):item.runNumberA1=item.runNumberA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -242,6 +243,7 @@
         <div ng-show="cartType=='B1'" style="margin-top:-25px;">
         <label>B1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB1($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B1')"></i>
                 <input type="hidden" ng-model="item.limitNumberB1" ng-init="item.limitNumberB1=3">
                 <input type="hidden" ng-model="item.runNumberB1" ng-init="item.runNumberB1=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB1>0?(item.runNumberB1=item.runNumberB1-1):item.runNumberB1=item.runNumberB1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -259,6 +261,7 @@
         <div ng-show="cartType=='A2'" style="margin-top:-25px;">
         <label>A2 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA2($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A2')"></i>
                 <input type="hidden" ng-model="item.limitNumberA2" ng-init="item.limitNumberA2=3">
                 <input type="hidden" ng-model="item.runNumberA2" ng-init="item.runNumberA2=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA2>0?(item.runNumberA2=item.runNumberA2-1):item.runNumberA2=item.runNumberA2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -335,6 +338,7 @@
         <div ng-show="cartType=='B2'" style="margin-top:-25px;">
         <label>B2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB2($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B2')"></i>
                 <input type="hidden" ng-model="item.limitNumberB2" ng-init="item.limitNumberB2=3">
                 <input type="hidden" ng-model="item.runNumberB2" ng-init="item.runNumberB2=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB2>0?(item.runNumberB2=item.runNumberB2-1):item.runNumberB2=item.runNumberB2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -352,6 +356,7 @@
         <div ng-show="cartType=='A3'" style="margin-top:-25px;">
         <label>A3 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA3($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A3')"></i>
                 <input type="hidden" ng-model="item.limitNumberA3" ng-init="item.limitNumberA3=3">
                 <input type="hidden" ng-model="item.runNumberA3" ng-init="item.runNumberA3=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA3>0?(item.runNumberA3=item.runNumberA3-1):item.runNumberA3=item.runNumberA3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -428,6 +433,7 @@
         <div ng-show="cartType=='B3'" style="margin-top:-25px;">
         <label>B3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB3($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B3')"></i>
                 <input type="hidden" ng-model="item.limitNumberB3" ng-init="item.limitNumberB3=3">
                 <input type="hidden" ng-model="item.runNumberB3" ng-init="item.runNumberB3=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB3>0?(item.runNumberB3=item.runNumberB3-1):item.runNumberB3=item.runNumberB3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -445,6 +451,7 @@
         <div ng-show="cartType=='A4'" style="margin-top:-25px;">
         <label>A4 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA4($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A4')"></i>
                 <input type="hidden" ng-model="item.limitNumberA4" ng-init="item.limitNumberA4=3">
                 <input type="hidden" ng-model="item.runNumberA4" ng-init="item.runNumberA4=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA4>0?(item.runNumberA4=item.runNumberA4-1):item.runNumberA4=item.runNumberA4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -521,6 +528,7 @@
         <div ng-show="cartType=='B4'" style="margin-top:-25px;">
         <label>B4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB4($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B4')"></i>
                 <input type="hidden" ng-model="item.limitNumberB4" ng-init="item.limitNumberB4=3">
                 <input type="hidden" ng-model="item.runNumberB4" ng-init="item.runNumberB4=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB4>0?(item.runNumberB4=item.runNumberB4-1):item.runNumberB4=item.runNumberB4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -538,6 +546,7 @@
         <div ng-show="cartType=='A5'" style="margin-top:-25px;">
         <label>A5 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA5($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A5')"></i>
                 <input type="hidden" ng-model="item.limitNumberA5" ng-init="item.limitNumberA5=3">
                 <input type="hidden" ng-model="item.runNumberA5" ng-init="item.runNumberA5=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA5>0?(item.runNumberA5=item.runNumberA5-1):item.runNumberA5=item.runNumberA5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -614,6 +623,7 @@
         <div ng-show="cartType=='B5'" style="margin-top:-25px;">
         <label>B5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB5($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B5')"></i>
                 <input type="hidden" ng-model="item.limitNumberB5" ng-init="item.limitNumberB5=3">
                 <input type="hidden" ng-model="item.runNumberB5" ng-init="item.runNumberB5=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB5>0?(item.runNumberB5=item.runNumberB5-1):item.runNumberB5=item.runNumberB5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -631,6 +641,7 @@
         <div ng-show="cartType=='A6'" style="margin-top:-25px;">
         <label>A6 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA6($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A6')"></i>
                 <input type="hidden" ng-model="item.limitNumberA6" ng-init="item.limitNumberA6=3">
                 <input type="hidden" ng-model="item.runNumberA6" ng-init="item.runNumberA6=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA6>0?(item.runNumberA6=item.runNumberA6-1):item.runNumberA6=item.runNumberA6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -707,6 +718,7 @@
         <div ng-show="cartType=='B6'" style="margin-top:-25px;">
         <label>B6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB6($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B6')"></i>
                 <input type="hidden" ng-model="item.limitNumberB6" ng-init="item.limitNumberB6=3">
                 <input type="hidden" ng-model="item.runNumberB6" ng-init="item.runNumberB6=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB6>0?(item.runNumberB6=item.runNumberB6-1):item.runNumberB6=item.runNumberB6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -724,6 +736,7 @@
         <div ng-show="cartType=='A7'" style="margin-top:-25px;">
         <label>A7 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA7($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A7')"></i>
                 <input type="hidden" ng-model="item.limitNumberA7" ng-init="item.limitNumberA7=3">
                 <input type="hidden" ng-model="item.runNumberA7" ng-init="item.runNumberA7=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA7>0?(item.runNumberA7=item.runNumberA7-1):item.runNumberA7=item.runNumberA7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -799,7 +812,8 @@
         <div class="col-md-3">
         <div ng-show="cartType=='B7'" style="margin-top:-25px;">
         <label>B7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-            <div class="one" ng-drop="true" ng-drop-success="onDropCompleteB7($data,$event)">
+            <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB7($data,$event)">
+            <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B7')"></i>
                 <input type="hidden" ng-model="item.limitNumberB7" ng-init="item.limitNumberB7=3">
                 <input type="hidden" ng-model="item.runNumberB7" ng-init="item.runNumberB7=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB7>0?(item.runNumberB7=item.runNumberB7-1):item.runNumberB7=item.runNumberB7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -831,6 +845,7 @@
         <div ng-show="cartTemType=='TemA1'" style="margin-top:-25px;">
         <label>A1 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-drop="true" ng-drop-success="onDropCompleteTemA1($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A1')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA1" ng-init="item.limitNumberTemA1=4">
                 <input type="hidden" ng-model="item.runNumberTemA1" ng-init="item.runNumberTemA1=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -881,6 +896,7 @@
         <div ng-show="cartTemType=='TemA2'" style="margin-top:-25px;">
         <label>A2 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-show="cartTemType=='TemA2'" ng-drop="true" ng-drop-success="onDropCompleteTemA2($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A2')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA2" ng-init="item.limitNumberTemA2=4">
                 <input type="hidden" ng-model="item.runNumberTemA2" ng-init="item.runNumberTemA2=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA2>0?(item.runNumberTemA2=item.runNumberTemA2-1):item.runNumberTemA2=item.runNumberTemA2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -931,6 +947,7 @@
         <div ng-show="cartTemType=='TemA3'" style="margin-top:-25px;">
         <label>A3 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-show="cartTemType=='TemA3'" ng-drop="true" ng-drop-success="onDropCompleteTemA3($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A3')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA3" ng-init="item.limitNumberTemA3=4">
                 <input type="hidden" ng-model="item.runNumberTemA3" ng-init="item.runNumberTemA3=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA3>0?(item.runNumberTemA3=item.runNumberTemA3-1):item.runNumberTemA3=item.runNumberTemA3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -981,6 +998,7 @@
         <div ng-show="cartTemType=='TemA4'" style="margin-top:-25px;">
         <label>A4 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-show="cartTemType=='TemA4'" ng-drop="true" ng-drop-success="onDropCompleteTemA4($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A4')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA4" ng-init="item.limitNumberTemA4=4">
                 <input type="hidden" ng-model="item.runNumberTemA4" ng-init="item.runNumberTemA4=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA4>0?(item.runNumberTemA4=item.runNumberTemA4-1):item.runNumberTemA4=item.runNumberTemA4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1031,6 +1049,7 @@
         <div ng-show="cartTemType=='TemA5'" style="margin-top:-25px;">
         <label>A5 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-show="cartTemType=='TemA5'" ng-drop="true" ng-drop-success="onDropCompleteTemA5($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A5')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA5" ng-init="item.limitNumberTemA5=4">
                 <input type="hidden" ng-model="item.runNumberTemA5" ng-init="item.runNumberTemA5=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA5>0?(item.runNumberTemA5=item.runNumberTemA5-1):item.runNumberTemA5=item.runNumberTemA5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1081,6 +1100,7 @@
         <div ng-show="cartTemType=='TemA6'" style="margin-top:-25px;">
         <label>A6 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-show="cartTemType=='TemA6'" ng-drop="true" ng-drop-success="onDropCompleteTemA6($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A6')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA6" ng-init="item.limitNumberTemA6=4">
                 <input type="hidden" ng-model="item.runNumberTemA6" ng-init="item.runNumberTemA6=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA6>0?(item.runNumberTemA6=item.runNumberTemA6-1):item.runNumberTemA6=item.runNumberTemA6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -1131,6 +1151,7 @@
         <div ng-show="cartTemType=='TemA7'" style="margin-top:-25px;">
         <label>A7 &nbsp;&nbsp;&nbsp;&nbsp;</label>
             <div class="one" ng-show="cartTemType=='TemA7'" ng-drop="true" ng-drop-success="onDropCompleteTemA7($data,$event)">
+            <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A7')"></i>
                 <input type="hidden" ng-model="item.limitNumberTemA7" ng-init="item.limitNumberTemA7=4">
                 <input type="hidden" ng-model="item.runNumberTemA7" ng-init="item.runNumberTemA7=0">
                 <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA7>0?(item.runNumberTemA7=item.runNumberTemA7-1):item.runNumberTemA7=item.runNumberTemA7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
