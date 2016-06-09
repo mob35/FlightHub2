@@ -1,23 +1,68 @@
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
-                            Daily Summary Sales Report By Qty 
-                            <br>
-                            (included redeem and free item)
+                            Daily Summary Sales Report By Qty (included redeem and free item)
                            
                         </h1>
         <ol class="breadcrumb">
-            <li>
-                <i class="fa fa-dashboard"></i> <a href="index.html">Dashboard</a>
-            </li>
             <li class="active">
-                <i class="fa fa-file"></i> Blank Page
+                <i class="fa fa-fw fa-file-text"></i> Criteria Report
             </li>
         </ol>
-        Hello
     </div>
 </div>
 <!-- /.row -->
-<p>This is the Daily Summary Sales Report By Qty 
-                            
-                            (included redeem and free item).</p>
+<div class="panel panel-default" style="margin-top: -20px;">
+    <div class="panel-body">
+        <div class="row">
+            <div class="col-md-6 ">
+                <label>Date </label>
+                <input type="date" class="form-control">
+            </div>
+            <div class="col-md-6">
+                <label>To </label>
+                <input type="date" class="form-control">
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
+            <div class="col-md-6">
+                <label> Category </label>
+                <select ng-model="report" style="width: 100%">
+                    <option value="">All Category</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label> Product </label>
+                <select ng-model="report" style="width: 100%">
+                    <option value="">All Product</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
+            <div class="col-md-6">
+                <label> Free Product </label>
+                <select ng-model="report" style="width: 100%">
+                    <option value="">All Free Product</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label> Offer Buy </label>
+                <select ng-model="report" style="width: 100%">
+                    <option value="">All Offer Buy</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12" align="right">
+                <button>Generate Report</button>
+                <button>Cancel Report</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12" align="center">
+        <iframe src="pdf/Report By include.pdf" width="1168px" height="800px" />
+    </div>
+</div>
