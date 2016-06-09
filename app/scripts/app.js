@@ -74,6 +74,12 @@
                  controllerAs: 'setupCartNew'
 
              })
+            .when('/setupCartNew/:cardID', {
+                 templateUrl: 'views/setupCartNew.html',
+                 controller: 'setupCartNewCtrl',
+                 controllerAs: 'setupCartNew'
+
+             })
              .when('/setupCartProduct', {
                  templateUrl: 'views/setupCartProduct.html',
                  controller: 'setupCartCtrl',
