@@ -4,12 +4,21 @@
                             Setup Template Cart
                           
                         </h1>
-        <ol class="breadcrumb">
-            <li>
-                <i class="fa fa-cutlery"></i> <a href="index.html"> Setup Template Cart</a>
-            </li>
-        </ol>
+        <div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            <span ng-repeat="item in carts"></span>
+            <a ng-href="#/setupCart" ng-click="clearData()">Cancel</a>
+            <a href="javascript:window.history.back();">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addCart()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
     </div>
+</div>
+<!--  -->
+<div class="form-group">
+    <label style="margin-left: 15px;">Cart Name</label>
+    <input class="form-control" ng-model="newCart.cartName">
 </div>
 <!-- ///////////////////////////////////////// -->
 <div class="navbar-header">
@@ -142,11 +151,11 @@
 <div class="row" align="center" style="margin-bottom:15px;">
 <div class="col-md-4"></div>
 <div class="col-md-2">
-    <input id="cartAB" type="radio" name="content" ng-model="content" value="cartAB" ng-click="changecontentCart('cartAB')">
+    <input id="cartAB" type="radio" name="content" ng-model="newCart.content" value="cartAB" ng-click="changecontentCart('cartAB')">
 <label for="cartAB"> A/B Template</label>
 </div>
 <div class="col-md-2">
-    <input id="cartA" type="radio" name="content" ng-model="content" value="cartA" ng-click="changecontentCart('cartA')">
+    <input id="cartA" type="radio" name="content" ng-model="newCart.content" value="cartA" ng-click="changecontentCart('cartA')">
 <label for="cartA"> A Template</label>
 </div>
 <div class="col-md-4"></div>

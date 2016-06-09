@@ -8,7 +8,7 @@
  * Controller of the inflightHubApp
  */
 angular.module('inflightHubApp')
-    .controller('setupCartNewCtrl', function($scope, productService, promotionDiscountService, $filter, $routeParams) {
+    .controller('setupCartNewCtrl', function($scope, productService, setupCartService, promotionDiscountService, $filter, $routeParams) {
         this.awesomeThings = [
             'HTML5 Boilerplate',
             'AngularJS',
@@ -731,10 +731,128 @@ angular.module('inflightHubApp')
             $scope.productType = type;
         };
 // ////////////////////////////////////////////////
-        $scope.content = "cartAB";
+        // $scope.content = "cartAB";
         $scope.cartcontentType = "cartAB";
         $scope.changecontentCart = function(type) {
             $scope.cartcontentType = type;
         };
+// ///////////////////////////////////////////////
+$scope.cartID = $routeParams.cardID;
+
+        $scope.carts = [];
+        $scope.isEdit = $routeParams.cardID ? true : false;
+        $scope.newCart = {};
+        $scope.init = function() {
+            $scope.carts = setupCartService.getCartList();
+           
+
+        }
+
+        $scope.newFn = function() {
+            $scope.newCart = setupCartService.getTemp();
+
+        };
+        $scope.setTemp = function() {
+            //$scope.newCart.cartName = "555";
+            setupCartService.setTemp($scope.newCart);
+        };
+        $scope.clearData = function() {
+            setupCartService.clearTemp();
+        };
+        $scope.addCart = function() {
+            $scope.newCart.id = guid();
+            $scope.carts.push($scope.newCart);
+            $scope.newFn();
+            setupCartService.clearTemp();
+           // uploadCartService.setCarts($scope.carts);
+        };
+        $scope.deleteCart = function(id) {
+            setupCartService.deleteCart(id);
+        };
+        $scope.removeItem = function(index) {
+                $scope.newCart.floor.splice(index, 1);
+            },
+            $scope.addFloor = function() {
+                $scope.newCart.floor.push({
+                    floorId: ($scope.newCart.floor.length + 1),
+                    cartCate: "",
+                    cartProd: []
+                });
+                console.log($scope.newCart);
+            };
+
+        $scope.setVal = function() {
+            // alert(''); 
+            // var result = $filter("filter")($scope.carts, { id: $routeParams.cardID }); 
+            var result = setupCartService.getCart($scope.carts, $routeParams.cardID);
+            console.log(result);
+            if (result) {
+                $scope.newCart = result;
+                $scope.setProduct();
+            }
+
+        };
+
+        $scope.editFn = function() {
+            setupCartService.clearTemp();
+        };
+
+        $scope.setProduct = function() {
+            if ($routeParams.floorId && $routeParams.cardID && typeof $scope.newCart.floor != "undefined") {
+                for (var i = 0; i < $scope.newCart.floor.length; i++) { //หาชั้นที่จะแอดค่า
+                    if ($routeParams.floorId == i + 1) {
+                        var cartProducts = $scope.newCart.floor[i].cartProd;
+                        for (var p = 0; p < $scope.product.length; p++) { //หาขนาดของโปรดัก
+                            for (var j = 0; j < cartProducts.length; j++) { //หาขนาดของโปรดักที่อยู่ในรถเข็น
+                                if ($scope.product[p].id == cartProducts[j].id) {
+                                    $scope.product[p].qty = cartProducts[j].qty;
+                                    $scope.product[p].stock = cartProducts[j].stock;
+                                }
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+
+        $scope.addProduct = function() {
+            console.log($scope.newCart);
+            var addItems = [];
+            for (var i = 0; i < $scope.product.length; i++) {
+                console.log($scope.product[i]);
+                if ($scope.product[i].qty > 0) {
+                    addItems.push($scope.product[i]);
+                }
+            }
+
+            console.log($scope.newCart);
+            if (!$routeParams.cardID) {
+
+            } else {
+                $scope.newCart = setupCartService.getTemp();
+
+            }
+            for (var i = 0; i < $scope.newCart.floor.length; i++) {
+                if ($routeParams.floorId == i + 1) {
+                    $scope.newCart.floor[i].cartProd = addItems;
+                    break;
+                }
+            }
+        };
+
+
+
+
+
+
+
+        $scope.init();
+
+        if ($routeParams.cardID) {
+            $scope.setVal();
+        } else {
+            $scope.newFn();
+        }
 
     });
