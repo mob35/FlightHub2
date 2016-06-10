@@ -149,7 +149,7 @@ angular.module('inflightHubApp')
             if (index == -1) {
                 $scope.droppedObjectsInboundSec1.push(data);
             }
-            qty1 = data.qty++;
+            qty1 = data.qty ++;
             console.log(data.qty);
         }
         $scope.onDragSuccessInboundSec1 = function(data, evt) {

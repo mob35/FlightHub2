@@ -8057,6 +8057,10 @@ button.close {
     width: 40px;
     height: 32px;
 }
+.imgsetUp {
+    width: 30px;
+    height: 24px;
+}
 
 .imgsetCartList {
     width: 20px;
@@ -8459,4 +8463,11 @@ div#scroll {
     border-style: solid;
     border-color: #ff0000;
     border-top-left-radius: 100%;
+}
+div[back-img]{
+    width: 400px;
+    height: 450px;
+    color: none;
+    margin-left: -100px;
+    position: relative;
 }

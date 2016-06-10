@@ -1,3 +1,4 @@
+
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
@@ -94,7 +95,7 @@
     <div class="col-md-3"></div>
 </div>
 <!-- //////////////////  Inbound  //////////////////// -->
-<div ng-show="uploadCartcontentType=='uploadCartInbound'">
+<!-- <div ng-show="uploadCartcontentType=='uploadCartInbound'">
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12" style="border-style: solid;border-width: 0.5px;">
@@ -157,10 +158,10 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- /////////////////////////////////////////// -->
 <!-- ///////////////////    Outbound    /////////////////// -->
-<div ng-show="uploadCartcontentType=='uploadCartOutbound'">
+<!-- <div ng-show="uploadCartcontentType=='uploadCartOutbound'">
     <div class="panel-body">
         <div class="row">
             <div class="col-md-12" style="border-style: solid;border-width: 0.5px;">
@@ -223,9 +224,9 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- ////////////////////   QuickTurnLeft   //////////////////// -->
-<div ng-show="uploadCartcontentType=='uploadCartQuickTurn'">
+<!-- <div ng-show="uploadCartcontentType=='uploadCartQuickTurn'">
     <div class="row">
         <div class="col-md-6">
             <div class="panel-body">
@@ -291,7 +292,7 @@
                 </div>
             </div>
         </div>
-        <!-- //////////////    QuickTurnRight   ////////////////////////////////// -->
+        //////////////    QuickTurnRight   //////////////////////////////////
         <div class="col-md-6">
             <div class="panel-body">
                 <div class="row">
@@ -357,150 +358,188 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row">
-    <div class="col-md-5 setPlaneLeft" style="height: 200px;">
+</div> -->
+<!-- /////////////////  Inbound  //////////////////// -->
+<div style="margin-left: -30px;" ng-show="uploadCartcontentType=='uploadCartInbound'">
+    <div class="panel-body">
+        <div>
+            <img src="images/Untitled-2.png" style="position: relative;">
+        </div>
         <div class="row">
-            <div class="col-md-1">
-                <div style="margin-top: 48px;"></div>
-                <div class="row">
-                    <div class="window"></div>
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 200px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec1($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec1| limitTo:item.limitNumberInboundSec1:item.runNumberInboundSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8"></div>
-            <div class="col-md-3">
-                <div class="row">
-                    <div class="col-md-1">
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-1 near">
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-1">
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-1 near">
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row" style="height: 30px;"></div>
-                        <div class="row">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
-                        <div class="row tid">
-                            <i class="fa fa-square-o" aria-hidden="true"></i>
-                        </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 240px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec2($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec2| limitTo:item.limitNumberInboundSec2:item.runNumberInboundSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
                     </div>
                 </div>
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 755px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec3($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec3| limitTo:item.limitNumberInboundSec3:item.runNumberInboundSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 795px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec4($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec4| limitTo:item.limitNumberInboundSec4:item.runNumberInboundSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-md-7 setPlaneRight" style="height: 200px;">
+</div>
+<!-- ///////////////////    Outbound    /////////////////// -->
+<div style="margin-left: -30px;" ng-show="uploadCartcontentType=='uploadCartOutbound'">
+    <div class="panel-body">
+        <div>
+            <img src="images/Untitled-2.png" style="position: relative;">
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 200px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec1($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec1| limitTo:item.limitNumberOutboundSec1:item.runNumberOutboundSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 240px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec2($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec2| limitTo:item.limitNumberOutboundSec2:item.runNumberOutboundSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 755px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec3($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec3| limitTo:item.limitNumberOutboundSec3:item.runNumberOutboundSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 795px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec4($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec4| limitTo:item.limitNumberOutboundSec4:item.runNumberOutboundSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div>
-<img src="images/Untitled-2.png" alt="" ng></div>
+<!-- ////////////////////   QuickTurnLeft   //////////////////// -->
+<div style="margin-left: -30px;" ng-show="uploadCartcontentType=='uploadCartQuickTurn'">
+    <div class="panel-body">
+        <div>
+            <img src="images/Untitled-2.png" style="position: relative;">
+        </div>
+        <div>
+            <img src="images/Untitled-Q.png" style="position: relative;">
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 200px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec1($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec1| limitTo:item.limitNumberQuickTurnLeftSec1:item.runNumberQuickTurnLeftSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 245px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec2($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec2| limitTo:item.limitNumberQuickTurnLeftSec2:item.runNumberQuickTurnLeftSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 755px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec3($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec3| limitTo:item.limitNumberQuickTurnLeftSec3:item.runNumberQuickTurnLeftSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 795px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec4($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec4| limitTo:item.limitNumberQuickTurnLeftSec4:item.runNumberQuickTurnLeftSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ////////////////////////////////////////// -->
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 225px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec1($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec1| limitTo:item.limitNumberQuickTurnRightSec1:item.runNumberQuickTurnRightSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 265px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec2($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec2| limitTo:item.limitNumberQuickTurnRightSec2:item.runNumberQuickTurnRightSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 780px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec3($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec3| limitTo:item.limitNumberQuickTurnRightSec3:item.runNumberQuickTurnRightSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 820px;">
+                <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec4($data,$event)">
+                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec4| limitTo:item.limitNumberQuickTurnRightSec4:item.runNumberQuickTurnRightSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
