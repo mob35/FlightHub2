@@ -8409,6 +8409,7 @@ div#scroll {
 
 .fixHidden {
     height: 20px;
+    width: 180px;
     margin-left: -15px;
     overflow: hidden;
 }

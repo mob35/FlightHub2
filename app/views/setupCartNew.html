@@ -160,1097 +160,647 @@
     </div>
     <div class="col-md-4"></div>
 </div>
-<div ng-show="cartcontentType=='cartAB'">
-    <!-- A1 / B1-->
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8" style="border:solid 4px;"></div>
-        <div class="col-md-2"></div>
-    </div>
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A1'" style="margin-top:-25px;">
-                <label>A1 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA1($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A1')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA1" ng-init="item.limitNumberA1=3">
-                    <input type="hidden" ng-model="item.runNumberA1" ng-init="item.runNumberA1=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA1>0?(item.runNumberA1=item.runNumberA1-1):item.runNumberA1=item.runNumberA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA1| limitTo:item.limitNumberA1:item.runNumberA1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA1($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA1!=(floor.cartProd.length-item.limitNumberA1)?(item.runNumberA1=item.runNumberA1+1):item.runNumberA1=item.runNumberA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A1')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A1</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A1'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA1" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A1" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A1</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA1">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <!-- ////////////////////////////////////// -->
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B1')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B1</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B1'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB1" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B1" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B1</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB1">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B1'" style="margin-top:-25px;">
-                <label>B1 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB1($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B1')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB1" ng-init="item.limitNumberB1=3">
-                    <input type="hidden" ng-model="item.runNumberB1" ng-init="item.runNumberB1=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB1>0?(item.runNumberB1=item.runNumberB1-1):item.runNumberB1=item.runNumberB1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB1| limitTo:item.limitNumberB1:item.runNumberB1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB1($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB1!=(floor.cartProd.length-item.limitNumberB1)?(item.runNumberB1=item.runNumberB1+1):item.runNumberB1=item.runNumberB1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- A2 / B2-->
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A2'" style="margin-top:-25px;">
-                <label>A2 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA2($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A2')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA2" ng-init="item.limitNumberA2=3">
-                    <input type="hidden" ng-model="item.runNumberA2" ng-init="item.runNumberA2=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA2>0?(item.runNumberA2=item.runNumberA2-1):item.runNumberA2=item.runNumberA2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA2| limitTo:item.limitNumberA2:item.runNumberA2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA2($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA2!=(floor.cartProd.length-item.limitNumberA2)?(item.runNumberA2=item.runNumberA2+1):item.runNumberA2=item.runNumberA2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A2')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A2</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A2'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA2" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A2" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A2" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A2</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA2">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B2')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B2</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B2'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB2" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B2" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B2" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B2</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB2">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B2'" style="margin-top:-25px;">
-                <label>B2 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB2($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B2')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB2" ng-init="item.limitNumberB2=3">
-                    <input type="hidden" ng-model="item.runNumberB2" ng-init="item.runNumberB2=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB2>0?(item.runNumberB2=item.runNumberB2-1):item.runNumberB2=item.runNumberB2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB2| limitTo:item.limitNumberB2:item.runNumberB2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB2($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB2!=(floor.cartProd.length-item.limitNumberB2)?(item.runNumberB2=item.runNumberB2+1):item.runNumberB2=item.runNumberB2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- A3 / B3-->
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A3'" style="margin-top:-25px;">
-                <label>A3 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA3($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A3')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA3" ng-init="item.limitNumberA3=3">
-                    <input type="hidden" ng-model="item.runNumberA3" ng-init="item.runNumberA3=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA3>0?(item.runNumberA3=item.runNumberA3-1):item.runNumberA3=item.runNumberA3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA3| limitTo:item.limitNumberA3:item.runNumberA3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA3($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA3!=(floor.cartProd.length-item.limitNumberA3)?(item.runNumberA3=item.runNumberA3+1):item.runNumberA3=item.runNumberA3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A3')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A3</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A3'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA3" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A3" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A3" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A3</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA3">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B3')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B3</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B3'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB3" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B3" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B3" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B3</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB3">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B3'" style="margin-top:-25px;">
-                <label>B3 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB3($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B3')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB3" ng-init="item.limitNumberB3=3">
-                    <input type="hidden" ng-model="item.runNumberB3" ng-init="item.runNumberB3=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB3>0?(item.runNumberB3=item.runNumberB3-1):item.runNumberB3=item.runNumberB3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB3| limitTo:item.limitNumberB3:item.runNumberB3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB3($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB3!=(floor.cartProd.length-item.limitNumberB3)?(item.runNumberB3=item.runNumberB3+1):item.runNumberB3=item.runNumberB3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- A4 / B4-->
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A4'" style="margin-top:-25px;">
-                <label>A4 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA4($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A4')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA4" ng-init="item.limitNumberA4=3">
-                    <input type="hidden" ng-model="item.runNumberA4" ng-init="item.runNumberA4=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA4>0?(item.runNumberA4=item.runNumberA4-1):item.runNumberA4=item.runNumberA4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA4| limitTo:item.limitNumberA4:item.runNumberA4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA4($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA4!=(floor.cartProd.length-item.limitNumberA4)?(item.runNumberA4=item.runNumberA4+1):item.runNumberA4=item.runNumberA4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A4')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A4</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A4'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA4" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A4" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A4" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A4</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA4">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B4')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B4</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B4'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB4" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B4" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B4" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B4</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB4">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B4'" style="margin-top:-25px;">
-                <label>B4 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB4($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B4')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB4" ng-init="item.limitNumberB4=3">
-                    <input type="hidden" ng-model="item.runNumberB4" ng-init="item.runNumberB4=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB4>0?(item.runNumberB4=item.runNumberB4-1):item.runNumberB4=item.runNumberB4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB4| limitTo:item.limitNumberB4:item.runNumberB4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB4($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB4!=(floor.cartProd.length-item.limitNumberB4)?(item.runNumberB4=item.runNumberB4+1):item.runNumberB4=item.runNumberB4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- A5 / B5-->
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A5'" style="margin-top:-25px;">
-                <label>A5 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA5($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A5')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA5" ng-init="item.limitNumberA5=3">
-                    <input type="hidden" ng-model="item.runNumberA5" ng-init="item.runNumberA5=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA5>0?(item.runNumberA5=item.runNumberA5-1):item.runNumberA5=item.runNumberA5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA5| limitTo:item.limitNumberA5:item.runNumberA5" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA5($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA5!=(floor.cartProd.length-item.limitNumberA5)?(item.runNumberA5=item.runNumberA5+1):item.runNumberA5=item.runNumberA5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A5')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A5</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A5'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA5" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A5" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A5" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A5</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA5">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B5')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B5</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B5'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB5" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B5" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B5" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B5</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB5">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B5'" style="margin-top:-25px;">
-                <label>B5 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB5($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B5')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB5" ng-init="item.limitNumberB5=3">
-                    <input type="hidden" ng-model="item.runNumberB5" ng-init="item.runNumberB5=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB5>0?(item.runNumberB5=item.runNumberB5-1):item.runNumberB5=item.runNumberB5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB5| limitTo:item.limitNumberB5:item.runNumberB5" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB5($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB5!=(floor.cartProd.length-item.limitNumberB5)?(item.runNumberB5=item.runNumberB5+1):item.runNumberB5=item.runNumberB5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- A6 / B6-->
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A6'" style="margin-top:-25px;">
-                <label>A6 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA6($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A6')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA6" ng-init="item.limitNumberA6=3">
-                    <input type="hidden" ng-model="item.runNumberA6" ng-init="item.runNumberA6=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA6>0?(item.runNumberA6=item.runNumberA6-1):item.runNumberA6=item.runNumberA6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA6| limitTo:item.limitNumberA6:item.runNumberA6" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA6($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA6!=(floor.cartProd.length-item.limitNumberA6)?(item.runNumberA6=item.runNumberA6+1):item.runNumberA6=item.runNumberA6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A6')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A6</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A6'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA6" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A6" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A6" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A6</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA6">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B6')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B6</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B6'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB6" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B6" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B6" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B6</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB6">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B6'" style="margin-top:-25px;">
-                <label>B6 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB6($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B6')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB6" ng-init="item.limitNumberB6=3">
-                    <input type="hidden" ng-model="item.runNumberB6" ng-init="item.runNumberB6=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB6>0?(item.runNumberB6=item.runNumberB6-1):item.runNumberB6=item.runNumberB6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB6| limitTo:item.limitNumberB6:item.runNumberB6" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB6($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB6!=(floor.cartProd.length-item.limitNumberB6)?(item.runNumberB6=item.runNumberB6+1):item.runNumberB6=item.runNumberB6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- A7 / B7-->
-    <div class="row" align="center">
-        <div class="col-md-3">
-            <div ng-show="cartType=='A7'" style="margin-top:-25px;">
-                <label>A7 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteA7($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeCart('!A7')"></i>
-                    <input type="hidden" ng-model="item.limitNumberA7" ng-init="item.limitNumberA7=3">
-                    <input type="hidden" ng-model="item.runNumberA7" ng-init="item.runNumberA7=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberA7>0?(item.runNumberA7=item.runNumberA7-1):item.runNumberA7=item.runNumberA7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsA7| limitTo:item.limitNumberA7:item.runNumberA7" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA7($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA7!=(floor.cartProd.length-item.limitNumberA7)?(item.runNumberA7=item.runNumberA7+1):item.runNumberA7=item.runNumberA7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('A7')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A7</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='A7'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsA7" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#A7" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="A7" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A7</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsA7">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3 two" name="type" ng-click="changeCart('B7')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">B7</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartType=='B7'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsB7" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#B7" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="B7" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class B7</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsB7">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-3">
-            <div ng-show="cartType=='B7'" style="margin-top:-25px;">
-                <label>B7 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="three" ng-drop="true" ng-drop-success="onDropCompleteB7($data,$event)">
-                    <i class="fa fa-times closeRight" aria-hidden="true" ng-click="changeCart('!B7')"></i>
-                    <input type="hidden" ng-model="item.limitNumberB7" ng-init="item.limitNumberB7=3">
-                    <input type="hidden" ng-model="item.runNumberB7" ng-init="item.runNumberB7=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberB7>0?(item.runNumberB7=item.runNumberB7-1):item.runNumberB7=item.runNumberB7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsB7| limitTo:item.limitNumberB7:item.runNumberB7" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB7($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberB7!=(floor.cartProd.length-item.limitNumberB7)?(item.runNumberB7=item.runNumberB7+1):item.runNumberB7=item.runNumberB7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-3" align="left"><i class="fa fa-circle-thin fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-3" align="right"><i class="fa fa-circle-thin fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-3"></div>
-    </div>
-</div>
-<!-- ////////////////////////////////////// -->
-<div ng-hide="cartcontentType=='cartA'">
-    <!-- TemA1 -->
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-6" style="border:solid 4px;"></div>
-        <div class="col-md-3"></div>
-    </div>
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA1'" style="margin-top:-25px;">
-                <label>A1 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-drop="true" ng-drop-success="onDropCompleteTemA1($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A1')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA1" ng-init="item.limitNumberTemA1=4">
-                    <input type="hidden" ng-model="item.runNumberTemA1" ng-init="item.runNumberTemA1=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA1| limitTo:item.limitNumberTemA1:item.runNumberTemA1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA1($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA1')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A1</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA1'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA1" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA1" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA1" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A1</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA1">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <!-- TemA2 -->
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA2'" style="margin-top:-25px;">
-                <label>A2 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-show="cartTemType=='TemA2'" ng-drop="true" ng-drop-success="onDropCompleteTemA2($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A2')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA2" ng-init="item.limitNumberTemA2=4">
-                    <input type="hidden" ng-model="item.runNumberTemA2" ng-init="item.runNumberTemA2=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA2>0?(item.runNumberTemA2=item.runNumberTemA2-1):item.runNumberTemA2=item.runNumberTemA2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA2| limitTo:item.limitNumberTemA2:item.runNumberTemA2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA2($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA2!=(floor.cartProd.length-item.limitNumberTemA2)?(item.runNumberTemA2=item.runNumberTemA2+1):item.runNumberTemA2=item.runNumberTemA2"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA2')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A2</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA2'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA2" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA2" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA2" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A2</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA2">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <!-- TemA3 -->
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA3'" style="margin-top:-25px;">
-                <label>A3 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-show="cartTemType=='TemA3'" ng-drop="true" ng-drop-success="onDropCompleteTemA3($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A3')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA3" ng-init="item.limitNumberTemA3=4">
-                    <input type="hidden" ng-model="item.runNumberTemA3" ng-init="item.runNumberTemA3=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA3>0?(item.runNumberTemA3=item.runNumberTemA3-1):item.runNumberTemA3=item.runNumberTemA3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA3| limitTo:item.limitNumberTemA3:item.runNumberTemA3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA3($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA3!=(floor.cartProd.length-item.limitNumberTemA3)?(item.runNumberTemA3=item.runNumberTemA3+1):item.runNumberTemA3=item.runNumberTemA3"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA3')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A3</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA3'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA3" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA3" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA3" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A3</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA3">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <!-- TemA4 -->
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA4'" style="margin-top:-25px;">
-                <label>A4 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-show="cartTemType=='TemA4'" ng-drop="true" ng-drop-success="onDropCompleteTemA4($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A4')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA4" ng-init="item.limitNumberTemA4=4">
-                    <input type="hidden" ng-model="item.runNumberTemA4" ng-init="item.runNumberTemA4=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA4>0?(item.runNumberTemA4=item.runNumberTemA4-1):item.runNumberTemA4=item.runNumberTemA4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA4| limitTo:item.limitNumberTemA4:item.runNumberTemA4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA4($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA4!=(floor.cartProd.length-item.limitNumberTemA4)?(item.runNumberTemA4=item.runNumberTemA4+1):item.runNumberTemA4=item.runNumberTemA4"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA4')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A4</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA4'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA4" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA4" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA4" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A4</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA4">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <!-- TemA5 -->
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA5'" style="margin-top:-25px;">
-                <label>A5 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-show="cartTemType=='TemA5'" ng-drop="true" ng-drop-success="onDropCompleteTemA5($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A5')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA5" ng-init="item.limitNumberTemA5=4">
-                    <input type="hidden" ng-model="item.runNumberTemA5" ng-init="item.runNumberTemA5=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA5>0?(item.runNumberTemA5=item.runNumberTemA5-1):item.runNumberTemA5=item.runNumberTemA5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA5| limitTo:item.limitNumberTemA5:item.runNumberTemA5" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA5($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA5!=(floor.cartProd.length-item.limitNumberTemA5)?(item.runNumberTemA5=item.runNumberTemA5+1):item.runNumberTemA5=item.runNumberTemA5"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA5')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A5</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA5'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA5" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA5" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA5" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A5</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA5">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <!-- TemA6 -->
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA6'" style="margin-top:-25px;">
-                <label>A6 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-show="cartTemType=='TemA6'" ng-drop="true" ng-drop-success="onDropCompleteTemA6($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A6')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA6" ng-init="item.limitNumberTemA6=4">
-                    <input type="hidden" ng-model="item.runNumberTemA6" ng-init="item.runNumberTemA6=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA6>0?(item.runNumberTemA6=item.runNumberTemA6-1):item.runNumberTemA6=item.runNumberTemA6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA6| limitTo:item.limitNumberTemA6:item.runNumberTemA6" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA6($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA6!=(floor.cartProd.length-item.limitNumberTemA6)?(item.runNumberTemA6=item.runNumberTemA6+1):item.runNumberTemA6=item.runNumberTemA6"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA6')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A6</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA6'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA6" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA6" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA6" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A6</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA6">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <!-- TemA7 -->
-    <div class="row" align="center">
-        <div class="col-md-4">
-            <div ng-show="cartTemType=='TemA7'" style="margin-top:-25px;">
-                <label>A7 &nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <div class="one" ng-show="cartTemType=='TemA7'" ng-drop="true" ng-drop-success="onDropCompleteTemA7($data,$event)">
-                    <i class="fa fa-times closeLeft" aria-hidden="true" ng-click="changeTemCart('!A7')"></i>
-                    <input type="hidden" ng-model="item.limitNumberTemA7" ng-init="item.limitNumberTemA7=4">
-                    <input type="hidden" ng-model="item.runNumberTemA7" ng-init="item.runNumberTemA7=0">
-                    <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA7>0?(item.runNumberTemA7=item.runNumberTemA7-1):item.runNumberTemA7=item.runNumberTemA7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA7| limitTo:item.limitNumberTemA7:item.runNumberTemA7" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA7($data,$event)" ng-center-anchor="{{centerAnchor}}">
-                        <img src="{{obj.img}}" class="imgsetCart">
-                        <span class="badge red_badge">{{obj.qty}}</span>
-                    </div>
-                    <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA7!=(floor.cartProd.length-item.limitNumberTemA7)?(item.runNumberTemA7=item.runNumberTemA7+1):item.runNumberTemA7=item.runNumberTemA7"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 two" name="type" ng-click="changeTemCart('TemA7')">
-            <div class="row">
-                <div class="col-md-12" style="margin-bottom:-10px;">
-                    <p style="font-weight:bold;">A7</p>
-                </div>
-            </div>
-            <div class="row fixHidden" ng-hide="cartTemType=='TemA7'">
-                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA7" style="margin-left:-2px;">
-                    <img src="{{obj.img}}" class="imgsetCartList">
-                </div>
-            </div>
-            <!-- <span data-toggle="modal" data-target="#TemA7" style="cursor:pointer">View Detail</span> -->
-            <!-- <div class="container">
-                <div class="modal fade" id="TemA7" role="dialog">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                <h4 class="modal-title">Class A7</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p ng-repeat="obj in droppedObjectsTemA7">{{obj.name}} {{obj.qty}} Qty.</p>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" data-dismiss="modal">Close</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-        </div>
-        <div class="col-md-4">
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-2" align="left"><i class="fa fa-circle-thin fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-2" align="right"><i class="fa fa-circle-thin fa-5x" aria-hidden="true"></i></div>
-        <div class="col-md-4"></div>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-12" align="center">
-        <div back-img="images/cart/cratA.png"></div>
-    </div>
-</div>
-<!-- <img src="images/cart/z1.png" alt="" style="height: 90px; position: absolute; margin-top: -446px; margin-left: 635px;"> -->
-<div class="row">
-            <div class="col-md-12" style="position:absolute;margin-top:-400px;width: 35px;height: 150px; margin-left: 345px;">
-                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 290px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA1($data,$event)">
-                    
-                    <input type="hidden" ng-model="item.limitNumberTemA1" ng-init="item.limitNumberTemA1=5">
-                    <input type="hidden" ng-model="item.runNumberTemA1" ng-init="item.runNumberTemA1=0">
-                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-                    <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsTemA1| limitTo:item.limitNumberTemA1:item.runNumberTemA1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+<!-- ////////////////////////////////////// -->
+<!-- new AB layout -->
+<div class="row" ng-show="cartcontentType=='cartAB'">
+    <div class="col-md-12" align="center">
+        <img src="images/cart2/cratB.png" width="600px" style="position: relative;">
+    </div>
+    <!-- AB  A1 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:40px; margin-left: 330px;" ng-click="changeCart('A1')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A1'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: -990px; margin-top: -2px;">
+            <div class="col-md-12" style="position:absolute;margin-top:40px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA1($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA1" ng-init="item.limitNumberA1=5">
+                    <input type="hidden" ng-model="item.runNumberA1" ng-init="item.runNumberA1=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA1| limitTo:item.limitNumberA1:item.runNumberA1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
                     </div>
                     <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-
                 </div>
             </div>
         </div>
+        <div ng-click="changeCart('!A1')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:35px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A1')" style="position: absolute; margin-left: 330px; margin-top: 55px;">
+            <div class="row fixHidden" ng-hide="cartType=='A1'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA1" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B1 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-370px; margin-left: 715px;" ng-click="changeCart('B1')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B1'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 595px; margin-top: -405px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-360px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB1($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB1" ng-init="item.limitNumberB1=5">
+                    <input type="hidden" ng-model="item.runNumberB1" ng-init="item.runNumberB1=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB1| limitTo:item.limitNumberB1:item.runNumberB1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B1')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-365px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B1')" style="position: absolute; margin-left: 510px; margin-top: -349px;">
+            <div class="row fixHidden" ng-hide="cartType=='B1'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB1" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+ <!-- AB  A2 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-315px; margin-left: 330px;" ng-click="changeCart('A2')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A2'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 40px; margin-top: -355px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-310px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA2($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA2" ng-init="item.limitNumberA2=5">
+                    <input type="hidden" ng-model="item.runNumberA2" ng-init="item.runNumberA2=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA2| limitTo:item.limitNumberA2:item.runNumberA2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!A2')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-325px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A2')" style="position: absolute; margin-left: 330px; margin-top: -300px;">
+            <div class="row fixHidden" ng-hide="cartType=='A2'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA2" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B2 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-320px; margin-left: 715px;" ng-click="changeCart('B2')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B2'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -355px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-310px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB2($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB2" ng-init="item.limitNumberB2=5">
+                    <input type="hidden" ng-model="item.runNumberB2" ng-init="item.runNumberB2=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB2| limitTo:item.limitNumberB2:item.runNumberB2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B2')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-315px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B2')" style="position: absolute; margin-left: 510px; margin-top: -300px;">
+            <div class="row fixHidden" ng-hide="cartType=='B2'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB2" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AB  A3 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-265px; margin-left: 330px;" ng-click="changeCart('A3')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A3'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 45px; margin-top: -310px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-260px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA3($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA3" ng-init="item.limitNumberA3=5">
+                    <input type="hidden" ng-model="item.runNumberA3" ng-init="item.runNumberA3=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA3| limitTo:item.limitNumberA3:item.runNumberA3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!A3')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-270px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A3')" style="position: absolute; margin-left: 330px; margin-top: -250px;">
+            <div class="row fixHidden" ng-hide="cartType=='A3'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA3" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B3 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-270px; margin-left: 715px;" ng-click="changeCart('B3')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B3'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -307px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-260px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB3($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB3" ng-init="item.limitNumberB3=5">
+                    <input type="hidden" ng-model="item.runNumberB3" ng-init="item.runNumberB3=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB3| limitTo:item.limitNumberB3:item.runNumberB3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B3')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-270px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B3')" style="position: absolute; margin-left: 510px; margin-top: -250px;">
+            <div class="row fixHidden" ng-hide="cartType=='B3'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB3" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+       <!-- AB  A4 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-220px; margin-left: 330px;" ng-click="changeCart('A4')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A4'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 43px; margin-top: -260px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-210px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA4($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA4" ng-init="item.limitNumberA4=5">
+                    <input type="hidden" ng-model="item.runNumberA4" ng-init="item.runNumberA4=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA4| limitTo:item.limitNumberA4:item.runNumberA4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!A4')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-230px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A4')" style="position: absolute; margin-left: 330px; margin-top: -200px;">
+            <div class="row fixHidden" ng-hide="cartType=='A4'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA4" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B4 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-225px; margin-left: 715px;" ng-click="changeCart('B4')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B4'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -260px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-215px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB4($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB4" ng-init="item.limitNumberB4=5">
+                    <input type="hidden" ng-model="item.runNumberB4" ng-init="item.runNumberB4=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB4| limitTo:item.limitNumberB4:item.runNumberB4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B4')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-225px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B4')" style="position: absolute; margin-left: 510px; margin-top: -200px;">
+            <div class="row fixHidden" ng-hide="cartType=='B4'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB4" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+      <!-- AB  A5 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-170px; margin-left: 330px;" ng-click="changeCart('A5')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A5'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 42px; margin-top: -210px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-165px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA5($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA5" ng-init="item.limitNumberA5=5">
+                    <input type="hidden" ng-model="item.runNumberA5" ng-init="item.runNumberA5=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA5| limitTo:item.limitNumberA5:item.runNumberA5" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA5($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!A5')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-180px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A5')" style="position: absolute; margin-left: 330px; margin-top: -150px;">
+            <div class="row fixHidden" ng-hide="cartType=='A5'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA5" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B5 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-175px; margin-left: 715px;" ng-click="changeCart('B5')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B5'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -210px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-165px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB5($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB5" ng-init="item.limitNumberB5=5">
+                    <input type="hidden" ng-model="item.runNumberB5" ng-init="item.runNumberB5=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB5| limitTo:item.limitNumberB5:item.runNumberB5" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB5($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B5')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-170px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B5')" style="position: absolute; margin-left: 510px; margin-top: -150px;">
+            <div class="row fixHidden" ng-hide="cartType=='B5'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB5" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- AB  A6 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-120px; margin-left: 330px;" ng-click="changeCart('A6')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A6'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 40px; margin-top: -160px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-115px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA6($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA6" ng-init="item.limitNumberA6=5">
+                    <input type="hidden" ng-model="item.runNumberA6" ng-init="item.runNumberA6=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA6| limitTo:item.limitNumberA6:item.runNumberA6" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA6($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!A6')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-120px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A6')" style="position: absolute; margin-left: 330px; margin-top: -105px;">
+            <div class="row fixHidden" ng-hide="cartType=='A6'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA6" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B6 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-125px; margin-left: 715px;" ng-click="changeCart('B6')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B6'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -161px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-115px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB6($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB6" ng-init="item.limitNumberB6=5">
+                    <input type="hidden" ng-model="item.runNumberB6" ng-init="item.runNumberB6=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB6| limitTo:item.limitNumberB6:item.runNumberB6" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB6($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B6')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-120px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B6')" style="position: absolute; margin-left: 510px; margin-top: -100px;">
+            <div class="row fixHidden" ng-hide="cartType=='B6'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB6" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+     <!-- AB  A7 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-70px; margin-left: 330px;" ng-click="changeCart('A7')">
+    </div>
+    <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
+     <div class="row">
+        <div ng-show="cartType=='A7'">
+            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 39px; margin-top: -112px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-65px;width: 35px;height: 150px; margin-left: 80px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA7($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberA7" ng-init="item.limitNumberA7=5">
+                    <input type="hidden" ng-model="item.runNumberA7" ng-init="item.runNumberA7=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsA7| limitTo:item.limitNumberA7:item.runNumberA7" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessA7($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!A7')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-80px; margin-left: 60px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('A7')" style="position: absolute; margin-left: 330px; margin-top: -55px;">
+            <div class="row fixHidden" ng-hide="cartType=='A7'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsA7" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <!-- AB  B7 -->
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-80px; margin-left: 715px;" ng-click="changeCart('B7')">
+    </div>
+     <div class="row">
+        <div ng-show="cartType=='B7'">
+            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -113px;">
+            <div class="col-md-12" style="position:absolute;margin-top:-65px;width: 35px;height: 150px; margin-left: 760px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB7($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberB7" ng-init="item.limitNumberB7=5">
+                    <input type="hidden" ng-model="item.runNumberB7" ng-init="item.runNumberB7=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsB7| limitTo:item.limitNumberB7:item.runNumberB7" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessB7($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeCart('!B7')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-75px; margin-left: 1010px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeCart('B7')" style="position: absolute; margin-left: 510px; margin-top: -55px;">
+            <div class="row fixHidden" ng-hide="cartType=='B7'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsB7" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- new A layout -->
+<div class="row" ng-show="cartcontentType=='cartA'">
+    <div class="col-md-12" align="center">
+        <div back-img="images/cart2/cratA.png"></div>
+    </div>
+    <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:40px; margin-left: 630px;" ng-click="changeTemCart('TemA1')">
+    </div>
+    <!-- A1 NEW -->
+    <div class="row">
+        <div ng-show="cartTemType=='TemA1'">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top:3px; margin-left: -400px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:55px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA1($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA1" ng-init="item.limitNumberTemA1=5">
+                    <input type="hidden" ng-model="item.runNumberTemA1" ng-init="item.runNumberTemA1=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA1| limitTo:item.limitNumberTemA1:item.runNumberTemA1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA1($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A1')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:35px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA1')" style="position: absolute; margin-left: 350px; margin-top: 65px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA1'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA1" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- A2 NEW -->
+    <div style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-355px; margin-left: 630px;" ng-click="changeTemCart('TemA2')">
+    </div>
+    <div class="row">
+        <div ng-show="cartTemType=='TemA2'">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top: -393px; margin-left: 635px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:-345px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA2($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA2" ng-init="item.limitNumberTemA2=5">
+                    <input type="hidden" ng-model="item.runNumberTemA2" ng-init="item.runNumberTemA2=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA2| limitTo:item.limitNumberTemA2:item.runNumberTemA2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA2($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A2')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-355px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA2')" style="position: absolute; margin-left: 350px; margin-top: -330px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA2'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA2" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- A3 NEW -->
+    <div style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-300px; margin-left: 630px;" ng-click="changeTemCart('TemA3')">
+    </div>
+    <div class="row">
+        <div ng-show="cartTemType=='TemA3'" ng-drop="true" ng-drop-success="onDropCompleteTemA3($data,$event)">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top: -345px; margin-left: 108px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:-300px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA3($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA3" ng-init="item.limitNumberTemA3=5">
+                    <input type="hidden" ng-model="item.runNumberTemA3" ng-init="item.runNumberTemA3=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA3| limitTo:item.limitNumberTemA3:item.runNumberTemA3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA3($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A3')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-350px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA3')" style="position: absolute; margin-left: 350px; margin-top: -275px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA3'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA3" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- A4 NEW -->
+    <div style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-250px; margin-left: 630px;" ng-click="changeTemCart('TemA4')">
+    </div>
+    <div class="row">
+        <div ng-show="cartTemType=='TemA4'" ng-drop="true" ng-drop-success="onDropCompleteTemA4($data,$event)">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top: -291px; margin-left: 108px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:-245px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA4($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA4" ng-init="item.limitNumberTemA4=5">
+                    <input type="hidden" ng-model="item.runNumberTemA4" ng-init="item.runNumberTemA4=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA4| limitTo:item.limitNumberTemA4:item.runNumberTemA4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA4($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A4')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-295px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA4')" style="position: absolute; margin-left: 355px; margin-top: -225px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA4'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA4" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- A5 NEW -->
+    <div style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-190px; margin-left: 630px;" ng-click="changeTemCart('TemA5')">
+    </div>
+    <div class="row">
+        <div ng-show="cartTemType=='TemA5'" ng-drop="true" ng-drop-success="onDropCompleteTemA5($data,$event)">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top: -238px; margin-left: 108px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:-190px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style:none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA5($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA5" ng-init="item.limitNumberTemA5=5">
+                    <input type="hidden" ng-model="item.runNumberTemA5" ng-init="item.runNumberTemA5=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA5| limitTo:item.limitNumberTemA5:item.runNumberTemA5" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA5($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A5')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-240px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA5')" style="position: absolute; margin-left: 350px; margin-top: -170px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA5'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA5" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- A6 NEW -->
+    <div style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-135px; margin-left: 630px;" ng-click="changeTemCart('TemA6')">
+    </div>
+    <div class="row">
+        <div ng-show="cartTemType=='TemA6'" ng-drop="true" ng-drop-success="onDropCompleteTemA6($data,$event)">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top: -182px; margin-left: 108px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:-135px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA6($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA6" ng-init="item.limitNumberTemA6=5">
+                    <input type="hidden" ng-model="item.runNumberTemA6" ng-init="item.runNumberTemA6=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA6| limitTo:item.limitNumberTemA6:item.runNumberTemA6" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA6($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A6')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-185px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA6')" style="position: absolute; margin-left: 350px; margin-top: -110px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA6'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA6" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- A7 NEW -->
+    <div style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-80px; margin-left: 630px;" ng-click="changeTemCart('TemA7')">
+    </div>
+    <div class="row">
+        <div ng-show="cartTemType=='TemA7'" ng-drop="true" ng-drop-success="onDropCompleteTemA7($data,$event)">
+            <img src="images/cart/z1.png" alt="" style="height: 90px;  margin-top: -128px; margin-left: 108px; position: absolute; ">
+            <div class="col-md-12" style="position:absolute;margin-top:-80px;width: 35px;height: 150px; margin-left: 650px;">
+                <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteTemA7($data,$event)">
+                    <input type="hidden" ng-model="item.limitNumberTemA7" ng-init="item.limitNumberTemA7=5">
+                    <input type="hidden" ng-model="item.runNumberTemA7" ng-init="item.runNumberTemA7=0">
+                    <!-- <i class="fa fa-angle-left fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1>0?(item.runNumberTemA1=item.runNumberTemA1-1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                    <div style="height:50px;width:50px;margin-left:-17px" ng-repeat="obj in droppedObjectsTemA7| limitTo:item.limitNumberTemA7:item.runNumberTemA7" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessTemA7($data,$event)" ng-center-anchor="{{centerAnchor}}">
+                        <img src="{{obj.img}}" class="imgsetUp">
+                        <span class="badge red_badge">{{obj.qty}}</span>
+                    </div>
+                    <!-- <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberTemA1!=(floor.cartProd.length-item.limitNumberTemA1)?(item.runNumberTemA1=item.runNumberTemA1+1):item.runNumberTemA1=item.runNumberTemA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+                </div>
+            </div>
+        </div>
+        <div ng-click="changeTemCart('!A7')" style="width: 20px; height: 20px; border-style: none; position: absolute; margin-top:-125px; margin-left: 920px; ">
+        </div>
+        <div class="col-md-4 " name="type" ng-click="changeTemCart('TemA7')" style="position: absolute; margin-left: 350px; margin-top: -60px;">
+            <div class="row fixHidden" ng-hide="cartTemType=='TemA7'">
+                <div class="col-md-1" ng-repeat="obj in droppedObjectsTemA7" style="margin-left:10px;">
+                    <img src="{{obj.img}}" class="imgsetUp">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

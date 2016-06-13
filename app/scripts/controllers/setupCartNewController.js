@@ -844,7 +844,9 @@ $scope.cartID = $routeParams.cardID;
 
 
 
-
+        // $scope.alert = function(){
+        //     alert('');
+        // }
 
 
         $scope.init();
