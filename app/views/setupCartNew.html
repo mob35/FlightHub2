@@ -160,9 +160,14 @@
     </div>
     <div class="col-md-4"></div>
 </div>
-
 <!-- ////////////////////////////////////// -->
 <!-- new AB layout -->
+<div class="row" ng-repeat="item in newCart.floor">
+    <span ng-repeat="itm in item.cartProd">
+        <img src="{{itm.img}}" class="imgsetUp" ng-model="itm.img">
+    </span>
+</div>
+<!-- ////////////////////////////////////// -->
 <div class="row" ng-show="cartcontentType=='cartAB'">
     <div class="col-md-12" align="center">
         <img src="images/cart2/cratB.png" width="600px" style="position: relative;">
@@ -171,9 +176,9 @@
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:40px; margin-left: 330px;" ng-click="changeCart('A1')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A1'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: -990px; margin-top: -2px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: -990px; margin-top: -2px;">
             <div class="col-md-12" style="position:absolute;margin-top:40px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA1($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA1" ng-init="item.limitNumberA1=5">
@@ -197,13 +202,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B1 -->
+    <!-- AB  B1 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-370px; margin-left: 715px;" ng-click="changeCart('B1')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B1'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 595px; margin-top: -405px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 595px; margin-top: -405px;">
             <div class="col-md-12" style="position:absolute;margin-top:-360px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB1($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB1" ng-init="item.limitNumberB1=5">
@@ -227,13 +231,13 @@
             </div>
         </div>
     </div>
- <!-- AB  A2 -->
+    <!-- AB  A2 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-315px; margin-left: 330px;" ng-click="changeCart('A2')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A2'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 40px; margin-top: -355px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: 40px; margin-top: -355px;">
             <div class="col-md-12" style="position:absolute;margin-top:-310px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA2($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA2" ng-init="item.limitNumberA2=5">
@@ -257,13 +261,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B2 -->
+    <!-- AB  B2 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-320px; margin-left: 715px;" ng-click="changeCart('B2')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B2'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -355px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 594px; margin-top: -355px;">
             <div class="col-md-12" style="position:absolute;margin-top:-310px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB2($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB2" ng-init="item.limitNumberB2=5">
@@ -287,14 +290,13 @@
             </div>
         </div>
     </div>
-
     <!-- AB  A3 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-265px; margin-left: 330px;" ng-click="changeCart('A3')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A3'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 45px; margin-top: -310px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: 45px; margin-top: -310px;">
             <div class="col-md-12" style="position:absolute;margin-top:-260px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA3($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA3" ng-init="item.limitNumberA3=5">
@@ -318,13 +320,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B3 -->
+    <!-- AB  B3 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-270px; margin-left: 715px;" ng-click="changeCart('B3')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B3'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -307px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 594px; margin-top: -307px;">
             <div class="col-md-12" style="position:absolute;margin-top:-260px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB3($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB3" ng-init="item.limitNumberB3=5">
@@ -348,14 +349,13 @@
             </div>
         </div>
     </div>
-
-       <!-- AB  A4 -->
+    <!-- AB  A4 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-220px; margin-left: 330px;" ng-click="changeCart('A4')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A4'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 43px; margin-top: -260px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: 43px; margin-top: -260px;">
             <div class="col-md-12" style="position:absolute;margin-top:-210px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA4($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA4" ng-init="item.limitNumberA4=5">
@@ -379,13 +379,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B4 -->
+    <!-- AB  B4 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-225px; margin-left: 715px;" ng-click="changeCart('B4')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B4'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -260px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 594px; margin-top: -260px;">
             <div class="col-md-12" style="position:absolute;margin-top:-215px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB4($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB4" ng-init="item.limitNumberB4=5">
@@ -409,13 +408,13 @@
             </div>
         </div>
     </div>
-      <!-- AB  A5 -->
+    <!-- AB  A5 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-170px; margin-left: 330px;" ng-click="changeCart('A5')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A5'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 42px; margin-top: -210px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: 42px; margin-top: -210px;">
             <div class="col-md-12" style="position:absolute;margin-top:-165px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA5($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA5" ng-init="item.limitNumberA5=5">
@@ -439,13 +438,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B5 -->
+    <!-- AB  B5 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-175px; margin-left: 715px;" ng-click="changeCart('B5')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B5'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -210px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 594px; margin-top: -210px;">
             <div class="col-md-12" style="position:absolute;margin-top:-165px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB5($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB5" ng-init="item.limitNumberB5=5">
@@ -469,13 +467,13 @@
             </div>
         </div>
     </div>
-     <!-- AB  A6 -->
+    <!-- AB  A6 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-120px; margin-left: 330px;" ng-click="changeCart('A6')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A6'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 40px; margin-top: -160px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: 40px; margin-top: -160px;">
             <div class="col-md-12" style="position:absolute;margin-top:-115px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA6($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA6" ng-init="item.limitNumberA6=5">
@@ -499,13 +497,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B6 -->
+    <!-- AB  B6 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-125px; margin-left: 715px;" ng-click="changeCart('B6')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B6'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -161px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 594px; margin-top: -161px;">
             <div class="col-md-12" style="position:absolute;margin-top:-115px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB6($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB6" ng-init="item.limitNumberB6=5">
@@ -529,13 +526,13 @@
             </div>
         </div>
     </div>
-     <!-- AB  A7 -->
+    <!-- AB  A7 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-70px; margin-left: 330px;" ng-click="changeCart('A7')">
     </div>
     <!-- <img src="images/cart2/y1.png" width="455px"style="position: absolute; margin-left: -440px; margin-top: -2px;"> -->
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='A7'">
-            <img src="images/cart2/y2.png" alt="" width="455px"style="position: absolute; margin-left: 39px; margin-top: -112px;">
+            <img src="images/cart2/y2.png" alt="" width="455px" style="position: absolute; margin-left: 39px; margin-top: -112px;">
             <div class="col-md-12" style="position:absolute;margin-top:-65px;width: 35px;height: 150px; margin-left: 80px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteA7($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberA7" ng-init="item.limitNumberA7=5">
@@ -559,13 +556,12 @@
             </div>
         </div>
     </div>
-
- <!-- AB  B7 -->
+    <!-- AB  B7 -->
     <div style="width: 20px; height: 20px; border-style:none; position: absolute; margin-top:-80px; margin-left: 715px;" ng-click="changeCart('B7')">
     </div>
-     <div class="row">
+    <div class="row">
         <div ng-show="cartType=='B7'">
-            <img src="images/cart2/y1.png" alt="" width="455px"style="position: absolute; margin-left: 594px; margin-top: -113px;">
+            <img src="images/cart2/y1.png" alt="" width="455px" style="position: absolute; margin-left: 594px; margin-top: -113px;">
             <div class="col-md-12" style="position:absolute;margin-top:-65px;width: 35px;height: 150px; margin-left: 760px;">
                 <div style="border-style: none;border-width: 0.5px;height: 60px;width: 250px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteB7($data,$event)">
                     <input type="hidden" ng-model="item.limitNumberB7" ng-init="item.limitNumberB7=5">
@@ -590,11 +586,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
 <!-- new A layout -->
 <div class="row" ng-show="cartcontentType=='cartA'">
     <div class="col-md-12" align="center">
