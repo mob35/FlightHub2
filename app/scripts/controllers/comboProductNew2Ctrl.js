@@ -256,7 +256,7 @@ angular.module('inflightHubApp')
             img: "images/combo/XJ-12-ChickenRiceSoupSet.jpg"
         }];
 
-$scope.comboID = $routeParams.comboID;
+        $scope.comboID = $routeParams.comboID;
         $scope.combos = [];
         $scope.isEdit = $routeParams.comboID ? true : false;
         $scope.newCombo = {};
@@ -272,9 +272,10 @@ $scope.comboID = $routeParams.comboID;
             $scope.newCombo.id = guid();
             $scope.newCombo.floor[0].comboProd = $scope.droppedObjectsA1;
             $scope.combos.push($scope.newCombo);
-            $scope.newFn();
-             $scope.droppedObjectsA1 = [];
+            $scope.droppedObjectsA1 = [];
             comboProductNew2service.clearTemp();
+            $scope.newFn();
+
         };
         $scope.clearData = function() {
             comboProductNew2service.clearTemp();
@@ -360,7 +361,7 @@ $scope.comboID = $routeParams.comboID;
         $scope.cart = ["Cart 001A", "Cart 002B", "Cart 003C", "Cart 004D", "Cart 005E", "Cart 006F", "Cart 007G", "Cart 008H"];
         $scope.img = ["images/hamburger.jpg", "images/Macaroni.jpg", "images/salad.jpg", "images/sandwich.jpg", "images/sapagetti.jpg"]
 
-        
+
         $scope.limitNumber = 5;
         $scope.runNumber = 0;
         $scope.comboSet = [
@@ -392,12 +393,12 @@ $scope.comboID = $routeParams.comboID;
         };
         $scope.clickAdd = function(item) {
             item.qty += 1;
-             item.stock -= 1;
+            item.stock -= 1;
         };
         $scope.clickRemove = function(item) {
             if (item.qty > 0) {
                 item.qty -= 1;
-                 item.stock += 1;
+                item.stock += 1;
                 return true;
             } else {
                 return false;
@@ -419,8 +420,8 @@ $scope.comboID = $routeParams.comboID;
         $scope.droppedObjects2 = [];
         $scope.droppedObjectsA1 = [];
         $scope.droppedObjectsB1 = [];
-        
-         // TRASH ///////
+
+        // TRASH ///////
         $scope.onDragSuccess2 = function(data, evt) {
             var index = $scope.droppedObjects2.indexOf(data);
             if (index > -1) {
@@ -449,14 +450,14 @@ $scope.comboID = $routeParams.comboID;
             console.log(data);
         }
         $scope.onDragSuccessA1 = function(data, evt) {
-            console.log("A1", "$scope", "onDragSuccessA1", "", evt);
-            var index = $scope.droppedObjectsA1.indexOf(data);
-            var qty1 = data.qty;
-            if (index > -1) {
-                $scope.droppedObjectsA1.splice(index, 1);
+                console.log("A1", "$scope", "onDragSuccessA1", "", evt);
+                var index = $scope.droppedObjectsA1.indexOf(data);
+                var qty1 = data.qty;
+                if (index > -1) {
+                    $scope.droppedObjectsA1.splice(index, 1);
+                }
             }
-        }
-        // B1 ///////
+            // B1 ///////
         $scope.onDropCompleteB1 = function(data, evt) {
             var index = $scope.droppedObjectsB1.indexOf(data);
             var qty1 = data.qty;
@@ -475,8 +476,8 @@ $scope.comboID = $routeParams.comboID;
                 $scope.droppedObjectsB1.splice(index, 1);
             }
         }
-        
-            //  ///////
+
+        //  ///////
         var inArray = function(array, obj) {
             var index = array.indexOf(obj);
         }
@@ -498,7 +499,7 @@ $scope.comboID = $routeParams.comboID;
             $scope.productType = type;
         };
 
-        
+
 
 
 
