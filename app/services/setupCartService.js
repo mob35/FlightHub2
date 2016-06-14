@@ -11,6 +11,7 @@ angular.module('inflightHubApp').service('setupCartService', function() {
     var carts = [{
         id: 1,
         cartName: "Cart 001A",
+        typeTem: "cartAB"
         floor: [{
             floorId: 1,
             cartCate: "A1 Food",

@@ -359,6 +359,8 @@
         </div>
     </div>
 </div> -->
+
+<hr>
 <!-- /////////////////  Inbound  //////////////////// -->
 <div style="margin-left: -30px;" ng-show="uploadCartcontentType=='uploadCartInbound'">
     <div class="panel-body">
@@ -366,11 +368,14 @@
             <img src="images/Untitled-2.png" style="position: relative;">
         </div>
         <div class="row">
-            <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 200px;">
+            <div class="col-md-12" style="border-style: none ;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 200px; ">
+                <!-- <div style="writing-mode: tb-rl;position:absolute;">
+                Cart</div> -->
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec1($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec1| limitTo:item.limitNumberInboundSec1:item.runNumberInboundSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000; font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -380,6 +385,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec2| limitTo:item.limitNumberInboundSec2:item.runNumberInboundSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -389,6 +395,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec3| limitTo:item.limitNumberInboundSec3:item.runNumberInboundSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -399,6 +406,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec4| limitTo:item.limitNumberInboundSec4:item.runNumberInboundSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -417,6 +425,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec1| limitTo:item.limitNumberOutboundSec1:item.runNumberOutboundSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -426,6 +435,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec2| limitTo:item.limitNumberOutboundSec2:item.runNumberOutboundSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -435,6 +445,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec3| limitTo:item.limitNumberOutboundSec3:item.runNumberOutboundSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -445,6 +456,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec4| limitTo:item.limitNumberOutboundSec4:item.runNumberOutboundSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -466,6 +478,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec1| limitTo:item.limitNumberQuickTurnLeftSec1:item.runNumberQuickTurnLeftSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -475,6 +488,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec2| limitTo:item.limitNumberQuickTurnLeftSec2:item.runNumberQuickTurnLeftSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                         <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
@@ -485,6 +499,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec3| limitTo:item.limitNumberQuickTurnLeftSec3:item.runNumberQuickTurnLeftSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                         <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
@@ -496,6 +511,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec4| limitTo:item.limitNumberQuickTurnLeftSec4:item.runNumberQuickTurnLeftSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -507,6 +523,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec1| limitTo:item.limitNumberQuickTurnRightSec1:item.runNumberQuickTurnRightSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
@@ -516,6 +533,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec2| limitTo:item.limitNumberQuickTurnRightSec2:item.runNumberQuickTurnRightSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                         <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
@@ -526,6 +544,7 @@
                 <div style="height: 150px;width: 30px;margin-left: -13px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec3| limitTo:item.limitNumberQuickTurnRightSec3:item.runNumberQuickTurnRightSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                         <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
@@ -537,6 +556,7 @@
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec4| limitTo:item.limitNumberQuickTurnRightSec4:item.runNumberQuickTurnRightSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <span class="badge red_badge">{{obj.qty}}</span>
+                        <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
                     </div>
                 </div>
             </div>
