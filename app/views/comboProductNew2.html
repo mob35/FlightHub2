@@ -153,7 +153,7 @@
             <div style="padding:15px;">
                 <div class="row">
                     <div class="col-md-4" ng-repeat="item in combos | filter:searchPromoList">
-                    <a ng-href="#/comboProductAdd/{{item.id}}" class="row list-group-item" >
+                    <a ng-href="#/comboProductNew2/{{item.id}}" class="row list-group-item" >
                         <div class="panel panel-default" style="padding:15px;" ng-repeat="itm in item.floor">
                             <div class="row">
                                 <div class="col-md-12">
@@ -182,7 +182,7 @@
                                 </div>
                             </div>
                         </div>
-                    
+                     </a>
                     </div>
                 </div>
             </div>
@@ -196,10 +196,20 @@
                 <a ng-click="clearData()">Cancel</a>
                 <a>
                     <span style="float: right;" ng-show="isEdit==false" ng-click="addCombo()">Done </span>
-                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+                
+                </a>
+                <a ng-href="#/comboProductNew2" ng-click="clearData()">
+                    <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
                 </a>
             </div>
             <div style="padding:15px;margin-top:-20px" ng-repeat="item in newCombo.floor">
+
+
+               <!--  <div style="margin-top:30px">
+                                <span ng-repeat="itm in item.floor">
+                            <div class="col-md-6 panel panel-default" style="padding:5px;margin-top:-20px" ng-repeat="im in itm.comboProd">
+                                <img class="imgsetCart" src="{{im.img}}">
+                            </div> -->
                 <div class="row">
                     <div class="col-md-2">
                         <label>Name : </label>
@@ -208,12 +218,22 @@
                         <input class="form-control" ng-model="item.comboName">
                     </div>
                 </div>
+                <div class="row" ng-repeat="item in newCombo.floor">
+                <div ng-repeat="itm in item.comboProd">
+                    <div class="col-md-2">
+                        <label>XX : </label>
+                    </div>
+                    <div class="col-md-10">
+                        <img ng-model="itm.img">
+                    </div>
+                    </div>
+                </div>
                 <div class="row" style="margin-top:10px;">
                     <div class="col-md-2">
                         <label>Price : </label>
                     </div>
                     <div class="col-md-10">
-                        <input class="form-control" ng-model="item.comboMoney">
+                        <input type="number" placeholder="0" class="form-control" ng-model="item.comboMoney">
                     </div>
                 </div>
                 <div class="row" style="margin-top:10px;">

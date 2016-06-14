@@ -855,7 +855,7 @@ angular.module("ngDraggable", [])
             floor: [{
                 floorId: 1,
                 comboName: "",
-                comboMoney: 0,
+                comboMoney: "",
                 comboProd: []
             }]
         };

@@ -305,6 +305,7 @@ angular.module('inflightHubApp')
             };
 
         $scope.editFn = function() {
+            $scope.newCombo.floor[0].comboProd = $scope.droppedObjectsA1;
             comboProductNew2service.clearTemp();
         };
         $scope.setProduct = function() {

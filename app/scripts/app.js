@@ -160,6 +160,12 @@
                  controllerAs: 'comboProductNew2'
 
              })
+             .when('/comboProductNew2/:comboID', {
+                 templateUrl: 'views/comboProductNew2.html',
+                 controller: 'comboProductNew2Ctrl',
+                 controllerAs: 'comboProductNew2'
+
+             })
              .when('/product', {
                  templateUrl: 'views/product.html',
                  controller: 'comboProductCtrl',
