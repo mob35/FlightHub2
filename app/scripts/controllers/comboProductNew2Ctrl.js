@@ -308,6 +308,14 @@ angular.module('inflightHubApp')
             $scope.newCombo.floor[0].comboProd = $scope.droppedObjectsA1;
             comboProductNew2service.clearTemp();
         };
+        // $scope.reload = function() {
+        //     comboProductNew2service.clearTemp();
+        //     window.location.reload("#/comboProductNew2");
+        // };
+
+        $scope.clear = function() {
+            $("form")[0].reset();
+        };
         $scope.setProduct = function() {
             if ($routeParams.floorId && $routeParams.comboID && typeof $scope.newCombo.floor != "undefined") {
                 for (var i = 0; i < $scope.newCombo.floor.length; i++) { //หาชั้นที่จะแอดค่า

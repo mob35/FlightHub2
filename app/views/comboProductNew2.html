@@ -153,36 +153,36 @@
             <div style="padding:15px;">
                 <div class="row">
                     <div class="col-md-4" ng-repeat="item in combos | filter:searchPromoList">
-                    <a ng-href="#/comboProductNew2/{{item.id}}" class="row list-group-item" >
-                        <div class="panel panel-default" style="padding:15px;" ng-repeat="itm in item.floor">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <label>{{itm.comboName}}</label>
-                                    <br>
-                                    <label>Price {{itm.comboMoney}} ฿</label>
+                        <a ng-href="#/comboProductNew2/{{item.id}}" class="row list-group-item">
+                            <div class="panel panel-default" style="padding:15px;" ng-repeat="itm in item.floor">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>{{itm.comboName}}</label>
+                                        <br>
+                                        <label>Price {{itm.comboMoney}} ฿</label>
+                                    </div>
                                 </div>
-                            </div>
-                            <div style="margin-top:30px">
-                                <span ng-repeat="itm in item.floor">
+                                <div style="margin-top:30px">
+                                    <span ng-repeat="itm in item.floor">
                             <div class="col-md-6 panel panel-default" style="padding:5px;margin-top:-20px" ng-repeat="im in itm.comboProd">
                                 <img class="imgsetCart" src="{{im.img}}">
                             </div>
                             </span>
-                            </div>
-                            <div align="center">
-                                <div class="row" style="margin-top:10px;">
-                                    <div class="col-md-12">
-                                        <span style="font-size:10px;">Date {{item.comboDateStart | date:'dd-MM-yyyy'}}</span>
+                                </div>
+                                <div align="center">
+                                    <div class="row" style="margin-top:10px;">
+                                        <div class="col-md-12">
+                                            <span style="font-size:10px;">Date {{item.comboDateStart | date:'dd-MM-yyyy'}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <span style="font-size:10px;">To. {{item.comboDateFinish | date:'dd-MM-yyyy'}}</span>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <span style="font-size:10px;">To. {{item.comboDateFinish | date:'dd-MM-yyyy'}}</span>
-                                    </div>
-                                </div>
                             </div>
-                        </div>
-                     </a>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -193,19 +193,18 @@
         <div class="panel panel-default">
             <div class="breadcrumb">
                 <!-- <span> Cancel</span> -->
-                <a ng-click="clearData()">Cancel</a>
+                <a ng-href="#/comboProductNew2" ng-show="isEdit==false" ng-click="clear()">Cancel</a>
+                <a ng-href="#/comboProductNew2" ng-show="isEdit==true" ng-click="clearData()">Cancel</a>
                 <a>
                     <span style="float: right;" ng-show="isEdit==false" ng-click="addCombo()">Done </span>
-                
                 </a>
                 <a ng-href="#/comboProductNew2" ng-click="clearData()">
                     <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
                 </a>
             </div>
+            <form>
             <div style="padding:15px;margin-top:-20px" ng-repeat="item in newCombo.floor">
-
-
-               <!--  <div style="margin-top:30px">
+                <!--  <div style="margin-top:30px">
                                 <span ng-repeat="itm in item.floor">
                             <div class="col-md-6 panel panel-default" style="padding:5px;margin-top:-20px" ng-repeat="im in itm.comboProd">
                                 <img class="imgsetCart" src="{{im.img}}">
@@ -216,16 +215,6 @@
                     </div>
                     <div class="col-md-10">
                         <input class="form-control" ng-model="item.comboName">
-                    </div>
-                </div>
-                <div class="row" ng-repeat="item in newCombo.floor">
-                <div ng-repeat="itm in item.comboProd">
-                    <div class="col-md-2">
-                        <label>XX : </label>
-                    </div>
-                    <div class="col-md-10">
-                        <img ng-model="itm.img">
-                    </div>
                     </div>
                 </div>
                 <div class="row" style="margin-top:10px;">
@@ -254,6 +243,23 @@
                         </label>
                     </div>
                 </div>
+                <div class="row" style="margin-top:10px;">
+                    <div class="col-md-3">
+                        <label>Product :
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row" ng-repeat="item in newCombo.floor">
+                        <span ng-repeat="itm in item.comboProd">
+                        <img src="{{itm.img}}" class="imgsetUp" ng-model="itm.img"></span>
+                    </div>
+                        </label>
+                    </div>
+                </div>
+                <!-- <div class="row" ng-repeat="item in newCombo.floor">
+                        <span ng-repeat="itm in item.comboProd">
+                        <img src="{{itm.img}}" class="imgsetCart" ng-model="itm.img"></span>
+                        <span class="badge red_badge">{{itm.qty}}</span>
+                    </div> -->
                 <div class="panel panel-default" style="margin-top:15px;padding:15px;">
                     <div ng-drop="true" ng-drop-success="onDropCompleteA1($data,$event)">
                         <input type="hidden" ng-model="item.limitNumberA1" ng-init="item.limitNumberA1=6">
@@ -266,7 +272,11 @@
                         <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberA1!=(floor.cartProd.length-item.limitNumberA1)?(item.runNumberA1=item.runNumberA1+1):item.runNumberA1=item.runNumberA1"></i> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     </div>
                 </div>
+                <!-- ///////////////////////////////////////////////////////////////////////// -->
+                
+                <!-- ///////////////////////////////////////////////////////////////////////// -->
             </div>
+            </form>
         </div>
     </div>
 </div>
