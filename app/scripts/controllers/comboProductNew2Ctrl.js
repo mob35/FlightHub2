@@ -414,7 +414,9 @@ angular.module('inflightHubApp')
             }
         };
 
-
+ $scope.xx = function() {
+            alert("test");
+        };
 
 
 
@@ -507,9 +509,6 @@ angular.module('inflightHubApp')
         $scope.changeType = function(type) {
             $scope.productType = type;
         };
-
-
-
 
 
     });
