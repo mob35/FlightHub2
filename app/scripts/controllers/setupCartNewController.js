@@ -331,6 +331,7 @@ angular.module('inflightHubApp')
             }
             qty1 = data.qty++;
             console.log(data.qty);
+            console.log($scope.droppedObjectsA1);
         }
         $scope.onDragSuccessB1 = function(data, evt) {
             console.log("B1", "$scope", "onDragSuccessB1", "", evt);

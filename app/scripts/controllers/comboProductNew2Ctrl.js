@@ -368,7 +368,7 @@ angular.module('inflightHubApp')
 
 
         $scope.cart = ["Cart 001A", "Cart 002B", "Cart 003C", "Cart 004D", "Cart 005E", "Cart 006F", "Cart 007G", "Cart 008H"];
-        $scope.img = ["images/hamburger.jpg", "images/Macaroni.jpg", "images/salad.jpg", "images/sandwich.jpg", "images/sapagetti.jpg"]
+        $scope.img = ["images/hamburger.jpg", "images/Macaroni.jpg", "images/salad.jpg", "images/sandwich.jpg", "images/sapagetti.jpg"];
 
 
         $scope.limitNumber = 5;
@@ -414,7 +414,9 @@ angular.module('inflightHubApp')
             }
         };
 
-
+ $scope.xx = function() {
+            alert("test");
+        };
 
 
 
@@ -507,9 +509,6 @@ angular.module('inflightHubApp')
         $scope.changeType = function(type) {
             $scope.productType = type;
         };
-
-
-
 
 
     });
