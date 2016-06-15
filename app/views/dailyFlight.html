@@ -1,7 +1,7 @@
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
-                            Daily Summary Sales Report By Flight
+                            Daily Summary Sales Report 
                            
                         </h1>
         <ol class="breadcrumb">
@@ -16,50 +16,113 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-6 ">
-                <label>Date  </label>
-                <input type="date" class="form-control" value="2016-06-10" >
-                
-
+                <label>Date </label>
+                <input type="date" class="form-control" >
             </div>
             <div class="col-md-6">
-                <label>To  </label>
-                <input type="date" class="form-control" value="2016-06-13">
+                <label>To </label>
+                <input type="date" class="form-control" >
             </div>
         </div>
         <div class="row" style="margin-top:20px;">
             <div class="col-md-6">
-                <label> Flight No. </label>
-                <select ng-model="report" style="width: 100%">
-                    <option value="">All Flight</option>
+                <label> Flight No </label>
+                <select ng-model="flight" style="width: 100%">
+                    <option value="">Choose</option>
+                    <option value="allFlight">All Flight</option>
+                    <option value="">AK 001</option>
+                    <option value="qz002">QZ 002</option>
+                    <option value="">TG 005</option>
+                    <option value="">FT 004</option>
+                    <option value="">JP 006</option>
                 </select>
             </div>
+            <div class="col-md-6">
+                <label> Crew </label>
+                <select ng-model="crew" style="width: 100%">
+                    <option value="">Choose</option>
+                    <option value="allCrew">All Crew</option>
+                    <option value="">Satida P.</option>
+                    <option value="kunkul">Kunkulnat P.</option>
+                    <option value="">Arisara S.</option>
+                    <option value="">Somsri A.</option>
+                    <option value="">Manee C.</option>
+                </select>
+            </div>
+        </div>
+        <div class="row" style="margin-top:20px;">
             <div class="col-md-6">
                 <label> Category </label>
-                <select ng-model="report" style="width: 100%">
-                    <option value="">All Category</option>
+                <select ng-model="category" style="width: 100%">
+                    <option value="">Choose</option>
+                    <option value="allCate">All Category</option>
+                    <option value="food">Food</option>
+                    <option value="">Drink</option>
+                    <option value="">Fast Food</option>
+                    <option value="">Dessert</option>
+                    <option value="">Combo Set</option>
                 </select>
             </div>
-        </div>
-        <div class="row" style="margin-top:20px;">
             <div class="col-md-6">
                 <label> Product </label>
-                <select ng-model="report" style="width: 100%">
-                    <option value="">All  Product</option>
+                <select ng-model="product" style="width: 100%">
+                    <option value="">Choose</option>
+                    <option value="allPro">All Product</option>
+                    <option value="">KoloMee</option>
+                    <option value="">Shepherds Pie</option>
+                    <option value="">Pak Nassers Nasi Lemak</option>
+                    <option value="">Nasi Dagang with Chicken Curry</option>
+                    <option value="">Tomato Rice with Ayam Percik</option>
+                    <option value="roast chicken">Roast Chicken with Cream Sauce</option>
+                    <option value="">Ginger Fried Rice</option>
+                    <option value="">Vegetable Briyani</option>
+                    <option value="">Chicken Rice</option>
+                    <option value="">Water</option>
+                    <option value="">Pepsi</option>
+                    <option value="">Cocacola</option>
+                    <option value="">Green Fanta</option>
+                    <option value="">Red Fanta</option>
+                    <option value="">Orange Fanta</option>
+                    <option value="">Sprite</option>
+                    <option value="">Chicken Satay Wrap</option>
+                    <option value="">Assorted Sandwiches</option>
+                    <option value="">CornBell Peppers Sandwich</option>
+                    <option value="">Frankster Chicken</option>
+                    <option value="">Deli Chicken Focaccia Sandwich</option>
+                    <option value="">Pancakes Maple Syrup Butter</option>
+                    <option value="">Banana Cake with Malee</option>
+                    <option value="">Yamanishi Mochi</option>
+                    <option value="">Macand Cheese Ribena</option>
+                    <option value="">Roti Canai With ChickenCurry</option>
+                    <option value="">American Breakfast Set</option>
+                    <option value="">Mee Goreng Mamak TehTarik</option>
+                    <option value="">Chicken Rice Soup Set</option>
                 </select>
             </div>
         </div>
+        &nbsp;
         <div class="row">
             <div class="col-md-12" align="right">
                 <button>Generate Report</button>
                 <button>Cancel Report</button>
             </div>
         </div>
-    
+    </div>
 </div>
-</div>
-
 <div class="row">
-    <div class="col-md-12" align="center">
-        <iframe src="pdf/select flight.pdf" width="1168px" height="800px" />
+    <div class="col-md-12" align="center" ng-show="flight == 'allFlight' && crew == 'allCrew' && category == 'allCate'  &&  product == 'allPro'">
+        <iframe src="pdf/1.select date.pdf#zoom=85" width="1168px" height="800px" />
+    </div>
+    <div class="col-md-12" align="center" ng-show="flight == 'qz002' && crew == 'allCrew' && category == 'allCate'  &&  product == 'allPro'">
+        <iframe src="pdf/2.select flight.pdf#zoom=85" width="1168px" height="800px" />
+    </div>
+    <div class="col-md-12" align="center" ng-show="flight == 'qz002' && crew == 'kunkul' && category == 'allCate'  &&  product == 'allPro'">
+        <iframe src="pdf/3.select crew.pdf#zoom=85" width="1168px" height="800px" />
+    </div>
+    <div class="col-md-12" align="center" ng-show="flight == 'qz002' && crew == 'kunkul' && category == 'food'  &&  product == 'allPro'">
+        <iframe src="pdf/4.select cate.pdf#zoom=85" width="1168px" height="800px" />
+    </div>
+    <div class="col-md-12" align="center" ng-show="flight == 'qz002' && crew == 'kunkul' && category == 'food'  &&  product == 'roast chicken'">
+        <iframe src="pdf/5.select product.pdf#zoom=85" width="1168px" height="800px" />
     </div>
 </div>
