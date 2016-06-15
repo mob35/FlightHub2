@@ -68,14 +68,20 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Malaysia",
-            value: 10
-        }, {
-            label: "Japan",
-            value: 50
-        }, {
-            label: "India",
+            label: "Food",
             value: 40
+        }, {
+            label: "Drink",
+            value: 20
+        },{
+            label: "Dessert",
+            value: 15
+        },{
+            label: "Fast Food",
+            value: 10
+        },{
+            label: "Combo Set",
+            value: 5
         }],
         resize: true
     });
