@@ -29,7 +29,6 @@
          'ngTouch',
          'ngMaterial',
          'ngDraggable',
-         'dndLists',
          'ui.sortable'
      ])
      .config(function($routeProvider) {
