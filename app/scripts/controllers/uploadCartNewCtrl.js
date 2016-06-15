@@ -17,7 +17,7 @@ angular.module('inflightHubApp')
         $scope.productPro = [{
             id: 1,
             cate: "Cart",
-            name: "Gift",
+            name: "Duty Free",
             price: 130,
             stock: 10,
             qty: 0,
@@ -25,7 +25,7 @@ angular.module('inflightHubApp')
         }, {
             id: 2,
             cate: "Cart",
-            name: "Normal",
+            name: "Lunch",
             price: 230,
             stock: 55,
             qty: 0,
@@ -33,7 +33,7 @@ angular.module('inflightHubApp')
         }, {
             id: 3,
             cate: "Cart",
-            name: "Islam",
+            name: "Coffee Break",
             price: 100,
             stock: 90,
             qty: 0,

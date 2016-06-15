@@ -10,7 +10,43 @@
 angular.module('inflightHubApp').service('setupCartService', function() {
     var carts = [{
         id: 1,
-        cartName: "Cart 001A",
+        cartName: "Duty Free",
+        floor: [{
+            floorId: 1,
+            cartCate: "A1 Food",
+            cartProd: [{
+                id: 1,
+                cate:"Food",
+                name: "KoloMee",
+                price: 130,
+                stock:9,
+                qty: 1,
+                img: "images/food/AK-1-KoloMee.png"
+            }, {
+                id: 10,
+                cate:"Drink",
+                name: "Water",
+                price: 20,
+                stock:69,
+                qty: 1,
+                img: "images/drink/1-Water.jpg"
+            }]
+        }, {
+            floorId: 2,
+            cartCate: "A2 Foodx",
+            cartProd: [{
+                id: 16,
+                cate:"Drink",
+                name: "Sprite",
+                price: 30,
+                stock:41,
+                qty: 1,
+                img: "images/drink/7-sprite.jpg"
+            }]
+        }]
+    },{
+        id: 2,
+        cartName: "Coffee Break",
         floor: [{
             floorId: 1,
             cartCate: "A1 Food",

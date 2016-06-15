@@ -1,4 +1,3 @@
-
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
@@ -15,9 +14,70 @@
     </div>
 </div>
 <!-- ///////////////////////////////////////// -->
-<div class="form-group">
-    <label style="margin-left: 15px;">Flight Name</label>
-    <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+<div class="panel panel-default">
+    <div class="breadcrumb">
+        <div>
+            <label>Flight Type</label>
+        </div>
+    </div>
+    <!-- ////////////////////////////////// -->
+    <!-- //////////////      Radio     ////////////////////////////// -->
+    <div class="row" align="center">
+        <!-- <div class="col-md-3"></div> -->
+        <div class="col-md-4">
+            <input id="uploadCartInbound" type="radio" name="uploadContent" ng-model="uploadContent" value="uploadCartInbound" ng-click="uploadChangecontentCart('uploadCartInbound')">
+            <label for="uploadCartInbound"> Inbound </label>
+        </div>
+        <div class="col-md-4">
+            <input id="uploadCartOutbound" type="radio" name="uploadContent" ng-model="uploadContent" value="uploadCartOutbound" ng-click="uploadChangecontentCart('uploadCartOutbound')">
+            <label for="uploadCartOutbound"> Outbound </label>
+        </div>
+        <div class="col-md-4">
+            <input id="uploadCartQuickTurn" type="radio" name="uploadContent" ng-model="uploadContent" value="uploadCartQuickTurn" ng-click="uploadChangecontentCart('uploadCartQuickTurn')">
+            <label for="uploadCartQuickTurn"> QuickTurn </label>
+        </div>
+        <!-- <div class="col-md-3"></div> -->
+    </div>
+</div>
+<!-- ///////////////////////////////////////// -->
+<div class="row">
+<div class="col-md-12">
+<div class="panel panel-default" ng-show="uploadCartcontentType=='uploadCartInbound'">
+    <div class="breadcrumb">
+        <label>Flight Name</label>
+    </div>
+    <div class="row" style="margin-bottom:20px;margin-top:-10px;">
+        <div class="col-md-12">
+            <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+        </div>
+    </div>
+</div></div></div>
+<!-- ///////////////////////////////////////// -->
+<div class="row">
+<div class="col-md-12">
+<div class="panel panel-default" ng-show="uploadCartcontentType=='uploadCartOutbound'">
+    <div class="breadcrumb">
+        <label>Flight Name</label>
+    </div>
+    <div class="row" style="margin-bottom:20px;margin-top:-10px;">
+        <div class="col-md-12">
+            <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+        </div>
+    </div>
+</div></div></div>
+<!-- ///////////////////////////////////////// -->
+<div class="panel panel-default" ng-show="uploadCartcontentType=='uploadCartQuickTurn'">
+    <div class="breadcrumb">
+        <label>Flight Name</label>
+    </div>
+    <div class="row" style="margin-bottom:20px;margin-top:-10px;">
+        <div class="col-md-6">
+            <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+        </div>
+        <div class="col-md-6">
+            <input class="form-control" placeholder="AK25" ng-model="newUpload.flightName">
+        </div>
+    </div>
 </div>
 <!-- ////////////////////////////////// -->
 <div class="navbar-header">
@@ -78,7 +138,7 @@
 </div>
 <!-- ///////////////////////////////////////////////////// -->
 <!-- //////////////      Radio     ////////////////////////////// -->
-<div class="row" align="center">
+<!-- <div class="row" align="center">
     <div class="col-md-3"></div>
     <div class="col-md-2">
         <input id="uploadCartInbound" type="radio" name="uploadContent" ng-model="uploadContent" value="uploadCartInbound" ng-click="uploadChangecontentCart('uploadCartInbound')">
@@ -93,7 +153,7 @@
         <label for="uploadCartQuickTurn"> QuickTurn </label>
     </div>
     <div class="col-md-3"></div>
-</div>
+</div> -->
 <!-- //////////////////  Inbound  //////////////////// -->
 <!-- <div ng-show="uploadCartcontentType=='uploadCartInbound'">
     <div class="panel-body">
@@ -359,7 +419,6 @@
         </div>
     </div>
 </div> -->
-
 <hr>
 <!-- /////////////////  Inbound  //////////////////// -->
 <div style="margin-left: -30px;" ng-show="uploadCartcontentType=='uploadCartInbound'">
@@ -383,7 +442,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 240px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec2| limitTo:item.limitNumberInboundSec2:item.runNumberInboundSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -394,7 +453,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 755px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec3| limitTo:item.limitNumberInboundSec3:item.runNumberInboundSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -405,7 +464,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 795px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec4($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsInboundSec4| limitTo:item.limitNumberInboundSec4:item.runNumberInboundSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessInboundSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -425,7 +484,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 200px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Cart</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Cart</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec1($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec1| limitTo:item.limitNumberOutboundSec1:item.runNumberOutboundSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -437,7 +496,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 240px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec2| limitTo:item.limitNumberOutboundSec2:item.runNumberOutboundSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -448,7 +507,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 755px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec3| limitTo:item.limitNumberOutboundSec3:item.runNumberOutboundSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -459,7 +518,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 795px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec4($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsOutboundSec4| limitTo:item.limitNumberOutboundSec4:item.runNumberOutboundSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessOutboundSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -482,7 +541,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 200px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Cart</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Cart</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec1($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec1| limitTo:item.limitNumberQuickTurnLeftSec1:item.runNumberQuickTurnLeftSec1" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec1($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -494,7 +553,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 245px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec2| limitTo:item.limitNumberQuickTurnLeftSec2:item.runNumberQuickTurnLeftSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -506,7 +565,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 755px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec3| limitTo:item.limitNumberQuickTurnLeftSec3:item.runNumberQuickTurnLeftSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
@@ -518,7 +577,7 @@
         </div>
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 795px;">
-            <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
+                <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec4($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec4| limitTo:item.limitNumberQuickTurnLeftSec4:item.runNumberQuickTurnLeftSec4" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec4($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">

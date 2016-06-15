@@ -762,7 +762,7 @@ $scope.cartID = $routeParams.cardID;
         };
         $scope.addCart = function() {
             $scope.newCart.id = guid();
-            $scope.newCart.floor[0].cartProd = $scope.droppedObjectsA1;
+            $scope.newCart.floor.floorId[0].cartProd = $scope.droppedObjectsA1;
             $scope.carts.push($scope.newCart);
             $scope.newFn();
             setupCartService.clearTemp();
@@ -796,7 +796,7 @@ $scope.cartID = $routeParams.cardID;
         };
 
         $scope.editFn = function() {
-            $scope.newCart.floor[0].cartProd = $scope.droppedObjectsA1;
+            $scope.newCart.floor.cartProd = $scope.droppedObjectsA1;
             setupCartService.clearTemp();
         };
 
