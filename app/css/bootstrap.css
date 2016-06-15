@@ -8472,6 +8472,9 @@ div[back-img]{
     margin-left: -100px;
     position: relative;
 }
+<<<<<<< HEAD
+
+=======
 /***************************** Required styles *****************************/
 
 /**
@@ -8617,3 +8620,4 @@ div[back-img]{
 .nestedDemo .trashcan .dndPlaceholder {
     display: none;
 }
+>>>>>>> 83aaf335592f026e80f39efe50de592cafbaaf1c
