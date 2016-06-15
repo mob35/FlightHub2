@@ -29,7 +29,6 @@
          'ngTouch',
          'ngMaterial',
          'ngDraggable',
-         // 'ngDragDrop',
          'ui.sortable'
      ])
      .config(function($routeProvider) {
@@ -48,6 +47,12 @@
                  templateUrl: 'views/home.html',
                  controller: 'homeCtrl',
                  controllerAs: 'homeCtrl'
+
+             })
+             .when('/dnd', {
+                 templateUrl: 'views/dnd.html',
+                 controller: 'NestedListsDemoController',
+                 controllerAs: 'NestedListsDemoController'
 
              })
              .when('/setupCart', {

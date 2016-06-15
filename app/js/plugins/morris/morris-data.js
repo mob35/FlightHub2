@@ -9,56 +9,76 @@ $(function() {
             period: '2014-03',
             Food: 2666,
             Drink: null,
-            Combo: 2647
+            Combo: 2647,
+            FastFood: 2533,
+            Dessert:2004
         }, {
             period: '2014-06',
             Food: 2778,
             Drink: 2294,
-            Combo: 2441
+            Combo: 2441,
+            FastFood: 1333,
+            Dessert:934
         }, {
             period: '2014-09',
             Food: 4912,
             Drink: 1969,
-            Combo: 2501
+            Combo: 2501,
+            FastFood: 2333,
+            Dessert:2134
         }, {
             period: '2014-12',
             Food: 3767,
             Drink: 3597,
-            Combo: 5689
+            Combo: 5689,
+            FastFood: 2033,
+            Dessert:2674
         }, {
             period: '2015-03',
             Food: 6810,
             Drink: 1914,
-            Combo: 2293
+            Combo: 2293,
+            FastFood: 2563,
+            Dessert:1234
         }, {
             period: '2015-06',
             Food: 5670,
             Drink: 4293,
-            Combo: 1881
+            Combo: 1881,
+            FastFood: 2543,
+            Dessert:2335
         }, {
             period: '2015-09',
             Food: 4820,
             Drink: 3795,
-            Combo: 1588
+            Combo: 1588,
+            FastFood: 2199,
+            Dessert:2000
         }, {
             period: '2015-12',
             Food: 15073,
             Drink: 5967,
-            Combo: 5175
+            Combo: 5175,
+            FastFood: 2345,
+            Dessert:2134
         }, {
             period: '2016-03',
             Food: 10687,
             Drink: 4460,
-            Combo: 2028
+            Combo: 2028,
+            FastFood: 2563,
+            Dessert:2555
         }, {
             period: '2016-06',
             Food: 8432,
             Drink: 5713,
-            Combo: 1791
+            Combo: 1791,
+            FastFood: 3000,
+            Dessert:2634
         }],
         xkey: 'period',
-        ykeys: ['Food', 'Drink', 'Combo'],
-        labels: ['Food', 'Drink', 'Combo'],
+        ykeys: ['Food', 'Drink', 'Combo', 'FastFood', 'Dessert'],
+        labels: ['Food', 'Drink', 'Combo', 'FastFood', 'Dessert'],
         pointSize: 2,
         hideHover: 'auto',
         resize: true
