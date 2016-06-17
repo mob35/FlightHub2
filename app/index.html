@@ -12,7 +12,7 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
+    <link rel="stylesheet" href="angular_material_datetimepicker/css/material-datetimepicker.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -22,6 +22,8 @@
     <!-- Custom CSS -->
     <link href="css/sb-admin.css" rel="stylesheet">
     <link href="css/plugins/morris.css" rel="stylesheet">
+    <!-- datetimepicker -->
+    <!-- <link href="css/materail-datetimepicker.css" rel="stylesheet"> -->
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
@@ -115,7 +117,7 @@
         position: relative;
         /*margin-top: -9.5px;*/
         /*padding-right: 55px;*/
-        padding-top:10px;
+        padding-top: 10px;
     }
     
     [ng-drop].drag-enter {
@@ -137,7 +139,7 @@
         position: relative;
         z-index: 2;
     }
-   
+    
     .setimgSmall {
         width: 25px;
         height: 20px;
@@ -155,7 +157,7 @@
         height: 43px;
         text-align: center;
     }
-
+    
     .amountColHeader {
         width: 200px;
     }
@@ -168,7 +170,7 @@
         height: 43px;
         text-align: center;
     }
-
+    
     .flightHeader {
         width: 80px;
     }
@@ -318,10 +320,10 @@
                     <!-- <li>
                         <a ng-href="#/uploadCartNew"><i class="fa fa-fw fa-plane"></i> Upload Cart</a>
                     </li> -->
-                   <!--  <li>
+                    <!--  <li>
                         <a ng-href="#/comboProduct"><i class="fa fa-fw fa-cutlery"></i> Combo / Product</a>
                     </li> -->
-                   <!--  <li>
+                    <!--  <li>
                         <a ng-href="#/comboProductNew"><i class="fa fa-fw fa-cutlery"></i> Combo Product New</a>
                     </li> -->
                     <li>
@@ -342,19 +344,19 @@
                     <li>
                         <a ng-href="#/insentive"><i class="fa fa-fw fa fa-money"></i> Setup Incentive</a>
                     </li>
-                  <!--   <li>
+                    <!--   <li>
                         <a ng-href="#/dnd"><i class="fa fa-fw fa-file-text"></i> DND</a>
                     </li> -->
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#demo"><i class="fa fa-fw fa-file-text"></i> View Reports <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="demo" class="collapse">
-                        <!--     <li>
+                            <!--     <li>
                                 <a ng-href="#/dailyAmount">Daily Summary Sales Report By Amount</a>
                             </li> -->
                             <li>
                                 <a ng-href="#/dailyFlight">Daily Summary Sales Report</a>
                             </li>
-                          <!--   <li>
+                            <!--   <li>
                                 <a ng-href="#/dailyIncluded">Daily Summary Sales Report By Qty (included redeem and free item)</a>
                             </li>
                             <li>
@@ -411,6 +413,8 @@
     <script src="bower_components/angular-aria/angular-aria.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="angular_material_datetimepicker/js/moment.js"></script>
+    <script src="angular_material_datetimepicker/js/angular-material-datetimepicker.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -463,9 +467,8 @@
     <script src="scripts/controllers/uploadCartNewCtrl.js"></script>
     <script src="services/includedService.js"></script>
     <script src="scripts/controllers/homeCtrl.js"></script>
-     <script src="scripts/controllers/NestedListsDemoController.js"></script>
-    
-
+    <script src="scripts/controllers/NestedListsDemoController.js"></script>
+   
     <!-- endbuild -->
     <!-- jQuery -->
 </body>

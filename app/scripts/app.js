@@ -29,7 +29,8 @@
          'ngTouch',
          'ngMaterial',
          'ngDraggable',
-         'ui.sortable'
+         'ui.sortable',
+         'ngMaterialDatePicker'
      ])
      .config(function($routeProvider) {
          $routeProvider
