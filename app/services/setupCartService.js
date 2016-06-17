@@ -16,18 +16,26 @@ angular.module('inflightHubApp').service('setupCartService', function() {
             cartCate: "A1 Food",
             cartProd: [{
                 id: 1,
-                cate:"Food",
+                cate: "Food",
                 name: "KoloMee",
                 price: 130,
-                stock:9,
+                stock: 9,
                 qty: 1,
                 img: "images/food/AK-1-KoloMee.png"
             }, {
+                id: 23,
+                cate: "Dessert",
+                name: "Pancakes Maple Syrup Butter",
+                price: 100,
+                stock: 51,
+                qty: 0,
+                img: "images/dessert/QC-8-PancakesMapleSyrupButter.png"
+            }, {
                 id: 10,
-                cate:"Drink",
+                cate: "Drink",
                 name: "Water",
                 price: 20,
-                stock:69,
+                stock: 69,
                 qty: 1,
                 img: "images/drink/1-Water.jpg"
             }]
@@ -36,15 +44,15 @@ angular.module('inflightHubApp').service('setupCartService', function() {
             cartCate: "A2 Foodx",
             cartProd: [{
                 id: 16,
-                cate:"Drink",
+                cate: "Drink",
                 name: "Sprite",
                 price: 30,
-                stock:41,
+                stock: 41,
                 qty: 1,
                 img: "images/drink/7-sprite.jpg"
             }]
         }]
-    },{
+    }, {
         id: 2,
         cartName: "Coffee Break",
         floor: [{
@@ -52,18 +60,18 @@ angular.module('inflightHubApp').service('setupCartService', function() {
             cartCate: "A1 Food",
             cartProd: [{
                 id: 1,
-                cate:"Food",
+                cate: "Food",
                 name: "KoloMee",
                 price: 130,
-                stock:9,
+                stock: 9,
                 qty: 1,
                 img: "images/food/AK-1-KoloMee.png"
             }, {
                 id: 10,
-                cate:"Drink",
+                cate: "Drink",
                 name: "Water",
                 price: 20,
-                stock:69,
+                stock: 69,
                 qty: 1,
                 img: "images/drink/1-Water.jpg"
             }]
@@ -72,10 +80,10 @@ angular.module('inflightHubApp').service('setupCartService', function() {
             cartCate: "A2 Foodx",
             cartProd: [{
                 id: 16,
-                cate:"Drink",
+                cate: "Drink",
                 name: "Sprite",
                 price: 30,
-                stock:41,
+                stock: 41,
                 qty: 1,
                 img: "images/drink/7-sprite.jpg"
             }]

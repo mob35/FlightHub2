@@ -4,83 +4,112 @@
      makes an element draggable and will transfer the object that was
      assigned to it. If an element was dragged away, you have to remove
      it from the original list yourself using the dnd-moved attribute -->
+<div class="momo"></div>
+<div class="breadcrumb">
+            <!-- <span> Cancel</span> -->
+            <span ng-repeat="item in carts"></span>
+            <a ng-href="#/setupCart" ng-click="clearData()">Cancel</a>
+            <a href="javascript:window.history.back();">
+                <span style="float: right;" ng-show="isEdit==false" ng-click="addCart()">Done </span>
+                <span style="float: right;" ng-show="isEdit==true" ng-click="editFn()">Edit </span>
+            </a>
+        </div>
+        <div class="form-group">
+    <label style="margin-left: 15px;">Cart Name</label>
+    <input class="form-control" ng-model="newCart.cartName">
+</div>
 <script type="text/ng-template" id="list.html">
-    <ul dnd-list="list">
-        <li ng-repeat="item in list"
-            dnd-draggable="item"
-            dnd-effect-allowed="move"
-            dnd-moved="list.splice($index, 1)"
-            dnd-selected="models.selected = item"
-            ng-class="{selected: models.selected === item}"
-            ng-include="item.type + '.html'">
-        </li>
-    </ul>
-  
+    <!-- <ul><li> -->
+    <div dnd-list="list" style="border:none;height: 5px; ">
+        <div ng-repeat="item in list" dnd-draggable="item" dnd-effect-allowed="move" dnd-moved="list.splice($index, 1)" dnd-selected="models.selected = item" ng-class="{selected: models.selected === item}" ng-include="item.cate + '.html'">
+        </div>
+    </div>
+    <!-- </li></ul> -->
 </script>
-
 <!-- This template is responsible for rendering a container element. It uses
      the above list template to render each container column -->
-<script type="text/ng-template" id="container.html">
+<!-- <script type="text/ng-template" id="container.html">
     <div class="container-element box box-blue">
-        <h3>Container {{item.id}}</h3>
+        <img class="imgset" src="{{item.img}}">
         <div class="column" ng-repeat="list in item.columns" ng-include="'list.html'"></div>
         <div class="clearfix"></div>
     </div>
-</script>
-
+</script> -->
 <!-- Template for a normal list item -->
-<script type="text/ng-template" id="item.html">
-    <div class="item">Item {{item.id}}</div>
+<script type="text/ng-template" id="Food.html">
+    <!-- <div class="item">Item {{item.id}}</div> -->
+    <img class="imgset" src="{{item.img}}">
 </script>
-
+<script type="text/ng-template" id="Drink.html">
+    <img class="imgset" src="{{item.img}}">
+</script>
+<script type="text/ng-template" id="Fast.html">
+    <img class="imgset" src="{{item.img}}">
+</script>
+<script type="text/ng-template" id="Dessert.html">
+    <img class="imgset" src="{{item.img}}">
+</script>
+<script type="text/ng-template" id="Combo.html">
+    <img class="imgset" src="{{item.img}}">
+</script>
 <!-- Main area with dropzones and source code -->
 <div class="col-md-10" style="margin-top: 30px;">
     <div class="row">
         <div ng-repeat="(zone, list) in models.dropzones" class="col-md-6">
             <div class="dropzone box box-yellow">
                 <!-- The dropzone also uses the list template -->
-                <h3>Dropzone {{zone}}</h3>
+                <h3>{{zone}}</h3>
                 <div ng-include="'list.html'"></div>
             </div>
         </div>
     </div>
-
     <div view-source="nested"></div>
-
     <!-- <h2>Generated Model</h2>
     <pre>{{modelAsJson}}</pre> -->
 </div>
-
-<!-- Sidebar -->
-<div class="col-md-2">
-
+<!-- <div ng-repeat="floor in newCart.floor"> {{floor.cartCate}}</div>
+ --><!-- Sidebar -->
+<div class="col-md-2" style="margin-top: 30px;">
     <div class="toolbox box box-grey box-padding">
-        <h3>New Elements</h3>
-        <ul>
-            <!-- The toolbox only allows to copy objects, not move it. After a new
+        <h3>Product</h3>
+        <!-- <ul>  -->
+        <!-- <li> -->
+        <!-- The toolbox only allows to copy objects, not move it. After a new
                  element was created, dnd-copied is invoked and we generate the next id -->
-            <li ng-repeat="item in models.templates"
-                dnd-draggable="item"
-                dnd-effect-allowed="copy"
-                dnd-copied="item.id = item.id + 1"
-                >
-                <button type="button" class="btn btn-default btn-lg" >{{item.type}}</button>
-            </li>
-        </ul>
-    </div>
 
+        <h1>FOOD</h1>
+        <div ng-repeat="item in models.templates" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="item.id = item.id + 1">
+            <!-- <button type="button" class="btn btn-default btn-lg" >{{item.type}}</button> -->
+            <!-- <p>{{item.type}}</p> -->
+            <!-- <img class="imgset" src="{{item.img}}"> -->
+        </div>
+        
+        <!-- </li> -->
+        <!-- </ul> -->
+        <div ng-repeat="item in food | filter:searchText" dnd-draggable="item" dnd-effect-allowed="copy" dnd-copied="item.id = item.id">
+            <label style="height:34px;">{{item.name}}</label>
+            <br>
+            <img class="imgsetPro" src="{{item.img}}">
+            <br>
+            <label>{{item.price}}</label>
+            <label> THB.</label>
+        </div>
+    </div>
     <div ng-if="models.selected" class="box box-grey box-padding">
         <h3>Selected</h3>
-        <strong>Type: </strong> {{models.selected.type}}<br>
+        <strong>Type: </strong> {{models.selected.cate}}
+        <br>
         <input type="text" ng-model="models.selected.id" class="form-control" style="margin-top: 5px" />
     </div>
-
     <div class="trashcan box box-grey box-padding">
         <!-- If you use [] as referenced list, the dropped elements will be lost -->
         <h3>Trashcan</h3>
-        <ul dnd-list="[]">
-            <li><i class="fa fa-trash fa-5x" aria-hidden="true"></i></li>
-        </ul>
+        <div dnd-list="[]">
+            <!-- <ul> -->
+            <!-- <li> -->
+            <i class="fa fa-trash fa-5x" aria-hidden="true"></i>
+            <!-- </li> -->
+            <!-- </ul> -->
+        </div>
     </div>
-
 </div>
