@@ -30,7 +30,8 @@
          'ngMaterial',
          'ngDraggable',
          'ui.sortable',
-         'ngMaterialDatePicker'
+         'ngMaterialDatePicker',
+         'dndLists'
      ])
      .config(function($routeProvider) {
          $routeProvider
@@ -51,6 +52,12 @@
 
              })
              .when('/dnd', {
+                 templateUrl: 'views/dnd.html',
+                 controller: 'NestedListsDemoController',
+                 controllerAs: 'NestedListsDemoController'
+
+             })
+             .when('/dnd/:cardID', {
                  templateUrl: 'views/dnd.html',
                  controller: 'NestedListsDemoController',
                  controllerAs: 'NestedListsDemoController'
@@ -289,6 +296,12 @@
                  templateUrl: 'views/report.html',
                  controller: 'reportCtrl',
                  controllerAs: 'reportCtrl'
+
+             })
+             .when('/test', {
+                 templateUrl: 'views/nested.html',
+                 controller: 'nestedCtrl',
+                 controllerAs: 'nestedCtrl'
 
              })
 

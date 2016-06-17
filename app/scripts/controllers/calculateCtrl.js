@@ -21,6 +21,10 @@ angular.module('inflightHubApp')
         $scope.newCalculate = {};
         $scope.init = function() {
             $scope.calculates = calculateService.getCalculateList();
+            $scope.calculates2 = calculateService.getCalculateList2();
+            $scope.calculates3 = calculateService.getCalculateList3();
+            $scope.calculates4 = calculateService.getCalculateList4();
+            $scope.calculates5 = calculateService.getCalculateList5();
         }
 
         $scope.newFn = function() {
@@ -66,6 +70,24 @@ angular.module('inflightHubApp')
             $scope.calculateType = type;
             console.log(type);
         };
-
+        $scope.TproductType = "Food";
+        $scope.TableType = function(type) {
+            $scope.TproductType = type;
+        };
+        $scope.addRowTable = function() {
+            $scope.calculates.push({});
+        };
+        $scope.addRowTable2 = function() {
+            $scope.calculates2.push({});
+        };
+        $scope.addRowTable3 = function() {
+            $scope.calculates3.push({});
+        };
+        $scope.addRowTable4 = function() {
+            $scope.calculates4.push({});
+        };
+        $scope.addRowTable5 = function() {
+            $scope.calculates5.push({});
+        };
 
     });
