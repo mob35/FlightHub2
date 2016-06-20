@@ -30,7 +30,7 @@
          'ngMaterial',
          'ngDraggable',
          'ui.sortable',
-         'ngMaterialDatePicker',
+         // 'ngMaterialDatePicker',
          'dndLists'
      ])
      .config(function($routeProvider) {
