@@ -8618,4 +8618,15 @@ div[back-img]{
 .nestedDemo .trashcan .dndPlaceholder {
     display: none;
 }
-
+.numberCircle {
+    display:inline-block;
+    height:15px;
+    width:18px;
+    border-radius:10px;
+    border:none;
+    text-align:center;
+    font-size:12px;
+    background-color: red;
+    margin-left: -5px;
+    margin-top: -2px;
+}

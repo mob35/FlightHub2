@@ -1,3 +1,12 @@
+<script type="text/javascript">
+function numbersonly(e) {
+    var unicode = e.charCode ? e.charCode : e.keyCode
+    if (unicode != 8) {
+        if (unicode < 48 || unicode > 57)
+            return false
+    }
+}
+</script>
 <div class="row" style="margin-top: 50px;">
     <div class="col-lg-12">
         <h1 class="page-header">
@@ -57,7 +66,19 @@
             <div class="col-md-2" ng-repeat="obj in food | filter:searchText | limitTo:item.limitNumberFood:item.runNumberFood">
                 <label style="height:34px;">{{obj.name}}</label>
                 <br>
+                <br>
+                <div class="row" style="margin-left:130px;margin-bottom:-65px;">
+                    <div class="row">
+                        <button class="btn btn-default" ng-disabled="obj.stock < 1" ng-click="clickAdd(obj)">
+                            <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                    </div>
+                    <div class="row">
+                        <button button class="btn btn-default" ng-click="clickRemove(obj)"><i class="fa fa-minus" style="color:red;"></i></button>
+                    </div>
+                </div>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <span style="margin-left:-20px;width:22px;" class="badge red_badge"><input onkeypress="return numbersonly(event)" maxlength="2" class="numberCircle" value="{{obj.qty}}"></span>
+                <br>
                 <br>
                 <label>{{obj.price}}</label>
                 <label> THB.</label>
@@ -76,7 +97,19 @@
             <div class="col-md-2" ng-repeat="obj in drink | filter:searchText | limitTo:item.limitNumberDrink:item.runNumberDrink">
                 <label style="height:34px;">{{obj.name}}</label>
                 <br>
+                <br>
+                <div class="row" style="margin-left:130px;margin-bottom:-65px;">
+                    <div class="row">
+                        <button class="btn btn-default" ng-disabled="obj.stock < 1" ng-click="clickAdd(obj)">
+                            <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                    </div>
+                    <div class="row">
+                        <button button class="btn btn-default" ng-click="clickRemove(obj)"><i class="fa fa-minus" style="color:red;"></i></button>
+                    </div>
+                </div>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <span style="margin-left:-20px;width:22px;" class="badge red_badge"><input onkeypress="return numbersonly(event)" maxlength="2" class="numberCircle" value="{{obj.qty}}"></span>
+                <br>
                 <br>
                 <label>{{obj.price}}</label>
                 <label> THB.</label>
@@ -95,7 +128,19 @@
             <div class="col-md-2" ng-repeat="obj in fast | filter:searchText | limitTo:item.limitNumberFast:item.runNumberFast">
                 <label style="height:34px;">{{obj.name}}</label>
                 <br>
+                <br>
+                <div class="row" style="margin-left:130px;margin-bottom:-65px;">
+                    <div class="row">
+                        <button class="btn btn-default" ng-disabled="obj.stock < 1" ng-click="clickAdd(obj)">
+                            <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                    </div>
+                    <div class="row">
+                        <button button class="btn btn-default" ng-click="clickRemove(obj)"><i class="fa fa-minus" style="color:red;"></i></button>
+                    </div>
+                </div>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <span style="margin-left:-20px;width:22px;" class="badge red_badge"><input onkeypress="return numbersonly(event)" maxlength="2" class="numberCircle" value="{{obj.qty}}"></span>
+                <br>
                 <br>
                 <label>{{obj.price}}</label>
                 <label> THB.</label>
@@ -114,7 +159,19 @@
             <div class="col-md-2" ng-repeat="obj in dessert | filter:searchText | limitTo:item.limitNumberDessert:item.runNumberDessert">
                 <label style="height:34px;">{{obj.name}}</label>
                 <br>
+                <br>
+                <div class="row" style="margin-left:130px;margin-bottom:-65px;">
+                    <div class="row">
+                        <button class="btn btn-default" ng-disabled="obj.stock < 1" ng-click="clickAdd(obj)">
+                            <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                    </div>
+                    <div class="row">
+                        <button button class="btn btn-default" ng-click="clickRemove(obj)"><i class="fa fa-minus" style="color:red;"></i></button>
+                    </div>
+                </div>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <span style="margin-left:-20px;width:22px;" class="badge red_badge"><input onkeypress="return numbersonly(event)" maxlength="2" class="numberCircle" value="{{obj.qty}}"></span>
+                <br>
                 <br>
                 <label>{{obj.price}}</label>
                 <label> THB.</label>
@@ -133,7 +190,19 @@
             <div class="col-md-2" ng-repeat="obj in combo | filter:searchText | limitTo:item.limitNumberCombo:item.runNumberCombo">
                 <label style="height:34px;">{{obj.name}}</label>
                 <br>
+                <br>
+                <div class="row" style="margin-left:130px;margin-bottom:-65px;">
+                    <div class="row">
+                        <button class="btn btn-default" ng-disabled="obj.stock < 1" ng-click="clickAdd(obj)">
+                            <i class="fa fa-plus" style="color:#088A08;"></i></button>
+                    </div>
+                    <div class="row">
+                        <button button class="btn btn-default" ng-click="clickRemove(obj)"><i class="fa fa-minus" style="color:red;"></i></button>
+                    </div>
+                </div>
                 <img class="imgsetPro" src="{{obj.img}}" ng-drag="true" ng-drag-data="obj" data-allow-transform="true">
+                <span style="margin-left:-20px;width:22px;" class="badge red_badge"><input onkeypress="return numbersonly(event)" maxlength="2" class="numberCircle" value="{{obj.qty}}"></span>
+                <br>
                 <br>
                 <label>{{obj.price}}</label>
                 <label> THB.</label>
@@ -172,7 +241,6 @@
 
 
 </div> -->
-
 <!-- ////////////////////////////////////// -->
 <div class="row" ng-show="cartcontentType=='cartAB'">
     <div class="col-md-12" align="center">

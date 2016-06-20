@@ -21,6 +21,7 @@ angular.module('inflightHubApp')
         $scope.newCalculate = {};
         $scope.init = function() {
             $scope.calculates = calculateService.getCalculateList();
+            $scope.calculates1 = calculateService.getCalculateList1();
             $scope.calculates2 = calculateService.getCalculateList2();
             $scope.calculates3 = calculateService.getCalculateList3();
             $scope.calculates4 = calculateService.getCalculateList4();
@@ -76,6 +77,9 @@ angular.module('inflightHubApp')
         };
         $scope.addRowTable = function() {
             $scope.calculates.push({});
+        };
+        $scope.addRowTable1 = function() {
+            $scope.calculates1.push({});
         };
         $scope.addRowTable2 = function() {
             $scope.calculates2.push({});

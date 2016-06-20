@@ -95,8 +95,8 @@ angular.module('inflightHubApp').service('promotionDiscountService', function() 
         promotionDateStart:"",
         promotionDateFinish:"",
         proBy: "ByBill",
-        percent: 0,
-        bath: 0,
+        percent: "",
+        bath: "",
         offerBuy: "",
         card: "",
         floorProduct: [{

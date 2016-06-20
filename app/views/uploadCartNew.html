@@ -94,13 +94,13 @@
             <ul class="nav navbar-nav">
                 <li><a style="cursor:pointer" ng-click="changeType('Cart')">Cart</a>
                 </li>
-                <li><a style="cursor:pointer" ng-click="changeType('Crew')">Crew</a>
-                </li>
+                <!-- <li><a style="cursor:pointer" ng-click="changeType('Crew')">Crew</a>
+                </li> -->
             </ul>
         </div>
     </div>
     <div class="panel-body">
-        <!-- cart -->
+        
         <div class="row" align="center" ng-show="productType=='Cart'">
             <div class="col-md-1">
                 <input type="hidden" ng-model="item.limitNumberCart" ng-init="item.limitNumberCart=3">
@@ -116,8 +116,8 @@
                 <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberCart!=(floor.cartProd.length-item.limitNumberCart)?(item.runNumberCart=item.runNumberCart+1):item.runNumberCart=item.runNumberCart" style="padding-top:40px;"></i>
             </div>
         </div>
-        <!-- crew -->
-        <div class="row" align="center" ng-show="productType=='Crew'">
+        
+        <!-- <div class="row" align="center" ng-show="productType=='Crew'">
             <div class="col-md-1">
                 <input type="hidden" ng-model="item.limitNumberCrew" ng-init="item.limitNumberCrew=5">
                 <input type="hidden" ng-model="item.runNumberCrew" ng-init="item.runNumberCrew=0">
@@ -131,7 +131,7 @@
             <div class="col-md-1">
                 <i class="fa fa-angle-right fa-2x" aria-hidden="true" ng-click="item.runNumberCrew!=(floor.cartProd.length-item.limitNumberCrew)?(item.runNumberCrew=item.runNumberCrew+1):item.runNumberCrew=item.runNumberCrew" style="padding-top:40px;"></i>
             </div>
-        </div>
+        </div> -->
         <div class="text-right">
         </div>
     </div>
@@ -440,7 +440,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 240px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec2($data,$event)">
@@ -450,8 +450,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 755px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteInboundSec3($data,$event)">
@@ -461,7 +461,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 795px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
@@ -494,7 +494,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 240px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec2($data,$event)">
@@ -504,8 +504,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 755px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteOutboundSec3($data,$event)">
@@ -515,7 +515,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 795px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
@@ -551,30 +551,28 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 245px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -10px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec2| limitTo:item.limitNumberQuickTurnLeftSec2:item.runNumberQuickTurnLeftSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
-                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 755px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Crew</p>
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnLeftSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnLeftSec3| limitTo:item.limitNumberQuickTurnLeftSec3:item.runNumberQuickTurnLeftSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnLeftSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
-                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-340px;width: 35px;height: 150px; margin-left: 795px;">
                 <p style="margin-top:-40px;margin-bottom:20px;margin-left: -15px;font-weight: bold;">Cart</p>
@@ -599,28 +597,26 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 265px;">
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec2($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec2| limitTo:item.limitNumberQuickTurnRightSec2:item.runNumberQuickTurnRightSec2" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec2($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
-                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
+        </div> -->
+       <!--  <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 780px;">
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec3($data,$event)">
                     <div style="height:50px;width:50px;margin-left:-10px" ng-repeat="obj in droppedObjectsQuickTurnRightSec3| limitTo:item.limitNumberQuickTurnRightSec3:item.runNumberQuickTurnRightSec3" ng-drag="true" ng-drag-data="obj" ng-drag-success="onDragSuccessQuickTurnRightSec3($data,$event)" ng-center-anchor="{{centerAnchor}}">
                         <img src="{{obj.img}}" class="imgsetUp">
                         <p style="color: #000;  font-size: 1px;">{{obj.name}}</p>
-                        <!-- <span class="badge red_badge">{{obj.qty}}</span> -->
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="row">
             <div class="col-md-12" style="border-style: none;border-width: 0.5px;position:absolute;margin-top:-160px;width: 35px;height: 150px; margin-left: 820px;">
                 <div style="height: 150px;width: 30px;margin-left: -13px;border-style:dashed;border-width: 0.5px;" ng-drop="true" ng-drop-success="onDropCompleteQuickTurnRightSec4($data,$event)">

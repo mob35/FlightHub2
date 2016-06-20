@@ -44,7 +44,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr ng-repeat="item in calculates">
+                                <tr ng-repeat="item in calculates1">
                                     <td class="calcomRow ">
                                         <input type="text" ng-model="item.calDesc" style="border-style: none; text-align: left;">
                                     </td>
@@ -59,8 +59,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <div ng-click="addRowTable()" ng-show="TproductType=='Food'"> Add </div>
                         </table>
+                        <span ng-click="addRowTable1()" ng-show="TproductType=='Food'" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
                         <!-- Drink -->
                         <table class="table table-bordered table-hover " ng-show="TproductType=='Drink'">
                             <thead>
@@ -87,8 +87,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <div ng-click="addRowTable2()" ng-show="TproductType=='Drink'"> Add </div>
                         </table>
+                        <span ng-click="addRowTable2()" ng-show="TproductType=='Drink'" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
                         <!-- Fast Food -->
                         <table class="table table-bordered table-hover " ng-show="TproductType=='Fast'">
                             <thead>
@@ -115,8 +115,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <div ng-click="addRowTable3()" ng-show="TproductType=='Fast'"> Add </div>
                         </table>
+                        <span ng-click="addRowTable3()" ng-show="TproductType=='Fast'" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
                         <!-- Dessert-->
                         <table class="table table-bordered table-hover " ng-show="TproductType=='Dessert'">
                             <thead>
@@ -143,8 +143,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <div ng-click="addRowTable4()" ng-show="TproductType=='Dessert'"> Add </div>
                         </table>
+                        <span ng-click="addRowTable4()" ng-show="TproductType=='Dessert'" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
                         <!-- Combo Set-->
                         <table class="table table-bordered table-hover " ng-show="TproductType=='Combo'">
                             <thead>
@@ -171,8 +171,8 @@
                                     </td>
                                 </tr>
                             </tbody>
-                            <div ng-click="addRowTable5()" ng-show="TproductType=='Combo'"> Add </div>
                         </table>
+                        <span ng-click="addRowTable5()" ng-show="TproductType=='Combo'" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
                     </div>
                 </div>
             </div>
