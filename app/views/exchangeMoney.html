@@ -17,38 +17,54 @@
     </div>
 </div>
 <div class="panel panel-default">
-  
-   <div class="panel-body">
-             
-            <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h3 class="panel-title"><i class="fa fa-exchange"></i> Exchange Rates</h3>
+    <div class="panel-body">
+        <div class="col-lg-12">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <label>Date </label>
+                        <input time="false" date="true" mdc-datetime-picker="" type="date" id="searchDate" placeholder="Date" ng-model="searchDate" format="DD/MM/YYYY" min-date="minDate" max-date="maxDate" class=" md-input">
+                        <button type="button" ng-click="onChangeDate()">Go</button>
                     </div>
-                    <div class="panel-body">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-hover ">
-                                <thead>
-                                    <tr>
-                                        <th class="exchangeColHeader text-center breadcrumb">Foreign Currencies</th>
-                                        <th class="exchangeColHeader text-center breadcrumb">Description</th>
-                                        <th class="exchangeColHeader text-right breadcrumb">AirAsia Rates</th>
-                                        <th class="exchangeColHeader text-right breadcrumb">Current Rates</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr ng-repeat="item in exchanges">
-                                        <td class="exchangeRow "><img src="{{item.img}}" class="setFlag">&nbsp; &nbsp; {{item.exchangeName}}</td>
-                                        <td class="text-center">{{item.exchangeDesc}}</td>
-                                        <td class="exchangeColRate"><input type="number" ng-model="item.thaiRate" style="border-style: none; text-align: right;"></td>
-                                        <td class="exchangeColRate">{{item.sellingRate}}</td>
-                                    </tr>                                    
-                                </tbody>
-                            </table>
+                    <div class="col-md-3">
+                        <label>Time</label>
+                        <select ng-model="selectTimeId" ng-change="onChangeTime()">
+                            <option ng-repeat="item in timeDaily" value="{{item.id}}">{{item.id}}. {{item.value}}</option>
+                        </select>
+                    </div>
+                </div>
+                <br>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover ">
+                        <thead>
+                            <tr>
+                                <th class="exchangeColHeader text-center breadcrumb">Foreign Currencies</th>
+                                <th class="exchangeColHeader text-center breadcrumb">Description</th>
+                                <th class="exchangeColHeader text-right breadcrumb">AirAsia Rates</th>
+                                <th class="exchangeColHeader text-right breadcrumb">Current Rates</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in exchangesResult[0].rates">
+                                <td class="exchangeRow "><img src="{{item.img}}" class="setFlag">&nbsp; &nbsp; {{item.exchangeName}}</td>
+                                <td class="text-center">{{item.exchangeDesc}}</td>
+                                <td class="exchangeColRate">
+                                    <input type="number" ng-model="item.thaiRate" style="border-style: none; text-align: right;">
+                                </td>
+                                <td class="exchangeColRate">{{item.sellingRate}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="panel panel-default" style="margin-top: -20px; margin-bottom: -1px;">
+                    <div class="row" ng-click="add()">
+                        <div class="col-md-10">
+                            &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-plus-circle" style="color:#088A08;"></i>
                         </div>
                     </div>
                 </div>
             </div>
-      </div>
+        </div>
+    </div>
 </div>
-  

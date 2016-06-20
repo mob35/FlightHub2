@@ -15,13 +15,32 @@ angular.module('inflightHubApp')
             'Karma'
         ];
 
+        $scope.exchangesData = [];
+        $scope.exchangesResult = [];
+        $scope.timeDaily = [];
+        $scope.searchDate = "06/06/2016";
+        var _exchangesData = [];
 
         $scope.exchanges = [];
         $scope.isEdit = $routeParams.exchangeID ? true : false;
         $scope.newExchange = {};
         $scope.init = function() {
             $scope.exchanges = exchangeMoneyService.getExchangeList();
+
+            exchangeMoneyService.getExchangeDataList(function(response){
+                _exchangesData = response;
+                $scope.exchangesData = $filter('filter')(response, {date:$('#searchDate').val()});
+                $scope.timeDaily = $scope.exchangesData[0].times;
+            });
         }
+        $scope.onChangeDate = function(){
+            $scope.exchangesData = $filter('filter')(_exchangesData, {date:$('#searchDate').val()});
+            $scope.timeDaily = $scope.exchangesData[0].times;
+        };
+
+        $scope.onChangeTime = function(){
+            $scope.exchangesResult = $filter('filter')($scope.exchangesData[0].times, {id:$scope.selectTimeId});
+        };
 
         $scope.newFn = function() {
             $scope.newExchange = {};

@@ -14,10 +14,30 @@
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
-                        <table class="table table-bordered table-hover ">
+                        <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-bottom: 13px;margin-left: -15px;" id="pro">
+                            <div class="panel panel-default">
+                                <div class="panel-heading">
+                                    <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+                                        <ul class="nav navbar-nav">
+                                            <li><a style="cursor:pointer" ng-click="TableType('Food')">Food</a>
+                                            </li>
+                                            <li><a style="cursor:pointer" ng-click="TableType('Drink')">Drink</a>
+                                            </li>
+                                            <li><a style="cursor:pointer" ng-click="TableType('Fast')">Fast Food</a>
+                                            </li>
+                                            <li><a style="cursor:pointer" ng-click="TableType('Dessert')">Dessert</a>
+                                            </li>
+                                            <li><a style="cursor:pointer" ng-click="TableType('Combo')">Combo Set</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="table table-bordered table-hover " ng-show="TproductType=='Food'">
                             <thead>
                                 <tr>
-                                    <th class="calcomColHeader text-center breadcrumb">Description (THB)</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Description Food(THB)</th>
                                     <th class="calcomColHeader text-center breadcrumb">Minimum</th>
                                     <th class="calcomColHeader text-right breadcrumb">Maximum</th>
                                     <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
@@ -39,6 +59,119 @@
                                     </td>
                                 </tr>
                             </tbody>
+                            <div ng-click="addRowTable()" ng-show="TproductType=='Food'"> Add </div>
+                        </table>
+                        <!-- Drink -->
+                        <table class="table table-bordered table-hover " ng-show="TproductType=='Drink'">
+                            <thead>
+                                <tr>
+                                    <th class="calcomColHeader text-center breadcrumb">Description Drink(THB)</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in calculates2">
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calDesc2" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="number" ng-model="item.calMin2" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calMax2" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calComm2" style="border-style: none; text-align: right;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <div ng-click="addRowTable2()" ng-show="TproductType=='Drink'"> Add </div>
+                        </table>
+                        <!-- Fast Food -->
+                        <table class="table table-bordered table-hover " ng-show="TproductType=='Fast'">
+                            <thead>
+                                <tr>
+                                    <th class="calcomColHeader text-center breadcrumb">Description Fast Food (THB)</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in calculates3">
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calDesc3" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="number" ng-model="item.calMin3" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calMax3" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calComm3" style="border-style: none; text-align: right;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <div ng-click="addRowTable3()" ng-show="TproductType=='Fast'"> Add </div>
+                        </table>
+                        <!-- Dessert-->
+                        <table class="table table-bordered table-hover " ng-show="TproductType=='Dessert'">
+                            <thead>
+                                <tr>
+                                    <th class="calcomColHeader text-center breadcrumb">Description Dessert(THB)</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in calculates4">
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calDesc4" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="number" ng-model="item.calMin4" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calMax4" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calComm4" style="border-style: none; text-align: right;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <div ng-click="addRowTable4()" ng-show="TproductType=='Dessert'"> Add </div>
+                        </table>
+                        <!-- Combo Set-->
+                        <table class="table table-bordered table-hover " ng-show="TproductType=='Combo'">
+                            <thead>
+                                <tr>
+                                    <th class="calcomColHeader text-center breadcrumb">Description Combo Set(THB)</th>
+                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
+                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in calculates5">
+                                    <td class="calcomRow ">
+                                        <input type="text" ng-model="item.calDesc5" style="border-style: none; text-align: left;">
+                                    </td>
+                                    <td class="calcomRow ">
+                                        <input type="number" ng-model="item.calMin5" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calMax5" style="border-style: none; text-align: right;">
+                                    </td>
+                                    <td class="calcomColRate">
+                                        <input type="number" ng-model="item.calComm5" style="border-style: none; text-align: right;">
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <div ng-click="addRowTable5()" ng-show="TproductType=='Combo'"> Add </div>
                         </table>
                     </div>
                 </div>
