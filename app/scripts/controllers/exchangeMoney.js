@@ -79,7 +79,11 @@ angular.module('inflightHubApp')
             $scope.newFn();
         }
 
-
+        $scope.addRowEx = function() {
+            $scope.exchanges.push({});
+            console.log($scope.exchanges);
+            // alert("");
+        };
 
 
 
