@@ -23,14 +23,17 @@
                 <div class="row">
                     <div class="col-md-4 ">
                         <label>Date </label>
-                        <input time="false" date="true" mdc-datetime-picker="" type="date" id="searchDate" placeholder="Date" ng-model="searchDate" format="DD/MM/YYYY" min-date="minDate" max-date="maxDate" class=" md-input">
-                        <button type="button" ng-click="onChangeDate()">Go</button>
+                        <input time="false" date="true" mdc-datetime-picker="" type="date" id="searchDate" ng-change="onChangeDate()" placeholder="Date" ng-model="searchDate" format="DD/MM/YYYY" min-date="minDate" max-date="maxDate" class=" md-input">
+                        <!-- <button type="button" ng-click="onChangeDate()">Go</button> -->
                     </div>
                     <div class="col-md-3">
                         <label>Time</label>
                         <select ng-model="selectTimeId" ng-change="onChangeTime()">
                             <option ng-repeat="item in timeDaily" value="{{item.id}}">{{item.id}}. {{item.value}}</option>
                         </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button type="button" ng-click="onChangeTime()">Go</button>
                     </div>
                 </div>
                 <br>
@@ -53,16 +56,33 @@
                                 </td>
                                 <td class="exchangeColRate">{{item.sellingRate}}</td>
                             </tr>
+                            <tr ng-show="isClickAddRow">
+                                <td class="exchangeRow ">
+                                    <input type="text" ng-model="newItem.exchangeName" style="border-style: none; text-align: right;">
+                                </td>
+                                <td class="text-center">
+                                    <input type="text" ng-model="newItem.exchangeDesc" style="border-style: none; text-align: right;">
+                                </td>
+                                <td class="exchangeColRate">
+                                    <input type="number" ng-model="newItem.thaiRate" style="border-style: none; text-align: right;">
+                                </td>
+                                <td class="exchangeColRate">
+                                    <input type="number" ng-model="newItem.sellingRate" style="border-style: none; text-align: right;">
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
+
+                <div class="panel panel-default" style="margin-top: -20px; margin-bottom: -1px;">
+                    <div class="row" ng-click="addRow()"> 
+                        <div class="col-md-10">
+                            &nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-plus-circle" style="color:#088A08;"></i>  Exchange Money
+                        </div>
+
                 <!-- <div class="panel panel-default" style="margin-top: -20px; margin-bottom: -1px;"> -->
-                <div class="row">
-                    <div class="col-md-10">
-                        &nbsp;&nbsp;&nbsp;
-                        <span ng-click="addRowEx()" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
-                    </div>
-                </div>
+
             </div>
             <!-- </div> -->
         </div>

@@ -11,7 +11,7 @@ angular.module('inflightHubApp').service('exchangeMoneyService', function() {
 
     var exchangesData = [{
         id: 1,
-        date: "06/06/2016",
+        date: "2016-06-06",
         times: [{
             id: 1,
             value: "09:00:AM",
@@ -103,7 +103,7 @@ angular.module('inflightHubApp').service('exchangeMoneyService', function() {
     },
     {
         id: 2,
-        date: "16/06/2016",
+        date: "2016-06-16",
         times: [{
             id: 1,
             value: "08:00:AM",
