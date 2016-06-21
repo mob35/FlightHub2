@@ -245,6 +245,11 @@ angular.module('inflightHubApp').service('exchangeMoneyService', function() {
         return exchangesData;
     };
 
+     this.getExchangeOldList = function() {
+        return exchanges;
+        // return exchangesData;
+    };
+
     this.getExchangeDataList = function(fnCallback) {
         //return exchanges;
         fnCallback(exchangesData);

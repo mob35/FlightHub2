@@ -20,7 +20,7 @@ angular.module('inflightHubApp')
         $scope.isEdit = $routeParams.exchangeID ? true : false;
         $scope.newExchange = {};
         $scope.init = function() {
-            $scope.exchanges = exchangeMoneyService.getExchangeList();
+            $scope.exchanges = exchangeMoneyService.getExchangeOldList();
         }
 
         $scope.newFn = function() {
