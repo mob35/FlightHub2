@@ -18,7 +18,7 @@ angular.module('inflightHubApp')
         $scope.exchangesData = [];
         $scope.exchangesResult = [];
         $scope.timeDaily = [];
-        $scope.searchDate = "06/06/2016";
+        $scope.searchDate = new Date();
         var _exchangesData = [];
 
         $scope.exchanges = [];
@@ -27,19 +27,37 @@ angular.module('inflightHubApp')
         $scope.init = function() {
             $scope.exchanges = exchangeMoneyService.getExchangeList();
 
-            exchangeMoneyService.getExchangeDataList(function(response){
+            exchangeMoneyService.getExchangeDataList(function(response) {
                 _exchangesData = response;
-                $scope.exchangesData = $filter('filter')(response, {date:$('#searchDate').val()});
-                $scope.timeDaily = $scope.exchangesData[0].times;
+                $scope.exchangesResult = [];
+                setTimeout(function() {
+                    $scope.exchangesData = $filter('filter')(response, { date: $('#searchDate').val() });
+                    $scope.timeDaily = $scope.exchangesData[0].times;
+                }, 1000);
             });
         }
-        $scope.onChangeDate = function(){
-            $scope.exchangesData = $filter('filter')(_exchangesData, {date:$('#searchDate').val()});
+        $scope.onChangeDate = function() {
+            $scope.exchangesResult = [];
+            $scope.exchangesData = $filter('filter')(_exchangesData, { date: $('#searchDate').val() });
             $scope.timeDaily = $scope.exchangesData[0].times;
+            $scope.selectTimeId = "1";
+
         };
 
-        $scope.onChangeTime = function(){
-            $scope.exchangesResult = $filter('filter')($scope.exchangesData[0].times, {id:$scope.selectTimeId});
+        $scope.onChangeTime = function() {
+            $scope.exchangesResult = $filter('filter')($scope.exchangesData[0].times, { id: $scope.selectTimeId });
+        };
+        $scope.isClickAddRow = false;
+        $scope.newItem = {};
+
+        $scope.addRow = function() {
+            $scope.newItem = {};
+            $scope.isClickAddRow = true;
+
+            $scope.newItem.id = guid();
+            $scope.newItem.img = "images/flag/us-flag.jpg";
+
+            $scope.exchangesResult[0].rates.push($scope.newItem);
         };
 
         $scope.newFn = function() {
@@ -52,7 +70,7 @@ angular.module('inflightHubApp')
             $scope.newFn();
         };
 
-        $scope.deleteExchange = function(id){
+        $scope.deleteExchange = function(id) {
             exchangeMoneyService.deleteExchange(id);
         };
 
