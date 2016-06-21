@@ -179,6 +179,18 @@
                  controllerAs: 'comboProductNew2'
 
              })
+             .when('/addProduct', {
+                 templateUrl: 'views/addProduct.html',
+                 controller: 'addProductCtrl',
+                 controllerAs: 'addProduct'
+
+             })
+             .when('/addProduct/:comboID', {
+                 templateUrl: 'views/addProduct.html',
+                 controller: 'addProductCtrl',
+                 controllerAs: 'addProduct'
+
+             })
              .when('/product', {
                  templateUrl: 'views/product.html',
                  controller: 'comboProductCtrl',

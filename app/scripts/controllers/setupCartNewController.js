@@ -762,7 +762,7 @@ angular.module('inflightHubApp')
         };
         $scope.addCart = function() {
             $scope.newCart.id = guid();
-            $scope.newCart.floor.floorId[0].cartProd = $scope.droppedObjectsA1;
+            // $scope.newCart.floor.floorId[0].cartProd = $scope.droppedObjectsA1;
             $scope.carts.push($scope.newCart);
             $scope.newFn();
             setupCartService.clearTemp();

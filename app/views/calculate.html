@@ -16,8 +16,8 @@
                     <div class="table-responsive">
                         <div class="collapse navbar-collapse navbar-ex1-collapse" style="margin-bottom: 13px;margin-left: -15px;" id="pro">
                             <div class="panel panel-default">
-                                <div class="panel-heading">
-                                    <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro">
+                                <div class="panel-heading borderCl" style="height: 60px;">
+                                    <div class="collapse navbar-collapse navbar-ex1-collapse" id="pro" style="margin-top: -5px;">
                                         <ul class="nav navbar-nav">
                                             <li><a style="cursor:pointer" ng-click="TableType('Food')">Food</a>
                                             </li>
@@ -32,15 +32,15 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            
+                        
                         <table class="table table-bordered table-hover " ng-show="TproductType=='Food'">
                             <thead>
                                 <tr>
-                                    <th class="calcomColHeader text-center breadcrumb">Description Food(THB)</th>
-                                    <th class="calcomColHeader text-center breadcrumb">Minimum</th>
-                                    <th class="calcomColHeader text-right breadcrumb">Maximum</th>
-                                    <th class="calcomColHeader text-right breadcrumb">Commission(%)</th>
+                                    <th class="calcomColHeader text-center ">Description Food(THB)</th>
+                                    <th class="calcomColHeader text-center ">Minimum</th>
+                                    <th class="calcomColHeader text-right ">Maximum</th>
+                                    <th class="calcomColHeader text-right ">Commission(%)</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -173,6 +173,8 @@
                             </tbody>
                         </table>
                         <span ng-click="addRowTable5()" ng-show="TproductType=='Combo'" class="panel-title" style="float: left;"><i class="fa fa-plus-circle" style="color:#088A08;"></i></span>
+                    </div>
+                    </div>
                     </div>
                 </div>
             </div>

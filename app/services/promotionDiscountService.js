@@ -151,8 +151,8 @@ angular.module('inflightHubApp').service('promotionDiscountService', function() 
             promotionDateStart:"",
         promotionDateFinish:"",
             proBy: "",
-            percent: 0,
-            bath: 0,
+            percent: "",
+            bath: "",
             offerBuy: "",
             card: "",
             floorProduct: [{

@@ -8057,6 +8057,7 @@ button.close {
     width: 40px;
     height: 32px;
 }
+
 .imgsetUp {
     width: 30px;
     height: 24px;
@@ -8437,35 +8438,41 @@ div#scroll {
     border-style: solid;
     border-color: #ff0000;
 }
+
 .window {
-  margin-left: 50px;
-        width: 40px;
-        height: 100px;
-        border-color: #ff0000;
-        border-style: solid;
-        border-width: 2px 0px 2px 8px;
-        border-top-left-radius: 100% 50%;
+    margin-left: 50px;
+    width: 40px;
+    height: 100px;
+    border-color: #ff0000;
+    border-style: solid;
+    border-width: 2px 0px 2px 8px;
+    border-top-left-radius: 100% 50%;
     border-bottom-left-radius: 100% 50%;
 }
+
 .tid {
-  margin-top: -7px;
+    margin-top: -7px;
 }
+
 .near {
-  margin-left: -15px;
+    margin-left: -15px;
 }
+
 .setTailPlaneBottom {
     border-width: 2px 2px 2px 2px;
     border-style: solid;
     border-color: #ff0000;
     border-bottom-left-radius: 100%;
 }
+
 .setTailPlaneTop {
     border-width: 2px 2px 2px 2px;
     border-style: solid;
     border-color: #ff0000;
     border-top-left-radius: 100%;
 }
-div[back-img]{
+
+div[back-img] {
     width: 400px;
     height: 450px;
     color: none;
@@ -8473,28 +8480,35 @@ div[back-img]{
     position: relative;
 }
 
+
 /***************************** Required styles *****************************/
+
 
 /**
  * For the correct positioning of the placeholder element, the dnd-list and
  * it's children must have position: relative
  */
+
 .nestedDemo ul[dnd-list],
 .nestedDemo ul[dnd-list] > li {
     position: relative;
 }
 
+
 /***************************** Dropzone Styling *****************************/
+
 
 /**
  * The dnd-list should always have a min-height,
  * otherwise you can't drop to it once it's empty
  */
+
 .nestedDemo .dropzone ul[dnd-list] {
     min-height: 42px;
     margin: 0px;
     padding-left: 0px;
 }
+
 
 /**
  * The dnd-lists's child elements currently MUST have
@@ -8503,6 +8517,7 @@ div[back-img]{
  * half of the element we are dragging over. In other
  * browsers we can use event.offsetY for this.
  */
+
 .nestedDemo .dropzone li {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -8510,34 +8525,41 @@ div[back-img]{
     padding: 0px;
 }
 
+
 /**
  * Reduce opacity of elements during the drag operation. This allows the user
  * to see where he is dropping his element, even if the element is huge. The
  * .dndDragging class is automatically set during the drag operation.
  */
+
 .nestedDemo .dropzone .dndDragging {
     opacity: 0.7;
 }
+
 
 /**
  * The dndDraggingSource class will be applied to the source element of a drag
  * operation. It makes sense to hide it to give the user the feeling that he's
  * actually moving it. Note that the source element has also .dndDragging class.
  */
+
 .nestedDemo .dropzone .dndDraggingSource {
     display: none;
 }
+
 
 /**
  * An element with .dndPlaceholder class will be added as child of the dnd-list
  * while the user is dragging over it.
  */
+
 .nestedDemo .dropzone .dndPlaceholder {
     background-color: #ddd;
     min-height: 42px;
     display: block;
     position: relative;
 }
+
 
 /***************************** Element Selection *****************************/
 
@@ -8553,9 +8575,10 @@ div[back-img]{
 .nestedDemo .dropzone .selected .box > h3 {
     color: #3c763d;
     background-color: #dff0d8;
-    background-image: linear-gradient(to bottom,#dff0d8 0,#d0e9c6 100%);
+    background-image: linear-gradient(to bottom, #dff0d8 0, #d0e9c6 100%);
     border-color: #d6e9c6;
 }
+
 
 /***************************** Element type specific styles *****************************/
 
@@ -8571,6 +8594,7 @@ div[back-img]{
     float: left;
     width: 50%;
 }
+
 
 /***************************** Toolbox *****************************/
 
@@ -8593,6 +8617,7 @@ div[back-img]{
 .nestedDemo .toolbox .dndDraggingSource {
     opacity: 1.0;
 }
+
 
 /***************************** Trashcan *****************************/
 
@@ -8618,15 +8643,27 @@ div[back-img]{
 .nestedDemo .trashcan .dndPlaceholder {
     display: none;
 }
+
 .numberCircle {
-    display:inline-block;
-    height:15px;
-    width:18px;
-    border-radius:10px;
-    border:none;
-    text-align:center;
-    font-size:12px;
+    display: inline-block;
+    height: 15px;
+    width: 18px;
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    font-size: 12px;
     background-color: red;
     margin-left: -5px;
     margin-top: -2px;
+}
+
+.borderCl {
+    border-style: solid;
+    border-width: 0px 0px 3px 0px;
+}
+.thumb-image{
+    float:left;
+    width:200px;
+    position:relative;
+    padding:5px;
 }
